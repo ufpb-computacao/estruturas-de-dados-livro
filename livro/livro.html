@@ -1,0 +1,1825 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.8" />
+<meta name="description" content="Livro de Estruturas de Dados" />
+<meta name="keywords" content="Estruturas de Dados" />
+<title>Estruturas de Dados e Algoritmos de Busca e Ordenação</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+.monospaced, code, pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  color: navy;
+  padding: 0;
+  margin: 0;
+}
+
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel0, div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+div.unbreakable { page-break-inside: avoid; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+
+
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([1-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName.toLowerCase() == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install();
+/*]]>*/
+</script>
+</head>
+<body class="book">
+<div id="header">
+<h1>Estruturas de Dados e Algoritmos de Busca e Ordenação</h1>
+<span id="author">Alexandre Nóbrega Duarte</span><br />
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="prefacio">Prefácio</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>texto</p></div>
+<div class="sect2">
+<h3 id="_publico_alvo">Público alvo</h3>
+<div class="paragraph"><p>estudantes</p></div>
+</div>
+<div class="sect2">
+<h3 id="_metodo_de_elaboracao">Método de Elaboração</h3>
+<div class="paragraph"><p>Financiamento da capes.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_contribuicao">Contribuição</h3>
+<div class="paragraph"><p>Erros e etc.</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introducao">Introdução</h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Objetivos do capítulo</div>
+<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Entender a importância do uso de estruturas de dados e os conceitos de abstração e encapsulamento
+</p>
+</li>
+<li>
+<p>
+Conhecer a estrutura básica que será utilizada ao longo do livro para representar um elemento em nossas
+estruturas de dados
+</p>
+</li>
+<li>
+<p>
+Compreender o princípio da indução matemática
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>Computadores podem armazenar e processar grandes volumes de dados. Estruturas de dados formais possibilitam aos programadores gerenciar conceitualmente os relacionamentos entre os dados utilizados por um determinado programa.</p></div>
+<div class="paragraph"><p>Muitas vezes, estruturas de dados específicas nos permitem fazer mais,  por exemplo, ordenar mais rápido um grande volume de dados. Noutras vezes, utilizamos certas estruturas de dados para fazermos menos, por exemplo,  encontrar um determinado elemento em uma coleção utilizando o menor número
+possível de comparações.</p></div>
+<div class="paragraph"><p>Estruturas de dados também oferecem garantias sobre a complexidade algorítmica  relacionada às suas operações básicas. Portanto, escolher estruturas de dados apropriadas é crucial para o desenvolvimento de qualquer software.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Aviso</div>
+</td>
+<td class="content">A escolha das estruturas de dados a serem utilizadas tem papel fundamental no desenvolvimento de qualquer software. Uma escolha errada pode implicar em perdas de desempenho e em uma maior dificuldade na implementação.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>Estruturas de dados representam abstrações de alto nível e podem fornecer operações para lidar com grupos de dados, incluindo formas para adicionar, remover ou localizar elementos. Uma estrutura de dados que fornece operações para manipular seus dados é denominada <strong>tipo abstrato de dados</strong> (muitas vezes  abreviado por TAD). Tipos abstratos de dados podem minimizar dependências no código, o que é importante quando é preciso realizar alterações no programa. Tais estruturas abstraem do programa os detalhes de baixo nível, permitindo que o programados concentre-se unicamente em  utilizar a estrutura sem precisar conhecer, necessariamente, detalhes sobre sua implementação. Além disso, estruturas de dados que apresentam um conjunto comum de operações de alto nível podem ser substituídas umas pelas outras sem maiores impactos no restante do código de uma aplicação.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Nota</div>
+</td>
+<td class="content">Uma estrutura de dados que fornece operações de alto nível para manipular seus elementos é denominada <strong>tipo abstrato de dados</strong>.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>As principais linguagens de programação estão equipadas com um conjunto de tipos de dados, como números inteiros e de ponto flutuante, que nos permitem lidar com dados para os quais o processador do computador oferece suporte nativo. Estes tipos de dados pré-definidos são abstrações do que o processador realmente oferece uma vez que escondem detalhes sobre sua execução e limitações.</p></div>
+<div class="paragraph"><p>Por exemplo, quanto utilizamos números de ponto flutuante estamos preocupados principalmente com seu valor e com quais operações podem ser aplicadas a eles. Considere o trecho de código abaixo que calcula o comprimento da hipotenusa de um triângulo com catetos a e b.</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">double</span> c <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">sqrt</span></span><span style="color: #990000">(</span>a <span style="color: #990000">*</span> a <span style="color: #990000">+</span> b <span style="color: #990000">*</span> b<span style="color: #990000">)</span></tt></pre></div></div>
+<div class="paragraph"><p>O código de máquina gerado a partir do código acima utilizaria padrões comuns para computar e acumular o resultado. De fato, estes padrões são tão repetitivos que levaram a criação de linguagens de programação de alto nível justamente para evitar a redundância e para permitir que os programadores possam se preocupar com o que está sendo computado ao invés do como está sendo computado.</p></div>
+<div class="paragraph"><p>Dois conceitos muito úteis e inter-relacionados têm um papel fundamental neste avanço:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>Encapsulamento</strong> acontece quando um padrão comum de codificação é agrupado em uma unidade com nome único e que pode ser parametrizada, fornecendo um entendimento de mais alto nível sobre este padrão. Por exemplo, a operação de multiplicação requer dois valores fonte e escreve o valor do produto destes dois valores em um determinado destino. A operação é parametrizada por seus dois valores fonte e pelo destino único.
+</p>
+</li>
+<li>
+<p>
+<strong>Abstração</strong> é um mecanismo utilizado para esconder de implementação dos usuários. Quando multiplicamos dois números não precisamos saber qual a técnica utilizada pelo processador para efetivamente multiplicar os números, precisamos apenas conhecer as propriedades da operação de multiplicação.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Uma linguagem de programação é tanto uma abstração da máquina quanto uma ferramenta para encapsular seus detalhes internos. Quando a linguagem de programação encapsula suficientemente bem o funcionamento da  máquina um programa escrito nesta linguagem pode ser compilado em várias arquiteturas diferentes.</p></div>
+<div class="paragraph"><p>Neste livro nós levamos os conceitos e abstração e encapsulamento um passo adiante. Na medida em  que as aplicações começam a ficar mais complexas, as abstrações fornecidas pelas linguagens de  programação se mostram de insuficientes e precisam ser estendidas, exigindo a construção de  novas abstrações a partir das já disponíveis ou a partir de novas abstrações já adicionadas à linguagem. Cada vez que adicionamos um novo nível de abstração perdemos acesso aos detalhes de implementação do nível inferior. Apesar dessa perda de acesso parecer ruim, ela na verdade ajuda a lidar com a complexidade,
+pois, no final, estamos interessados em resolver o problema.</p></div>
+<div class="paragraph"><p>Abstrações e encapsulamento nos permitem  pensar em níveis mais altos e isso é fundamental para conseguirmos resolver problemas cada vez mais complexos.</p></div>
+<div class="sect2">
+<h3 id="_a_estrutura_basica_de_um_no">A estrutura básica de um Nó</h3>
+<div class="paragraph"><p>A primeira estrutura de dados que vamos estudar é chamada <em>Nó</em>. Esta é a estrutura básica que utilizaremos para construir todas as demais estruturas de dados tratadas neste livro.</p></div>
+<div class="paragraph"><p>Um <em>Nó</em> é um recipiente ao qual adicionamos um elemento do nosso conjunto de dados e um apontador para o próximo <em>Nó</em> (que pode não existir). O código a seguir apresenta a definição da estrutura de um <em>Nó</em>.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Nota</div>
+</td>
+<td class="content">Utilizaremos a linguagem C em todo o código fonte apresentado neste livro. Além disso, por convenção, nomes de tipos, variáveis e funções serão definidos em inglês. Portanto, a nossa estrutura de <em>Nó</em> se chama <em>Node</em>.</td>
+</tr></table>
+</div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">typedef</span></span> <span style="color: #009900">int</span> Element<span style="color: #990000">;</span>
+
+<span style="font-weight: bold"><span style="color: #0000FF">typedef</span></span> <span style="font-weight: bold"><span style="color: #0000FF">struct</span></span> <span style="color: #008080">Node_</span> <span style="color: #FF0000">{</span>
+        <span style="color: #008080">Element</span>         value<span style="color: #990000">;</span>          <span style="font-style: italic"><span style="color: #9A1900">//armazena o valor contido neste nó</span></span>
+        <span style="font-weight: bold"><span style="color: #0000FF">struct</span></span> <span style="color: #008080">Node_</span><span style="color: #990000">*</span>   next<span style="color: #990000">;</span>           <span style="font-style: italic"><span style="color: #9A1900">//apontador para o proximo nó; possivelmente null</span></span>
+<span style="color: #FF0000">}</span> Node<span style="color: #990000">;</span></tt></pre></div></div>
+<div class="paragraph"><p>As operações básicas a serem aplicadas à nossa estrutura de <em>Nó</em> são definidas a seguir.</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-style: italic"><span style="color: #9A1900">//Cria um nó com valor v e next como próximo nó</span></span>
+Node<span style="color: #990000">*</span> <span style="font-weight: bold"><span style="color: #000000">makeNode</span></span><span style="color: #990000">(</span><span style="color: #008080">Element</span> v<span style="color: #990000">,</span> <span style="color: #008080">Node</span> <span style="color: #990000">*</span>next<span style="color: #990000">);</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">//Retorna o valor contido no nó n</span></span>
+<span style="color: #008080">Element</span> <span style="font-weight: bold"><span style="color: #000000">getValue</span></span><span style="color: #990000">(</span><span style="color: #008080">Node</span> <span style="color: #990000">*</span>n<span style="color: #990000">);</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">//Retorna o apontador para o próximo nó</span></span>
+Node<span style="color: #990000">*</span> <span style="font-weight: bold"><span style="color: #000000">getNext</span></span><span style="color: #990000">(</span><span style="color: #008080">Node</span> <span style="color: #990000">*</span>n<span style="color: #990000">);</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">//Altera o valor contido no nó n</span></span>
+Node<span style="color: #990000">*</span> <span style="font-weight: bold"><span style="color: #000000">setValue</span></span><span style="color: #990000">(</span><span style="color: #008080">Node</span> <span style="color: #990000">*</span>n<span style="color: #990000">,</span> <span style="color: #008080">Element</span> v<span style="color: #990000">);</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">//Faz o apontador de próximo de nó n apontar para newNext</span></span>
+Node<span style="color: #990000">*</span> <span style="font-weight: bold"><span style="color: #000000">setNext</span></span><span style="color: #990000">(</span><span style="color: #008080">Node</span> <span style="color: #990000">*</span>n<span style="color: #990000">,</span> <span style="color: #008080">Node</span> <span style="color: #990000">*</span>newNext<span style="color: #990000">);</span></tt></pre></div></div>
+<div class="paragraph"><p>Todas as operações apresentadas acima possuem complexidade <em>O</em>(1). O tipo <em>Element</em> pode representar números, cadeias de caracteres, objetos, funções ou mesmo outros nós. Essencialmente, pode representar qualquer tipo presente na linguagem.</p></div>
+<div class="paragraph"><p>Neste momento, estamos preocupados apenas que o <em>Nó</em> possa armazenar valores de alguma forma.  O tipo do dado, neste momento, não é relevante. Em algumas linguagens de programação, o  tipo não precisa ser definido (linguagens  dinamicamente tipadas como Scheme, Smalltalk ou Python).  Em outras linguagens o tipo pode  precisar ser definido explicitamente, (linguagens estaticamente  tipadas como C).  Há ainda uma terceira opção, na qual a decisão sobre o tipo do elemento  pode ser atrasada até  o momento em que o tipo é efetivamente utilizado (linguagens que suportam tipos genéricos como C++ e Java).</p></div>
+<div class="paragraph"><p>Cada uma das operações especificadas pode ser implementada de forma relativamente simples:</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-style: italic"><span style="color: #9A1900">//Cria um nó com valor v e next como próximo nó</span></span>
+Node<span style="color: #990000">*</span> <span style="font-weight: bold"><span style="color: #000000">makeNode</span></span><span style="color: #990000">(</span><span style="color: #008080">Element</span> v<span style="color: #990000">,</span> <span style="color: #008080">Node</span> <span style="color: #990000">*</span>next<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="color: #008080">Node</span> <span style="color: #990000">*</span>n <span style="color: #990000">=</span> <span style="color: #990000">(</span>Node <span style="color: #990000">*)</span> <span style="font-weight: bold"><span style="color: #000000">malloc</span></span><span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #0000FF">sizeof</span></span><span style="color: #990000">(</span>Node<span style="color: #990000">));</span>
+        n<span style="color: #990000">-&gt;</span>value <span style="color: #990000">=</span> v<span style="color: #990000">;</span>
+        n<span style="color: #990000">-&gt;</span>next <span style="color: #990000">=</span> next<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> n<span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">//Retorna o valor contido no nó n</span></span>
+<span style="color: #008080">Element</span> <span style="font-weight: bold"><span style="color: #000000">getValue</span></span><span style="color: #990000">(</span><span style="color: #008080">Node</span> <span style="color: #990000">*</span>n<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> n<span style="color: #990000">-&gt;</span>value<span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">//Retorna o apontador para o próximo nó</span></span>
+Node<span style="color: #990000">*</span> <span style="font-weight: bold"><span style="color: #000000">getNext</span></span><span style="color: #990000">(</span><span style="color: #008080">Node</span> <span style="color: #990000">*</span>n<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> n<span style="color: #990000">-&gt;</span>next<span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">//Altera o valor contido no nó n</span></span>
+Node<span style="color: #990000">*</span> <span style="font-weight: bold"><span style="color: #000000">setValue</span></span><span style="color: #990000">(</span><span style="color: #008080">Node</span> <span style="color: #990000">*</span>n<span style="color: #990000">,</span> <span style="color: #008080">Element</span> v<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        n<span style="color: #990000">-&gt;</span>value <span style="color: #990000">=</span> v<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> n<span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span>
+
+<span style="font-style: italic"><span style="color: #9A1900">//Faz o apontador de próximo de nó n apontar para newNext</span></span>
+Node<span style="color: #990000">*</span> <span style="font-weight: bold"><span style="color: #000000">setNext</span></span><span style="color: #990000">(</span><span style="color: #008080">Node</span> <span style="color: #990000">*</span>n<span style="color: #990000">,</span> <span style="color: #008080">Node</span> <span style="color: #990000">*</span>newNext<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+        n<span style="color: #990000">-&gt;</span>next <span style="color: #990000">=</span> newNext<span style="color: #990000">;</span>
+        <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> n<span style="color: #990000">;</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="paragraph"><p>Neste momento, estamos mais preocupados com as operações e a estratégia de implementação do que com a estrutura propriamente dita e sua implementação de baixo nível. Por exemplo, estamos mais preocupados com o requisito de tempo especificado, que determinada que todas as operações devem tomar tempo <em>O</em>(1).  As implementações acima atendem este requisito uma vez que a quantidade de tempo que cada operação toma é constante. Uma outra forma de pensar sobre operações com tempo constante é vê-las como operações cuja  análise independe de qualquer variável.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Nota</div>
+</td>
+<td class="content">A notação <em>O</em>(1) será formalmente apresentada no próximo capítulo. Por hora, é suficiente assumir que ela significa tempo constante.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>Uma vez que o nó representa apenas um recipiente para um valor e para um apontador para outro nó, não deve ser surpreendente o quão trivial são a estrutura de dados propriamente dita e a implementação de  suas operações.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_encadeando_nos">Encadeando Nós</h3>
+<div class="paragraph"><p>Apesar da estrutura de um nó ser bastante simples, ela nos permite resolver problemas bastante interessantes. Porém, primeiro vamos dar uma olhada em um programa que não precisa utilizar a nossa estrutura de nó.</p></div>
+<div class="paragraph"><p>O programa a seguir lê da entrada padrão uma série de números inteiros até encontrar o final da entrada e  imprime o maior valor lido e a média de todos os números:</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #000000">    1:</span> <span style="font-weight: bold"><span style="color: #000080">#include</span></span> <span style="color: #FF0000">&lt;stdio.h&gt;</span>
+<span style="color: #000000">    2:</span>
+<span style="color: #000000">    3:</span> <span style="font-weight: bold"><span style="color: #000080">#define</span></span> INF <span style="color: #993399">2147483647</span>
+<span style="color: #000000">    4:</span>
+<span style="color: #000000">    5:</span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+<span style="color: #000000">    6:</span>
+<span style="color: #000000">    7:</span>         <span style="color: #009900">int</span> total <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+<span style="color: #000000">    8:</span>         <span style="color: #009900">int</span> count <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+<span style="color: #000000">    9:</span>         <span style="color: #009900">int</span> largest <span style="color: #990000">=</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">*(</span>INF<span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">);</span>
+<span style="color: #000000">   10:</span>         <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
+<span style="color: #000000">   11:</span>
+<span style="color: #000000">   12:</span>         <span style="font-weight: bold"><span style="color: #0000FF">while</span></span><span style="color: #990000">(</span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">scanf</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"%d"</span><span style="color: #990000">,&amp;</span>i<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">1</span> <span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
+<span style="color: #000000">   13:</span>                 count<span style="color: #990000">++;</span>
+<span style="color: #000000">   14:</span>                 total <span style="color: #990000">+=</span> i<span style="color: #990000">;</span>
+<span style="color: #000000">   15:</span>                 <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span> i <span style="color: #990000">&gt;</span> largest<span style="color: #990000">)</span> largest <span style="color: #990000">=</span> i<span style="color: #990000">;</span>
+<span style="color: #000000">   16:</span>         <span style="color: #FF0000">}</span>
+<span style="color: #000000">   17:</span>
+<span style="color: #000000">   18:</span>         <span style="font-weight: bold"><span style="color: #000000">printf</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">"Valor máximo: %d</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">,</span> largest<span style="color: #990000">);</span>
+<span style="color: #000000">   19:</span>         <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span>count <span style="color: #990000">!=</span> <span style="color: #993399">0</span><span style="color: #990000">)</span>
+<span style="color: #000000">   20:</span>                 <span style="font-weight: bold"><span style="color: #000000">printf</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">"Média: %d</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">,</span> <span style="color: #990000">(</span>total<span style="color: #990000">/</span>count<span style="color: #990000">));</span>
+<span style="color: #000000">   21:</span> <span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="paragraph"><p>Considere agora resolver uma tarefa similar: ler uma série de números até o final da entrada e imprimir o maior número, a média de todos os números que são divisores inteiros do maior número.</p></div>
+<div class="paragraph"><p>Este problema é diferente do problema anterior porque é possível que o maior número seja o último a ser fornecido, portanto, se precisamos calcular a média dos divisores do maior número precisaremos armazenar todos os números lidos. Poderíamos utilizar variáveis para armazenar os números lidos porém esta só seria uma solução se soubéssemos, a priori, quantos números seriam fornecidos.</p></div>
+<div class="paragraph"><p>Por exemplo, suponha que criemos, para armazenar o estado do programa, 200 variáveis inteiras, cada uma com 64 bits. Mesmo a implementação mais eficiente só poderá computar os resultados para 2<sup>64*200</sup> entradas  diferentes. Apesar desse ser um número muito grande de combinações, uma lista com 300 números de 64 bits  exigiria ainda mais bits para ser codificada.</p></div>
+<div class="paragraph"><p>Ao invés de criar uma solução com limitações que dificultam a implementação (como ter apenas um número constante de variáveis), podemos utilizar as propriedades da nossa abstração de nó para nos permitir armazenar tantos números quanto nos permita a memória do computador:</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #000000">    1:</span> <span style="font-weight: bold"><span style="color: #000080">#include</span></span> <span style="color: #FF0000">&lt;stdio.h&gt;</span>
+<span style="color: #000000">    2:</span> <span style="font-weight: bold"><span style="color: #000080">#include</span></span> <span style="color: #FF0000">"node.c"</span>
+<span style="color: #000000">    3:</span>
+<span style="color: #000000">    4:</span> <span style="font-weight: bold"><span style="color: #000080">#define</span></span> INF <span style="color: #993399">2147483647</span>  <span style="font-style: italic"><span style="color: #9A1900">//Maior valor que um inteiro pode assumir.</span></span>
+<span style="color: #000000">    5:</span>
+<span style="color: #000000">    6:</span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">main</span></span><span style="color: #990000">()</span> <span style="color: #FF0000">{</span>
+<span style="color: #000000">    7:</span>
+<span style="color: #000000">    8:</span>         <span style="color: #009900">int</span> count <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+<span style="color: #000000">    9:</span>         <span style="color: #009900">int</span> total <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span>
+<span style="color: #000000">   10:</span>         <span style="color: #009900">int</span> largest <span style="color: #990000">=</span> <span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">*(</span>INF<span style="color: #990000">-</span><span style="color: #993399">1</span><span style="color: #990000">);</span>
+<span style="color: #000000">   11:</span>         <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
+<span style="color: #000000">   12:</span>         <span style="color: #008080">Node</span> <span style="color: #990000">*</span>nodes <span style="color: #990000">=</span> NULL<span style="color: #990000">;</span>
+<span style="color: #000000">   13:</span>
+<span style="color: #000000">   14:</span>         <span style="font-weight: bold"><span style="color: #0000FF">while</span></span><span style="color: #990000">(</span> <span style="color: #990000">(</span><span style="font-weight: bold"><span style="color: #000000">scanf</span></span><span style="color: #990000">(</span><span style="color: #FF0000">"%d"</span><span style="color: #990000">,&amp;</span>i<span style="color: #990000">)</span> <span style="color: #990000">==</span> <span style="color: #993399">1</span> <span style="color: #990000">))</span> <span style="color: #FF0000">{</span>
+<span style="color: #000000">   15:</span>                 nodes <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">makeNode</span></span><span style="color: #990000">(</span>i<span style="color: #990000">,</span> nodes<span style="color: #990000">);</span>
+<span style="color: #000000">   16:</span>                 <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span> i <span style="color: #990000">&gt;</span> largest<span style="color: #990000">)</span> largest <span style="color: #990000">=</span> i<span style="color: #990000">;</span>
+<span style="color: #000000">   17:</span>         <span style="color: #FF0000">}</span>
+<span style="color: #000000">   18:</span>
+<span style="color: #000000">   19:</span>         <span style="font-weight: bold"><span style="color: #000000">printf</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">"Valor máximo: %d</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">,</span> largest<span style="color: #990000">);</span>
+<span style="color: #000000">   20:</span>
+<span style="color: #000000">   21:</span>         <span style="font-weight: bold"><span style="color: #0000FF">while</span></span><span style="color: #990000">(</span> nodes <span style="color: #990000">!=</span> NULL <span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+<span style="color: #000000">   22:</span>                 i <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">getValue</span></span><span style="color: #990000">(</span>nodes<span style="color: #990000">);</span>
+<span style="color: #000000">   23:</span>                 <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span> largest <span style="color: #990000">%</span> i <span style="color: #990000">==</span> <span style="color: #993399">0</span> <span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+<span style="color: #000000">   24:</span>                         total <span style="color: #990000">+=</span> i<span style="color: #990000">;</span>
+<span style="color: #000000">   25:</span>                         count<span style="color: #990000">++;</span>
+<span style="color: #000000">   26:</span>                 <span style="color: #FF0000">}</span>
+<span style="color: #000000">   27:</span>                 nodes <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">getNext</span></span><span style="color: #990000">(</span>nodes<span style="color: #990000">);</span>
+<span style="color: #000000">   28:</span>         <span style="color: #FF0000">}</span>
+<span style="color: #000000">   29:</span>
+<span style="color: #000000">   30:</span>         <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span>count <span style="color: #990000">!=</span> <span style="color: #993399">0</span><span style="color: #990000">)</span>
+<span style="color: #000000">   31:</span>                 <span style="font-weight: bold"><span style="color: #000000">printf</span></span><span style="color: #990000">(</span> <span style="color: #FF0000">"Média: %d</span><span style="color: #CC33CC">\n</span><span style="color: #FF0000">"</span><span style="color: #990000">,</span> <span style="color: #990000">(</span>total<span style="color: #990000">/</span>count<span style="color: #990000">));</span>
+<span style="color: #000000">   32:</span> <span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="paragraph"><p>No código acima, se <strong>n</strong> números forem lidos, a função <strong>makeNode</strong> será invocada n vezes. Isto exige que n nós sejam criados (o que requer espaço de memória suficiente para armazenar o valor e o apontador para o próximo nó), portanto, o requisito de memória da solução é da ordem <em>O</em>(n).</p></div>
+<div class="paragraph"><p>De forma similar, construímos uma <strong>cadeia de nós</strong> e iteramos ao longo de toda a cadeia, o que requer <em>O</em>(n) passos  para criar a cadeia e outros <em>O</em>(n) passos para iterar sobre ela.</p></div>
+<div class="paragraph"><p>Note que quando iteramos sobre os números na cadeia, estamos na verdade acessando-os em ordem inversa a da entrada. Por exemplo, assuma que os números na entrada do programa são 4, 7, 6, 30 e 15. Após encontrar o final da entrada,  a cadeia de nós terá a seguinte forma:</p></div>
+<div class="imageblock">
+<div class="content">
+<img src="imagens/capitulo-01/cadeia.png" alt="imagens/capitulo-01/cadeia.png" />
+</div>
+<div class="title">Figura 1. Cadeia com n nós</div>
+</div>
+<div class="paragraph"><p>Tais cadeias são mais comumente conhecidas como listas encadeadas. No entanto, nos geralmente preferimos pensar nelas em termos de listas ou sequências, que são conceitos de mais alto nível: o conceito de encadeamento é apenas um  detalhe de implementação. Apesar de uma lista pode ser construída por encadeamentos, neste livro abordaremos várias outras formas para implementar uma lista. No momento, nos preocupamos mais com as possibilidades de utilização da  nossa estrutura de nó do que com uma das formas como ela pode ser utilizada.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Sugestão</div>
+</td>
+<td class="content">
+<div class="title">Criar uma cadeia sem inverter os valores da entrada</div>O algoritmo acima utiliza apenas as funções <em>makeNode</em>, <em>getValeu</em> e <em>getNext</em>. Modifique o código apresentado utilizando a função <em>setNext</em> para gerar uma cadeia que mantem a ordem original da entrada ao invés de inverte-la.</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_o_principio_da_inducao">O Princípio da Indução</h3>
+<div class="paragraph"><p>As cadeias que podemos construir a partir de um nós são demonstrações do princípio da indução matemática:</p></div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Indução Matemática</div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Suponha que você tenha uma propriedade dos números naturais <em>P</em>(n)
+</p>
+</li>
+<li>
+<p>
+Se você puder provar que quando <em>P</em>(n) é verdade <em>P</em>(n+1) também precisa ser verdade, então
+</p>
+</li>
+<li>
+<p>
+Tudo que você precisa fazer para provar que <em>P</em>(n) é verdade para qualquer número natural <em>n</em> é mostrar que <em>P</em>(1) é verdade.
+</p>
+</li>
+</ol></div>
+</div></div>
+<div class="paragraph"><p>Por exemplo, seja a propriedade <em>P</em>(n) a afirmação que "é possível construir uma cadeia para armazenar <em>n</em> números".  Esta é uma propriedade dos números naturais pois a sentença faz sentido para valores específicos de <em>n</em>:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+É possível construir uma cadeira para armazenar 5 números
+</p>
+</li>
+<li>
+<p>
+É possível construir uma cadeira para armazenar 100 números
+</p>
+</li>
+<li>
+<p>
+É possível construir uma cadeira para armazenar 1.000.000 de números
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>Ao invés de provar que podemos construir uma cadeira de comprimento 5, 100 ou 1 milhão, podemos provar a afirmação geral <em>P</em>(n). Vamos ver como provar o passo 2 descrito acima, denominado <strong>Hipótese Indutiva</strong>:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Assuma que <em>P</em>(n) é verdade, ou seja, que é possível construir uma cadeia com <em>n</em> elementos. Agora precisamos
+mostrar que <em>P</em>(n+1) também é verdade.
+</p>
+</li>
+<li>
+<p>
+Assuma que <em>chain</em> é o primeiro nó de uma cadeia com <em>n</em> elementos. Assuma que <em>i</em> é algum número que nós gostaríamos de adicionar
+à cadeia fazendo com que seu tamanho aumente para <em>n+1</em>.
+</p>
+</li>
+<li>
+<p>
+O código a seguir pode fazer isso para nós
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #008080">Node</span> <span style="color: #990000">*</span>biggerChain <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">makeNode</span></span><span style="color: #990000">(</span>i<span style="color: #990000">,</span>chain<span style="color: #990000">);</span></tt></pre></div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Agora <em>i</em> é o valor do primeiro nó da cadeia denominada <em>biggerChain</em>. Se a cadeia <em>chain</em> tinha <em>n</em> elementos então <em>biggerChain</em> precisa ter <em>n + 1</em> elementos.
+</p>
+</li>
+</ul></div>
+<div class="paragraph"><p>O passo 3 mais acima é denominado <strong>Caso Base</strong>. Vamos ver como podemos provar que <em>P</em>(1) é verdade.</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Precisamos mostrar que <em>P</em>(1) é verdade, ou seja, que podemos criar uma cadeia com um elemento.
+</p>
+</li>
+<li>
+<p>
+O código a seguir poder fazer isso para nós
+</p>
+</li>
+</ul></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #008080">Node</span> <span style="color: #990000">*</span>chain <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">makeNode</span></span><span style="color: #990000">(</span>i<span style="color: #990000">,</span> NULL<span style="color: #990000">);</span></tt></pre></div></div>
+<div class="paragraph"><p>O princípio da indução nos diz agora que provamos que é possível construir uma cadeia com <em>n</em> elementos para qualquer valor de n &gt;= 1. Como isso é possível?  Provavelmente, a melhor forma de pensar sobre a indução é que ela é na verdade uma forma de criar uma fórmula que descreve um número infinito de provas. Depois que provamos que a afirmação é verdade para <em>P</em>(1), o caso base, podemos aplicar a hipótese indutiva para mostrar que <em>P</em>(2) é verdade. Sabendo que <em>P</em>(2) é verdade, podemos novamente aplicar a hipótese indutiva para mostrar que <em>P</em>(3) é verdade. O princípio nos diz que não há nada que nos impeça de continuar fazendo isso repetidamente, portanto, podemos assumir que <em>P</em> é verdade para qualquer <em>n</em> &gt;= 1.</p></div>
+<div class="paragraph"><p>A indução pode parecer a primeira vista uma forma estranha de prova, mas é uma técnica extremamente útil. O que faz está técnica ser tão útil é que podemos pegar um problema que a princípio parecer ser bem difícil "provar que <em>P</em>(n) é verdade para qualquer n &gt;= 1" e quebrá-lo em afirmações mais
+simples e mais fáceis de provar. Tipicamente os casos base são fáceis de provar porque não são afirmações gerais. Portanto, a maior parte do trabalho se concentra em provar que a hipótese indutiva é válida, o que muitas vezes envolve reformar as afirmações de forma que elas possam ser utilizadas em uma prova de validade para <em>n + 1</em>.</p></div>
+<div class="paragraph"><p>Você pode pensar no valor contido em um nó como o caso base e no apontar para o próximo nó como a hipótese indutiva. Da mesma forma que na indução matemática, podemos quebrar o difícil problema de armazenar um número arbitrário de elementos em um problema muito mais simples, que é armazenar um único elemento é ter um mecanismo para adicionar novos elementos.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_recapitulando">Recapitulando</h3>
+<div class="paragraph"><p>Neste capítulo nós vimos a importância da utilização de estruturas de dados e conhecemos dois conceitos fundamentais para o desenvolvimento de software: <strong>encapsulamento</strong> e <strong>abstração</strong>.</p></div>
+<div class="paragraph"><p>Implementamos uma estrutura de dados rudimentar, chamada nó, e a utilizamos para construir cadeias para armazenar uma quantidade arbitrária de elementos. Essa estrutura rudimentar será a base para todas as estruturas de dados que abordaremos ao longo deste livro.</p></div>
+<div class="paragraph"><p>Finalmente, vimos como o princípio da <strong>indução matemática</strong> está associado à concepção de estruturas em cadeia.</p></div>
+<div class="paragraph"><p>No próximo capítulos estudaremos o conceito de <strong>notação assintótica</strong>, o que nos permitirá estimar a quantidade de tempo necessária para a execução de um algoritmo e a quantidade de memória necessária para armazenar uma determinada estrutura de dados.</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_notacao_assintotica">Notação Assintótica</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<div class="title">Objetivos do capítulo</div>
+<div class="content">
+<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+objetivo 1
+</p>
+</li>
+<li>
+<p>
+objetivo 2
+</p>
+</li>
+<li>
+<p>
+objetivo N
+</p>
+</li>
+</ul></div>
+</div>
+<div class="attribution">
+</div></div>
+<div class="paragraph"><p>Neste lugar você deve apresentar o conteúdo em forma de diálogo.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Nota</div>
+</td>
+<td class="content">Para começar a escrever um novo capítulo, copie este arquivo e
+salve com outro nome (não utilize espaço no nome do arquivo). Em seguida,
+atualize o arquivo <strong>livro.asc</strong> para incluir o novo arquivo criado.
+Consulte o manual.</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_minha_primeira_secao">Minha primeira seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+<div class="sect3">
+<h4 id="_exemplo_de_subsecao">Exemplo de subseção</h4>
+<div class="paragraph"><p>Texto da subseção.</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_minha_segunda_secao">Minha segunda seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_recapitulando_2">Recapitulando</h3>
+<div class="paragraph"><p>Revisão do que foi aprendido.</p></div>
+<div class="paragraph"><p>Reserve o último parágrafo para realizar uma <strong>ponte</strong> para o próximo capítulo.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_atividades">Atividades</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Atenção</div>
+</td>
+<td class="content"><strong>Sempre termine os arquivos com uma linha em branco</strong>, caso
+contrário você poderá encontrar erros inesperados.</td>
+</tr></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vetores_e_matrizes">Vetores e Matrizes</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<div class="title">Objetivos do capítulo</div>
+<div class="content">
+<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+objetivo 1
+</p>
+</li>
+<li>
+<p>
+objetivo 2
+</p>
+</li>
+<li>
+<p>
+objetivo N
+</p>
+</li>
+</ul></div>
+</div>
+<div class="attribution">
+</div></div>
+<div class="paragraph"><p>Neste lugar você deve apresentar o conteúdo em forma de diálogo.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Nota</div>
+</td>
+<td class="content">Para começar a escrever um novo capítulo, copie este arquivo e
+salve com outro nome (não utilize espaço no nome do arquivo). Em seguida,
+atualize o arquivo <strong>livro.asc</strong> para incluir o novo arquivo criado.
+Consulte o manual.</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_minha_primeira_secao_2">Minha primeira seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+<div class="sect3">
+<h4 id="_exemplo_de_subsecao_2">Exemplo de subseção</h4>
+<div class="paragraph"><p>Texto da subseção.</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_minha_segunda_secao_2">Minha segunda seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_recapitulando_3">Recapitulando</h3>
+<div class="paragraph"><p>Revisão do que foi aprendido.</p></div>
+<div class="paragraph"><p>Reserve o último parágrafo para realizar uma <strong>ponte</strong> para o próximo capítulo.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_atividades_2">Atividades</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Atenção</div>
+</td>
+<td class="content"><strong>Sempre termine os arquivos com uma linha em branco</strong>, caso
+contrário você poderá encontrar erros inesperados.</td>
+</tr></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_listas_encadeadas">Listas Encadeadas</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<div class="title">Objetivos do capítulo</div>
+<div class="content">
+<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+objetivo 1
+</p>
+</li>
+<li>
+<p>
+objetivo 2
+</p>
+</li>
+<li>
+<p>
+objetivo N
+</p>
+</li>
+</ul></div>
+</div>
+<div class="attribution">
+</div></div>
+<div class="paragraph"><p>Neste lugar você deve apresentar o conteúdo em forma de diálogo.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Nota</div>
+</td>
+<td class="content">Para começar a escrever um novo capítulo, copie este arquivo e
+salve com outro nome (não utilize espaço no nome do arquivo). Em seguida,
+atualize o arquivo <strong>livro.asc</strong> para incluir o novo arquivo criado.
+Consulte o manual.</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_minha_primeira_secao_3">Minha primeira seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+<div class="sect3">
+<h4 id="_exemplo_de_subsecao_3">Exemplo de subseção</h4>
+<div class="paragraph"><p>Texto da subseção.</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_minha_segunda_secao_3">Minha segunda seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_recapitulando_4">Recapitulando</h3>
+<div class="paragraph"><p>Revisão do que foi aprendido.</p></div>
+<div class="paragraph"><p>Reserve o último parágrafo para realizar uma <strong>ponte</strong> para o próximo capítulo.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_atividades_3">Atividades</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Atenção</div>
+</td>
+<td class="content"><strong>Sempre termine os arquivos com uma linha em branco</strong>, caso
+contrário você poderá encontrar erros inesperados.</td>
+</tr></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pilhas_e_filas">Pilhas e Filas</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<div class="title">Objetivos do capítulo</div>
+<div class="content">
+<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+objetivo 1
+</p>
+</li>
+<li>
+<p>
+objetivo 2
+</p>
+</li>
+<li>
+<p>
+objetivo N
+</p>
+</li>
+</ul></div>
+</div>
+<div class="attribution">
+</div></div>
+<div class="paragraph"><p>Neste lugar você deve apresentar o conteúdo em forma de diálogo.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Nota</div>
+</td>
+<td class="content">Para começar a escrever um novo capítulo, copie este arquivo e
+salve com outro nome (não utilize espaço no nome do arquivo). Em seguida,
+atualize o arquivo <strong>livro.asc</strong> para incluir o novo arquivo criado.
+Consulte o manual.</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_minha_primeira_secao_4">Minha primeira seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+<div class="sect3">
+<h4 id="_exemplo_de_subsecao_4">Exemplo de subseção</h4>
+<div class="paragraph"><p>Texto da subseção.</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_minha_segunda_secao_4">Minha segunda seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_recapitulando_5">Recapitulando</h3>
+<div class="paragraph"><p>Revisão do que foi aprendido.</p></div>
+<div class="paragraph"><p>Reserve o último parágrafo para realizar uma <strong>ponte</strong> para o próximo capítulo.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_atividades_4">Atividades</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Atenção</div>
+</td>
+<td class="content"><strong>Sempre termine os arquivos com uma linha em branco</strong>, caso
+contrário você poderá encontrar erros inesperados.</td>
+</tr></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_arvores">Árvores</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<div class="title">Objetivos do capítulo</div>
+<div class="content">
+<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+objetivo 1
+</p>
+</li>
+<li>
+<p>
+objetivo 2
+</p>
+</li>
+<li>
+<p>
+objetivo N
+</p>
+</li>
+</ul></div>
+</div>
+<div class="attribution">
+</div></div>
+<div class="paragraph"><p>Neste lugar você deve apresentar o conteúdo em forma de diálogo.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Nota</div>
+</td>
+<td class="content">Para começar a escrever um novo capítulo, copie este arquivo e
+salve com outro nome (não utilize espaço no nome do arquivo). Em seguida,
+atualize o arquivo <strong>livro.asc</strong> para incluir o novo arquivo criado.
+Consulte o manual.</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_minha_primeira_secao_5">Minha primeira seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+<div class="sect3">
+<h4 id="_exemplo_de_subsecao_5">Exemplo de subseção</h4>
+<div class="paragraph"><p>Texto da subseção.</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_minha_segunda_secao_5">Minha segunda seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_recapitulando_6">Recapitulando</h3>
+<div class="paragraph"><p>Revisão do que foi aprendido.</p></div>
+<div class="paragraph"><p>Reserve o último parágrafo para realizar uma <strong>ponte</strong> para o próximo capítulo.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_atividades_5">Atividades</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Atenção</div>
+</td>
+<td class="content"><strong>Sempre termine os arquivos com uma linha em branco</strong>, caso
+contrário você poderá encontrar erros inesperados.</td>
+</tr></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_grafos">Grafos</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<div class="title">Objetivos do capítulo</div>
+<div class="content">
+<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+objetivo 1
+</p>
+</li>
+<li>
+<p>
+objetivo 2
+</p>
+</li>
+<li>
+<p>
+objetivo N
+</p>
+</li>
+</ul></div>
+</div>
+<div class="attribution">
+</div></div>
+<div class="paragraph"><p>Neste lugar você deve apresentar o conteúdo em forma de diálogo.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Nota</div>
+</td>
+<td class="content">Para começar a escrever um novo capítulo, copie este arquivo e
+salve com outro nome (não utilize espaço no nome do arquivo). Em seguida,
+atualize o arquivo <strong>livro.asc</strong> para incluir o novo arquivo criado.
+Consulte o manual.</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_minha_primeira_secao_6">Minha primeira seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+<div class="sect3">
+<h4 id="_exemplo_de_subsecao_6">Exemplo de subseção</h4>
+<div class="paragraph"><p>Texto da subseção.</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_minha_segunda_secao_6">Minha segunda seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_recapitulando_7">Recapitulando</h3>
+<div class="paragraph"><p>Revisão do que foi aprendido.</p></div>
+<div class="paragraph"><p>Reserve o último parágrafo para realizar uma <strong>ponte</strong> para o próximo capítulo.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_atividades_6">Atividades</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Atenção</div>
+</td>
+<td class="content"><strong>Sempre termine os arquivos com uma linha em branco</strong>, caso
+contrário você poderá encontrar erros inesperados.</td>
+</tr></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tabelas_de_espalhamento">Tabelas de Espalhamento</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<div class="title">Objetivos do capítulo</div>
+<div class="content">
+<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+objetivo 1
+</p>
+</li>
+<li>
+<p>
+objetivo 2
+</p>
+</li>
+<li>
+<p>
+objetivo N
+</p>
+</li>
+</ul></div>
+</div>
+<div class="attribution">
+</div></div>
+<div class="paragraph"><p>Neste lugar você deve apresentar o conteúdo em forma de diálogo.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Nota</div>
+</td>
+<td class="content">Para começar a escrever um novo capítulo, copie este arquivo e
+salve com outro nome (não utilize espaço no nome do arquivo). Em seguida,
+atualize o arquivo <strong>livro.asc</strong> para incluir o novo arquivo criado.
+Consulte o manual.</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_minha_primeira_secao_7">Minha primeira seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+<div class="sect3">
+<h4 id="_exemplo_de_subsecao_7">Exemplo de subseção</h4>
+<div class="paragraph"><p>Texto da subseção.</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_minha_segunda_secao_7">Minha segunda seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_recapitulando_8">Recapitulando</h3>
+<div class="paragraph"><p>Revisão do que foi aprendido.</p></div>
+<div class="paragraph"><p>Reserve o último parágrafo para realizar uma <strong>ponte</strong> para o próximo capítulo.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_atividades_7">Atividades</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Atenção</div>
+</td>
+<td class="content"><strong>Sempre termine os arquivos com uma linha em branco</strong>, caso
+contrário você poderá encontrar erros inesperados.</td>
+</tr></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_algoritmos_de_busca_e_ordenacao">Algoritmos de Busca e Ordenação</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<div class="title">Objetivos do capítulo</div>
+<div class="content">
+<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+objetivo 1
+</p>
+</li>
+<li>
+<p>
+objetivo 2
+</p>
+</li>
+<li>
+<p>
+objetivo N
+</p>
+</li>
+</ul></div>
+</div>
+<div class="attribution">
+</div></div>
+<div class="paragraph"><p>Neste lugar você deve apresentar o conteúdo em forma de diálogo.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Nota</div>
+</td>
+<td class="content">Para começar a escrever um novo capítulo, copie este arquivo e
+salve com outro nome (não utilize espaço no nome do arquivo). Em seguida,
+atualize o arquivo <strong>livro.asc</strong> para incluir o novo arquivo criado.
+Consulte o manual.</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_minha_primeira_secao_8">Minha primeira seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+<div class="sect3">
+<h4 id="_exemplo_de_subsecao_8">Exemplo de subseção</h4>
+<div class="paragraph"><p>Texto da subseção.</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_minha_segunda_secao_8">Minha segunda seção</h3>
+<div class="paragraph"><p>Texto da sua seção.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_recapitulando_9">Recapitulando</h3>
+<div class="paragraph"><p>Revisão do que foi aprendido.</p></div>
+<div class="paragraph"><p>Reserve o último parágrafo para realizar uma <strong>ponte</strong> para o próximo capítulo.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_atividades_8">Atividades</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+<li>
+<p>
+Texto da atividade.
+</p>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Atenção</div>
+</td>
+<td class="content"><strong>Sempre termine os arquivos com uma linha em branco</strong>, caso
+contrário você poderá encontrar erros inesperados.</td>
+</tr></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2013-11-07 18:32:47 BRT
+</div>
+</div>
+</body>
+</html>

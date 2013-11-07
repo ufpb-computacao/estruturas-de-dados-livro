@@ -8,8 +8,8 @@
   <revhistory>
     <revision>
       <revnumber>v1.0</revnumber>
-      <date>Março 2013</date>
-      <authorinitials>Autor 1, Autor 2</authorinitials>
+      <date>Novembro 2013</date>
+      <authorinitials>AND</authorinitials>
       <revremark>
         Primeira versão do livro
       </revremark>
@@ -19,8 +19,8 @@
 
   <authorgroup>
     <author>
-      <firstname>Nome</firstname>
-      <surname>Sobrenome</surname>
+      <firstname>Alexandre</firstname>
+      <surname>Duarte</surname>
       <affiliation>
         <jobtitle>Professor</jobtitle>
         <orgname>Universidade Federal da Paraíba</orgname>
