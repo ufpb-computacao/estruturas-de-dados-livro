@@ -1,6 +1,12 @@
-== Livro de disciplina
+== Estruturas de Dados e Algoritmos de Busca e Ordenação
 
-Este repositório contém um livro de uma disciplina.
+Livro texto da disciplina Estruturas de Dados do 3o período do curso de Licenciatura em Computação, modalidade EAD, da UFPB Virtual.
+
+== Linguagem de escrita
+Estive livro está sendo produzido utilizando a linguagem asciidoc:
+
+http://powerman.name/doc/asciidoc
+
 
 Para conhecer o seu processo de produção consulte 
 https://github.com/edusantana/producao-computacao-ead-ufpb.

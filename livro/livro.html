@@ -1104,8 +1104,8 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="color: #008080">Node</span> <span style="color: #990000">*</span>chain <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">makeNode</span></span><span style="color: #990000">(</span>i<span style="color: #990000">,</span> NULL<span style="color: #990000">);</span></tt></pre></div></div>
-<div class="paragraph"><p>O princípio da indução nos diz agora que provamos que é possível construir uma cadeia com <em>n</em> elementos para qualquer valor de n &gt;= 1. Como isso é possível?  Provavelmente, a melhor forma de pensar sobre a indução é que ela é na verdade uma forma de criar uma fórmula que descreve um número infinito de provas. Depois que provamos que a afirmação é verdade para <em>P</em>(1), o caso base, podemos aplicar a hipótese indutiva para mostrar que <em>P</em>(2) é verdade. Sabendo que <em>P</em>(2) é verdade, podemos novamente aplicar a hipótese indutiva para mostrar que <em>P</em>(3) é verdade. O princípio nos diz que não há nada que nos impeça de continuar fazendo isso repetidamente, portanto, podemos assumir que <em>P</em> é verdade para qualquer <em>n</em> &gt;= 1.</p></div>
-<div class="paragraph"><p>A indução pode parecer a primeira vista uma forma estranha de prova, mas é uma técnica extremamente útil. O que faz está técnica ser tão útil é que podemos pegar um problema que a princípio parecer ser bem difícil "provar que <em>P</em>(n) é verdade para qualquer n &gt;= 1" e quebrá-lo em afirmações mais
+<div class="paragraph"><p>O princípio da indução nos diz agora que provamos que é possível construir uma cadeia com <em>n</em> elementos para qualquer valor de n ≥ 1. Como isso é possível?  Provavelmente, a melhor forma de pensar sobre a indução é que ela é na verdade uma forma de criar uma fórmula que descreve um número infinito de provas. Depois que provamos que a afirmação é verdade para <em>P</em>(1), o caso base, podemos aplicar a hipótese indutiva para mostrar que <em>P</em>(2) é verdade. Sabendo que <em>P</em>(2) é verdade, podemos novamente aplicar a hipótese indutiva para mostrar que <em>P</em>(3) é verdade. O princípio nos diz que não há nada que nos impeça de continuar fazendo isso repetidamente, portanto, podemos assumir que <em>P</em> é verdade para qualquer <em>n</em> ≥ 1.</p></div>
+<div class="paragraph"><p>A indução pode parecer a primeira vista uma forma estranha de prova, mas é uma técnica extremamente útil. O que faz está técnica ser tão útil é que podemos pegar um problema que a princípio parecer ser bem difícil "provar que <em>P</em>(n) é verdade para qualquer n ≥ 1" e quebrá-lo em afirmações mais
 simples e mais fáceis de provar. Tipicamente os casos base são fáceis de provar porque não são afirmações gerais. Portanto, a maior parte do trabalho se concentra em provar que a hipótese indutiva é válida, o que muitas vezes envolve reformar as afirmações de forma que elas possam ser utilizadas em uma prova de validade para <em>n + 1</em>.</p></div>
 <div class="paragraph"><p>Você pode pensar no valor contido em um nó como o caso base e no apontar para o próximo nó como a hipótese indutiva. Da mesma forma que na indução matemática, podemos quebrar o difícil problema de armazenar um número arbitrário de elementos em um problema muito mais simples, que é armazenar um único elemento é ter um mecanismo para adicionar novos elementos.</p></div>
 </div>
@@ -1120,6 +1120,628 @@ simples e mais fáceis de provar. Tipicamente os casos base são fáceis de prov
 </div>
 <div class="sect1">
 <h2 id="_notacao_assintotica">Notação Assintótica</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_introducao_2">Introdução</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Objetivos do capítulo</div>
+<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Entender a noção de comparação assintótica de funções
+</p>
+</li>
+<li>
+<p>
+Conhecer as principais notações utilizadas para denotar a relação entre a complexidade assintótica de duas funções.
+</p>
+</li>
+<li>
+<p>
+Ser capaz de identificar a classe de crescimento assintótico de uma determinada função utilizando a notação <em>O</em>
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>Um problema pode ter várias soluções algorítmicas. Para poder escolher a melhor dentre as diversas opções, é preciso ser capaz de julgar quanto tempo cada solução precisa para resolver o problema. Mais precisamente, você não precisa saber o tempo de execução de uma solução em minutos ou segundos mas deve ser capaz de, dadas duas solução, decidir qual delas é a mais rápida.</p></div>
+<div class="paragraph"><p><em>Complexidade assintótica</em> é uma forma de expressar o componente principal relacionado ao tempo de execução de um algoritmo utilizando unidades abstratas de trabalho computacional. Considere, por exemplo, um algoritmo para ordenar uma pilha de cartas de baralho que percorre repetidas vezes a pilha a procura da menor carta. A complexidade assintótica deste algoritmo é o <em>quadrado</em> do número de cartas na pilha. Este componente quadrático é o termo principal da formula que conta quantas operações o algoritmo precisa para ordenar a pilha de cartas e ele mostra, por exemplo, que se dobramos o tamanho da pilha, o trabalho necessário para ordená-la é quadruplicado.</p></div>
+<div class="paragraph"><p>A formula exata para o custo de execução do algoritmo é um pouco mais complexa e contém detalhes adicionais necessários para entender a complexidade do algoritmo. Em relação ao problema de ordenar a pilha e cartas, o pior caso acontece quando a pilha se encontra em ordem decrescente pois nessa situação a busca pela menor carta sempre teria que ir até o final da pilha. A primeira busca iria varres as 52 cartas do baralho, a próxima varreria as demais 51, a seguinte 50 e assim por diante. Portanto, a formula para o custo de execução seria <em>52 + 51 + 50 + &#8230; + 2</em>. Sendo <em>N</em> o número de cartas, a formula geral é <em>2 + &#8230; + N - 1 + N</em>, o que é igual a <em>(N) x (N + 1)/2) - 1</em> = <em>((N<sup>2</sup> + N)/2) - 1</em> = <em>(1/2)N<sup>2</sup> + (1/2)N - 1</em>.  Note que o termo <em>N<sup>2</sup></em> domina a expressão, e esta é a chave para comparar o custo de dois algoritmos.</p></div>
+<div class="paragraph"><p>Assintóticamente falando, quando <em>N</em> tende ao infinito, a soma <em>2 + 3 + &#8230; + N</em> se aproxima cada vez mais da função puramente quadrática <em>(1/2)N<sup>2</sup></em>.  Além disso, com um valor de <em>N</em> muito grande, o fator constante <em>1/2</em> pode ser desprezado. Com isso, podemos dizer que o algoritmo tem complexidade <em>O(n<sup>2</sup>)</em>.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Nota</div>
+</td>
+<td class="content">O algoritmo de ordenação descrito acima é muito ineficiente. Veremos no decorrer do livro algoritmos bem mais eficientes que este, com tempos de execução sub-quadráticos.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>Considere agora a situação em que é necessário comparar a complexidade de dois algoritmos. Seja <em>f(n)</em> o custo, no pior caso, de um dos algoritmos, expresso como uma função do tamanho da entrada <em>n</em>, e <em>g(n)</em> a função que descreve o custo do outro algoritmo.  Por exemplo, considerando dois algoritmos de ordenação, <em>f(10)</em> e <em>g(10)</em> seriam as quantidades máximas de passos que cada um dos algoritmos precisaria para ordenar uma lista com 10 itens.</p></div>
+<div class="paragraph"><p>Se para todos os valores de <em>n</em> ≥ 0, <em>f(n)</em> ≤ <em>g(n)</em>, o algoritmo com função de complexidade <em>f</em> é estritamente mais rápido.</p></div>
+<div class="paragraph"><p>Porém, de forma geral, nossa preocupação em termos de custo computacional está mais focada nos casos onde <em>n</em> é muito grande; portanto, a comparação entre <em>f(n)</em> e <em>g(n)</em> para valores pequenos de <em>n</em> é menos significativa do que a comparação entre <em>f(n)</em> e <em>g(n)</em> para <em>n</em> maior que um determinado limiar.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Nota</div>
+</td>
+<td class="content">Estamos discutindo limites para o desempenho de algoritmos ao invés de medir a velocidade exata de cada um. O número efetivo de passos necessários para ordenar a nossa pilha de cartas (com nosso algoritmo simplório) depende diretamente da ordem em que as cartas se encontram inicialmente. O tempo necessário para executar cada um dos passos depende diretamente da velocidade do processador, do conteúdo da memória cache e de vários outros fatores.</td>
+</tr></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_a_notacao_em_o_em_em_omicron_em">A notação <em>O</em> (<em>omicron</em>)</h3>
+<div class="paragraph"><p>A notação  <em>O</em> (<em>pronunciada big-oh</em>) é o método formal utilizado para expressar o <em>limite superior</em> no tempo de execução de um algoritmo. É uma medida da maior quantidade de tempo que um determinado algoritmo pode precisar para completar sua tarefa.</p></div>
+<div class="paragraph"><p>De maneira mais formal, para duas funções não-negativas, <em>f(n)</em> e <em>g(n)</em>, se existe um inteiro <em>n<sub>0</sub></em> e uma constante <em>c</em> &gt; 0 tal que para todos os inteiros <em>n</em> &gt; <em>n<sub>0</sub></em>, <em>f(n)</em> ≤ <em>cg(n)</em>, então <em>f(n)</em> tem complexidade <em>big oh</em> <em>g(n)</em>, denotada por <em>f(n) = O(g(n))</em>.</p></div>
+<div class="paragraph"><p>No gráfico a seguir é possível observar visualmente o comportamento das funções <em>f</em> e <em>g</em>. Note que para <em>n</em> &gt; <em>n<sub>0</sub></em>, <em>f(n)</em> ≤ <em>cg(n)</em>.</p></div>
+<div class="imageblock">
+<div class="content">
+<img src="imagens/capitulo-02/notacao-bigO.gif" alt="imagens/capitulo-02/notacao-bigO.gif" />
+</div>
+<div class="title">Figura 2. Notação <em>O</em></div>
+</div>
+<div class="exampleblock">
+<div class="title">Exemplo 1. Funções com complexidade <em>O(n<sup>2</sup>)</em></div>
+<div class="content">
+<div class="paragraph"><p><em>f(n) = n</em></p></div>
+<div class="paragraph"><p><em>f(n) = n/1000</em></p></div>
+<div class="paragraph"><p><em>f(n) = n<sup>1.9</sup></em></p></div>
+<div class="paragraph"><p><em>f(n) = n<sup>2</sup></em></p></div>
+<div class="paragraph"><p><em>f(n) = n<sup>2</sup>+n</em></p></div>
+<div class="paragraph"><p><em>f(n) = 1000n<sup>2</sup> + 50n</em></p></div>
+</div></div>
+<div class="exampleblock">
+<div class="title">Exemplo 2. Funções com complexidade superior a <em>O(n<sup>2</sup>)</em></div>
+<div class="content">
+<div class="paragraph"><p><em>f(n) = n<sup>3</sup></em></p></div>
+<div class="paragraph"><p><em>f(n) = n<sup>2.1</sup></em></p></div>
+<div class="paragraph"><p><em>f(n) = 2<sup>n</sup></em></p></div>
+</div></div>
+<div class="exampleblock">
+<div class="title">Exemplo 3. Complexidade de alguns algoritmos</div>
+<div class="content">
+<div class="paragraph"><p>Imprimir uma lista de <em>n</em> itens na tela, examinando cada um deles uma única vez = <em>O(n)</em></p></div>
+<div class="paragraph"><p>Receber uma lista de <em>n</em> elementos e dividi-la ao meio sucessivas vezes até que reste um único elemento = <em>O(log n)</em></p></div>
+<div class="paragraph"><p>Receber uma lista de <em>n</em> elementos e comparar cada elemento com todos os outros elementos = <em>O(n<sup>2</sup>)</em></p></div>
+</div></div>
+<div class="exampleblock">
+<div class="title">Exemplo 4. Mostre que <em>2n + 8 = O(n<sup>2</sup>)</em></div>
+<div class="content">
+<div class="paragraph"><p>Sejam <em>f(n) = 2n + 8</em> e <em>g(n) = n<sup>2</sup></em>. Podemos encontrar uma constante <em>n<sub>0</sub></em> tal que <em>2n + 8 ≤ n<sup>2</sup></em> ?</p></div>
+<div class="paragraph"><p>Analisando as funções podemos ver que para <em>n<sub>0</sub> ≥ 4</em> , <em>2n + 8 ≤ n<sup>2</sup></em>.</p></div>
+<div class="paragraph"><p>Uma vez que queremos generalizar essa expressão para valores de <em>n</em> grandes, e valores pequenos para <em>n</em> (1, 2 e 3) não são importantes, pode-se dizer que <em>f(n)</em> é mais rápida que <em>g(n)</em>, ou seja, <em>f(n)</em> é limitada por <em>g(n)</em>. Portanto, <em>f(n) = O(n<sup>2</sup>)</em>.</p></div>
+<div class="paragraph"><p>Existem alguns atalhos para encontrar o limite superior de uma função. Por exemplo, podemos remover todas as constantes da expressão pois, eventualmente, para algum valor <em>c</em>, elas se tornam irrelevantes. Isso faz <em>f(n) = 2n</em>. Além disso, para conveniência na comparação, podemos também remover constantes multiplicativas, neste caso, o 2, fazendo <em>f(n) = n</em>. Com isso, podemos dizer que <em>f(n) = O(n)</em>, e isso nos dá um limite mais <em>apertado</em> para <em>f</em>.</p></div>
+</div></div>
+<div class="sect3">
+<h4 id="_exercicios">Exercícios</h4>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Faz sentido dizer que <em>f(n) = O(n<sup>2</sup>)</em> para <em>n ≥ 4</em>?
+</p>
+</li>
+<li>
+<p>
+É verdade que  <em>10n = O(n)</em> ?
+</p>
+</li>
+<li>
+<p>
+É verdade que  <em>10n<sup>55</sup> = O(2^n)</em> ?
+</p>
+</li>
+<li>
+<p>
+É verdade que  <em>n<sup>2</sup> + 200n + 300  =  O(n<sup>2</sup>)</em> ?
+</p>
+</li>
+<li>
+<p>
+É verdade que  <em>n<sup>2</sup> − 200n − 300  = O(n)</em> ?
+</p>
+</li>
+<li>
+<p>
+É verdade que  <em>(3/2)n<sup>2</sup> + (7/2)n − 4 = O(n)</em> ?
+</p>
+</li>
+<li>
+<p>
+É verdade que  <em>(3/2)n<sup>2</sup> + (7/2)n −  4 = O(n<sup>2</sup>)</em> ?
+</p>
+</li>
+<li>
+<p>
+É verdade que  <em>n<sup>3</sup> − 999999n<sup>2</sup> − 1000000 = O(n<sup>2</sup>)</em> ?
+</p>
+</li>
+<li>
+<p>
+Prove que <em>n = O(2<sup>n</sup>)</em>.
+</p>
+</li>
+<li>
+<p>
+Prove que <em>n = O(2<sup>n/4</sup>)</em>.
+</p>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Sugestão</div>
+</td>
+<td class="content">Nas questões 9 e 10, use indução matemática para provar que <em>n ≤ 2<sup>n</sup></em> e que <em>n ≤ 2<sup>n/4</sup></em> para todo n suficientemente grande.)</td>
+</tr></table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Nota</div>
+</td>
+<td class="content">Os algoritmos e estruturas de dados apresentadas neste livro terão sua complexidade temporal e espacial apresentadas utilizando a notação <em>O</em>. Porém, existem várias outras notações utilizadas para descrever complexidade assintótica. A seguir veremos algumas dessas notações e o seu significado.</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_notacao__em_omega_em">Notação Ω (<em>omega</em>)</h3>
+<div class="paragraph"><p>A notação Ω (<em>omega</em>) é utilizada para expressar o <em>limite inferior</em> no tempo de execução de um algoritmo. É uma medida da menor quantidade de tempo que um determinado algoritmo pode precisar para completar sua tarefa.</p></div>
+<div class="paragraph"><p>Para duas funções não negativas, <em>f(n)</em> e <em>g(n)</em>, se existe um inteiro <em>n<sub>0</sub></em> e uma constante <em>c &gt; 0</em> tal que para todos os inteiros <em>n ≥ n<sub>0</sub></em>, <em>f(n) ≥  cg(n)</em>, <em>f(n)</em> tem complexidade <em>omega</em> <em>g(n)</em>, denotado por <em>f(n) = Ω(g(n))</em>.</p></div>
+<div class="paragraph"><p>Esta é praticamente a mesma definição para a notação <em>O</em>, com a exceção de que <em>f(n) ≥ cg(n)</em> implica em dizer que <em>g(n)</em> representa o <em>melhor caso</em> para <em>f(n)</em>, como ilustrado na figura abaixo. Neste caso, <em>g(n)</em> descreve o <em>melhor</em> que pode acontecer para um determinado tamanho de entrada.</p></div>
+<div class="imageblock">
+<div class="content">
+<img src="imagens/capitulo-02/notacao-bigOmega.gif" alt="imagens/capitulo-02/notacao-bigOmega.gif" />
+</div>
+<div class="title">Figura 3. Notação <em>Ω</em></div>
+</div>
+<div class="exampleblock">
+<div class="title">Exemplo 5. Funções com complexidade <em>Ω(n)</em></div>
+<div class="content">
+<div class="paragraph"><p><em>f(n) = n</em></p></div>
+<div class="paragraph"><p><em>f(n) = n/1000</em></p></div>
+<div class="paragraph"><p><em>f(n) = n<sup>1.9</sup></em></p></div>
+<div class="paragraph"><p><em>f(n) = n<sup>2</sup></em></p></div>
+<div class="paragraph"><p><em>f(n) = n<sup>2</sup>+n</em></p></div>
+<div class="paragraph"><p><em>f(n) = 1000n<sup>2</sup> + 50n</em></p></div>
+</div></div>
+<div class="exampleblock">
+<div class="title">Exemplo 6. Funções com complexidade inferior a <em>Ω(n<sup>2</sup>)</em></div>
+<div class="content">
+<div class="paragraph"><p><em>f(n) = n</em></p></div>
+<div class="paragraph"><p><em>f(n) = n<sup>1.9</sup></em></p></div>
+<div class="paragraph"><p><em>f(n) = log(n)</em></p></div>
+</div></div>
+<div class="sect3">
+<h4 id="_exercicios_2">Exercícios</h4>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Prove que <em>100 lg n − 10n + 2n lg n = Ω(n lg n)</em>.
+</p>
+</li>
+<li>
+<p>
+É verdade que <em>2<sup>n+1</sup> = Ω(2^n)</em> ?
+</p>
+</li>
+<li>
+<p>
+É verdade que <em>3<sup>n</sup> = Ω(2ˆn^)</em> ?
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_notacao_theta_em_theta_em">Notação $\theta$ (<em>theta</em>)</h3>
+<div class="paragraph"><p>A notação Θ (<em>theta</em>) é utilizada para definir um <em>limite assintótico restrito</em> para o tempo de execução de um algoritmo. É uma medida que define tanto limites superiores quanto inferiores para o crescimento da função <em>f(n)</em>.</p></div>
+<div class="paragraph"><p>Sejam duas funções não-negativas <em>f(n)</em> e <em>g(n)</em>, <em>f(n)</em> é dita theta de <em>g(n)</em> se e somente se <em>f(n) = O(g(n))</em> e <em>f(n) = Ω(g(n))</em>, denotado por <em>f(n) = Ω(g(n))</em>.</p></div>
+<div class="paragraph"><p>Isto significa que a função <em>f(n)</em> é limite tanto superior quanto inferiormente, pela função <em>g(n)</em>, conforme ilustrado na figura abaixo.</p></div>
+<div class="imageblock">
+<div class="content">
+<img src="imagens/capitulo-02/notacao-theta.gif" alt="imagens/capitulo-02/notacao-theta.gif" />
+</div>
+<div class="title">Figura 4. Notação <em>Θ</em></div>
+</div>
+<div class="sect3">
+<h4 id="_exercicios_3">Exercícios</h4>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+É verdade que  <em>(3/2)n<sup>2</sup> + (7/2)n<sup>3</sup> − 4 = Θ(n<sup>2</sup>)</em> ?
+</p>
+</li>
+<li>
+<p>
+É verdade que <em>9999n<sup>2</sup> = Θ(n<sup>2</sup>)</em> ?
+</p>
+</li>
+<li>
+<p>
+É verdade que <em>n<sup>2</sup>/1000 − 999n = Θ(n<sup>2</sup>)</em> ?
+</p>
+</li>
+<li>
+<p>
+É verdade que <em>log<sub>2</sub>n + 1 = Θ(log<sub>10</sub>n)</em> ?
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_outras_notacoes">Outras notações</h3>
+<div class="sect3">
+<h4 id="_notacao_em_o_em_em_omicron_em">Notação <em>o</em> (<em>omicron</em>)</h4>
+<div class="paragraph"><p>A notação <em>o</em> (<em>pronunciada little oh</em>) representa uma versão mais solta da notação <em>O</em>. Nesta notação, <em>g(n)</em> limita a função <em>f(n)</em> superiormente mas não representa um limite assintótico restrito.</p></div>
+<div class="paragraph"><p>Sejam duas funções não-negativas, <em>f(n)</em> e <em>g(n)</em>, <em>f(n)</em> é dita <em>little oh</em> de <em>g(n)</em> se e somente se <em>f(n) = O(g(n))</em> mas <em>f(n) ≠ Θ(g(n))</em>, denotando-se por <em>f(n) = o(g(n))</em>.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_notacao_em__em_em_omega_em">Notação <em>ω</em> (<em>omega</em>)</h4>
+<div class="paragraph"><p>A notação <em>ω</em> (<em>pronunciada little omega</em>) representa uma versão mais solta da notação <em>Ω</em>. Nesta notação <em>g(n)</em> limita a função <em>f(n)</em> inferiormente mas não representa um limite assintótico restrito.</p></div>
+<div class="paragraph"><p>Sejam duas funções não-negativas, <em>f(n)</em> e <em>g(n)</em>, <em>f(n)</em> é dita <em>little omega</em> de <em>g(n)</em> se e somente se <em>f(n) = Ω(g(n))</em> mas <em>f(n) ≠ Θ(g(n))</em>, denotando-se por <em>f(n) = ω(g(n))</em>.</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_notacao_assintotica_e_analise_de_complexidade">Notação Assintótica e Análise de Complexidade</h3>
+<div class="paragraph"><p>Tempo de execução não é a única métrica de interesse ao analisarmos a complexidade de um algoritmo. Existem também fatores de interesse relacionados ao espaço de memória utilizado. Geralmente, há uma relação direta entre tempo de execução e quantidade de memória utilizada. Se pensarmos na quantidade de tempo e espaço que um programa utiliza como uma função do tamanho da entrada podemos analisar como estas métricas evoluem quando mais dados são introduzidos no programa.</p></div>
+<div class="paragraph"><p>Isto é particularmente importante no projeto de estruturas de dados pois desejamos utilizar uma estrutura que se comporte de forma eficiente quanto mais dados são fornecidos. Entretanto, é importante compreender que nem sempre algoritmos que são eficientes para grandes volumes de dados são simples e eficientes para pequenos volumes dados.</p></div>
+<div class="paragraph"><p>A notação assintótica é geralmente utilizada como uma forma conveniente de expressar o que acontece com uma função no pior e no melhor caso. Por exemplo, se você deseja escrever uma função que pesquisa um arranjo de números em busca do menor valor:</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #000000">    1:</span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">findMin</span></span><span style="color: #990000">(</span><span style="color: #009900">int</span> array<span style="color: #990000">[],</span> <span style="color: #009900">int</span> size<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+<span style="color: #000000">    2:</span>         <span style="color: #009900">int</span> min <span style="color: #990000">=</span> MAX_INT<span style="color: #990000">;</span>
+<span style="color: #000000">    3:</span>         <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
+<span style="color: #000000">    4:</span>         <span style="font-weight: bold"><span style="color: #0000FF">for</span></span><span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> size<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+<span style="color: #000000">    5:</span>                 <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span>array<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">&lt;</span> min<span style="color: #990000">)</span>
+<span style="color: #000000">    6:</span>                         min <span style="color: #990000">=</span> array<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
+<span style="color: #000000">    7:</span>         <span style="color: #FF0000">}</span>
+<span style="color: #000000">    8:</span>         <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> min<span style="color: #990000">;</span>
+<span style="color: #000000">    9:</span> <span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="paragraph"><p>Independente do quão grande seja o arranjo, sempre que a função <em>findMin()</em> é executada é preciso inicializar as variáveis <em>min</em> e <em>i</em> e retornar a variável <em>min</em> ao fim da execução. Portanto, podemos considerar estes trechos do código como constantes e ignorá-los no cálculo da complexidade.</p></div>
+<div class="paragraph"><p>Então, como podemos utilizar a notação assintótica para descrever a complexidade da função <em>findMin()</em> ? Se a função for utilizada para encontrar o valor mínimo de um arranjo com 87 elementos o <em>for</em> realizará 87 iterações, mesmo que o menor elemento seja o primeiro a ser visitado. De maneira análoga, para <em>n</em> elementos o <em>for</em> realizará <em>n</em> iterações. Portanto, podemos dizer que a função <em>findMin()</em> tem tempo de execução <em>O(n)</em>.</p></div>
+<div class="paragraph"><p>O que dizer agora acerca da função abaixo:</p></div>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #000000">    1:</span> <span style="color: #009900">int</span> <span style="font-weight: bold"><span style="color: #000000">findMinPlusMax</span></span><span style="color: #990000">(</span><span style="color: #009900">int</span> array<span style="color: #990000">[],</span> <span style="color: #009900">int</span> size<span style="color: #990000">)</span> <span style="color: #FF0000">{</span>
+<span style="color: #000000">    2:</span>         <span style="color: #009900">int</span> min <span style="color: #990000">=</span> MAX_INT<span style="color: #990000">;</span>
+<span style="color: #000000">    3:</span>         <span style="color: #009900">int</span> max <span style="color: #990000">=</span> MIN_INT<span style="color: #990000">;</span>
+<span style="color: #000000">    4:</span>         <span style="color: #009900">int</span> i<span style="color: #990000">;</span>
+<span style="color: #000000">    5:</span>
+<span style="color: #000000">    6:</span>         <span style="font-style: italic"><span style="color: #9A1900">//Encontra o valor mínimo no arranjo</span></span>
+<span style="color: #000000">    7:</span>         <span style="font-weight: bold"><span style="color: #0000FF">for</span></span><span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> size<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+<span style="color: #000000">    8:</span>                 <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span>array<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">&lt;</span> min<span style="color: #990000">)</span>
+<span style="color: #000000">    9:</span>                         min <span style="color: #990000">=</span> array<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
+<span style="color: #000000">   10:</span>         <span style="color: #FF0000">}</span>
+<span style="color: #000000">   11:</span>
+<span style="color: #000000">   12:</span>         <span style="font-style: italic"><span style="color: #9A1900">//Encontra o valor máximo no arranjo</span></span>
+<span style="color: #000000">   13:</span>         <span style="font-weight: bold"><span style="color: #0000FF">for</span></span><span style="color: #990000">(</span>i <span style="color: #990000">=</span> <span style="color: #993399">0</span><span style="color: #990000">;</span> i <span style="color: #990000">&lt;</span> size<span style="color: #990000">;</span> i<span style="color: #990000">++)</span> <span style="color: #FF0000">{</span>
+<span style="color: #000000">   14:</span>                 <span style="font-weight: bold"><span style="color: #0000FF">if</span></span><span style="color: #990000">(</span>array<span style="color: #990000">[</span>i<span style="color: #990000">]</span> <span style="color: #990000">&gt;</span> max<span style="color: #990000">)</span>
+<span style="color: #000000">   15:</span>                         max <span style="color: #990000">=</span> array<span style="color: #990000">[</span>i<span style="color: #990000">];</span>
+<span style="color: #000000">   16:</span>         <span style="color: #FF0000">}</span>
+<span style="color: #000000">   17:</span>
+<span style="color: #000000">   18:</span>         <span style="font-weight: bold"><span style="color: #0000FF">return</span></span> min <span style="color: #990000">+</span> max<span style="color: #990000">;</span>
+<span style="color: #000000">   19:</span> <span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="paragraph"><p>Qual função melhor representa o tempo de execução da função <em>findMinPlusMax()</em>?  Existem dois laços e cada um realiza <em>n</em> iterações sendo assim o tempo de execução é claramente <em>O(2n)</em>. Uma vez que 2 é uma constante ele pode ser ignorado e o tempo de execução da função pode ser descrito como <em>O(n)</em>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_recaptulando">Recaptulando</h3>
+<div class="paragraph"><p>Neste capítulo vimos uma noção sobre a comparação assintótica de funções e conhecemos as principais notações utilizadas para expressar o relacionamento assintótico entre duas funções.</p></div>
+<div class="paragraph"><p>Uma analogia imprecisa entre a comparação assintótica de duas funções <em>f</em> e <em>g</em> e a relação entre seus valores é dada a seguir:</p></div>
+<div class="paragraph"><p><em>f(n) = O(g(n))</em>  ≈  <em>f(n) ≤ g(n)</em></p></div>
+<div class="paragraph"><p><em>f(n) = Ω(g(n))</em>  ≈  <em>f(n) ≥ g(n)</em></p></div>
+<div class="paragraph"><p><em>f(n) = Θ(g(n))</em>  ≈  <em>f(n) = g(n)</em></p></div>
+<div class="paragraph"><p><em>f(n) = o(g(n))</em>  ≈  <em>f(n) &lt; g(n)</em></p></div>
+<div class="paragraph"><p><em>f(n) = ω(g(n))</em>  ≈ <em>f(n) &gt; g(n)</em></p></div>
+<div class="paragraph"><p>Estas notações, particularmente a notação <em>O</em>, serão utilizadas no decorrer deste livro para expressar complexidade temporal de algoritmos e complexidade espacial de estruturas de dados.</p></div>
+<div class="paragraph"><p>No próximo capítulo iniciamos efetivamente o estudo de estruturas de dados abordando os arranjos (<em>arrays</em>) unidimensionais, também denotados <em>vetores</em> e arranjos multi-dimensionais,  que podem ser denominados de <em>matrizes</em> no caso de termos apenas duas dimensões.</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_arranjos">Arranjos</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_introducao_3">Introdução</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Objetivos do capítulo</div>
+<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+objetivo 1
+</p>
+</li>
+<li>
+<p>
+objetivo 2
+</p>
+</li>
+<li>
+<p>
+objetivo N
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_arranjos_unidimensionais">Arranjos Unidimensionais</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_arranjos_multidimensionais">Arranjos Multidimensionais</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_eficiencia">Eficiência</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_recaptulando_2">Recaptulando</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_listas_encadeadas">Listas Encadeadas</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_introducao_4">Introdução</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Objetivos do capítulo</div>
+<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+objetivo 1
+</p>
+</li>
+<li>
+<p>
+objetivo 2
+</p>
+</li>
+<li>
+<p>
+objetivo N
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_lista_encadeada">Lista Encadeada</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_vetor">Vetor</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_lista_bidirecional">Lista Bidirecional</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_lista_duplamente_encadeada">Lista Duplamente Encadeada</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_eficiencia_2">Eficiência</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_recaptulando_3">Recaptulando</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pilhas_e_filas">Pilhas e Filas</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_introducao_5">Introdução</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Objetivos do capítulo</div>
+<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+objetivo 1
+</p>
+</li>
+<li>
+<p>
+objetivo 2
+</p>
+</li>
+<li>
+<p>
+objetivo N
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_pilhas">Pilhas</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+<div class="sect3">
+<h4 id="_implementacao_com_lista_encadeada">Implementação com Lista Encadeada</h4>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect3">
+<h4 id="_aplicacoes_de_pilhas">Aplicações de Pilhas</h4>
+<div class="paragraph"><p>blah blah blah</p></div>
+<div class="sect4">
+<h5 id="_convertendo_um_numero_decimal_em_binario">Convertendo um Número Decimal em Binário</h5>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect4">
+<h5 id="_torres_de_hanoi">Torres de Hanoi</h5>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect4">
+<h5 id="_avaliacao_de_expressoes">Avaliação de Expressões</h5>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_filas">Filas</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+<div class="sect3">
+<h4 id="_implementacao_com_lista_encadeada_2">Implementação com Lista Encadeada</h4>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect3">
+<h4 id="_implementacao_com_arranjo_circular">Implementação com Arranjo Circular</h4>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect3">
+<h4 id="_implementacao_de_uma_fila_de_prioridades">Implementação de uma Fila de Prioridades</h4>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect3">
+<h4 id="_deques">Deques</h4>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_recaptulando_4">Recaptulando</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_arvores">Árvores</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_introducao_6">Introdução</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Objetivos do capítulo</div>
+<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+objetivo 1
+</p>
+</li>
+<li>
+<p>
+objetivo 2
+</p>
+</li>
+<li>
+<p>
+objetivo N
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_arvore_binaria">Árvore Binária</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_caminhamento_em_arvore">Caminhamento em Árvore</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_balanceamento">Balanceamento</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_arvore_binaria_de_pesquisa">Árvore Binária de Pesquisa</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_recaptulando_5">Recaptulando</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_grafos">Grafos</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_introducao_7">Introdução</h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Objetivos do capítulo</div>
+<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+objetivo 1
+</p>
+</li>
+<li>
+<p>
+objetivo 2
+</p>
+</li>
+<li>
+<p>
+objetivo N
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_grafos_dirigidos">Grafos Dirigidos</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_grafos_nao_dirigidos">Grafos Não-Dirigidos</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_grafos_ponderados">Grafos Ponderados</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_representacao_de_grafos">Representação de Grafos</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+<div class="sect3">
+<h4 id="_matriz_de_adjacencias">Matriz de Adjacências</h4>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect3">
+<h4 id="_lista_de_adjascencias">Lista de Adjascências</h4>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_busca_em_grafo">Busca em Grafo</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+<div class="sect2">
+<h3 id="_recaptulando_6">Recaptulando</h3>
+<div class="paragraph"><p>blah blah blah</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tabelas_de_espalhamento">Tabelas de Espalhamento</h2>
 <div class="sectionbody">
 <div class="quoteblock">
 <div class="title">Objetivos do capítulo</div>
@@ -1206,7 +1828,7 @@ contrário você poderá encontrar erros inesperados.</td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_vetores_e_matrizes">Vetores e Matrizes</h2>
+<h2 id="_algoritmos_de_busca_e_ordenacao">Algoritmos de Busca e Ordenação</h2>
 <div class="sectionbody">
 <div class="quoteblock">
 <div class="title">Objetivos do capítulo</div>
@@ -1263,528 +1885,6 @@ Consulte o manual.</td>
 </div>
 <div class="sect2">
 <h3 id="_atividades_2">Atividades</h3>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-</ol></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Atenção</div>
-</td>
-<td class="content"><strong>Sempre termine os arquivos com uma linha em branco</strong>, caso
-contrário você poderá encontrar erros inesperados.</td>
-</tr></table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_listas_encadeadas">Listas Encadeadas</h2>
-<div class="sectionbody">
-<div class="quoteblock">
-<div class="title">Objetivos do capítulo</div>
-<div class="content">
-<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-objetivo 1
-</p>
-</li>
-<li>
-<p>
-objetivo 2
-</p>
-</li>
-<li>
-<p>
-objetivo N
-</p>
-</li>
-</ul></div>
-</div>
-<div class="attribution">
-</div></div>
-<div class="paragraph"><p>Neste lugar você deve apresentar o conteúdo em forma de diálogo.</p></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Nota</div>
-</td>
-<td class="content">Para começar a escrever um novo capítulo, copie este arquivo e
-salve com outro nome (não utilize espaço no nome do arquivo). Em seguida,
-atualize o arquivo <strong>livro.asc</strong> para incluir o novo arquivo criado.
-Consulte o manual.</td>
-</tr></table>
-</div>
-<div class="sect2">
-<h3 id="_minha_primeira_secao_3">Minha primeira seção</h3>
-<div class="paragraph"><p>Texto da sua seção.</p></div>
-<div class="sect3">
-<h4 id="_exemplo_de_subsecao_3">Exemplo de subseção</h4>
-<div class="paragraph"><p>Texto da subseção.</p></div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_minha_segunda_secao_3">Minha segunda seção</h3>
-<div class="paragraph"><p>Texto da sua seção.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_recapitulando_4">Recapitulando</h3>
-<div class="paragraph"><p>Revisão do que foi aprendido.</p></div>
-<div class="paragraph"><p>Reserve o último parágrafo para realizar uma <strong>ponte</strong> para o próximo capítulo.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_atividades_3">Atividades</h3>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-</ol></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Atenção</div>
-</td>
-<td class="content"><strong>Sempre termine os arquivos com uma linha em branco</strong>, caso
-contrário você poderá encontrar erros inesperados.</td>
-</tr></table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_pilhas_e_filas">Pilhas e Filas</h2>
-<div class="sectionbody">
-<div class="quoteblock">
-<div class="title">Objetivos do capítulo</div>
-<div class="content">
-<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-objetivo 1
-</p>
-</li>
-<li>
-<p>
-objetivo 2
-</p>
-</li>
-<li>
-<p>
-objetivo N
-</p>
-</li>
-</ul></div>
-</div>
-<div class="attribution">
-</div></div>
-<div class="paragraph"><p>Neste lugar você deve apresentar o conteúdo em forma de diálogo.</p></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Nota</div>
-</td>
-<td class="content">Para começar a escrever um novo capítulo, copie este arquivo e
-salve com outro nome (não utilize espaço no nome do arquivo). Em seguida,
-atualize o arquivo <strong>livro.asc</strong> para incluir o novo arquivo criado.
-Consulte o manual.</td>
-</tr></table>
-</div>
-<div class="sect2">
-<h3 id="_minha_primeira_secao_4">Minha primeira seção</h3>
-<div class="paragraph"><p>Texto da sua seção.</p></div>
-<div class="sect3">
-<h4 id="_exemplo_de_subsecao_4">Exemplo de subseção</h4>
-<div class="paragraph"><p>Texto da subseção.</p></div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_minha_segunda_secao_4">Minha segunda seção</h3>
-<div class="paragraph"><p>Texto da sua seção.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_recapitulando_5">Recapitulando</h3>
-<div class="paragraph"><p>Revisão do que foi aprendido.</p></div>
-<div class="paragraph"><p>Reserve o último parágrafo para realizar uma <strong>ponte</strong> para o próximo capítulo.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_atividades_4">Atividades</h3>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-</ol></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Atenção</div>
-</td>
-<td class="content"><strong>Sempre termine os arquivos com uma linha em branco</strong>, caso
-contrário você poderá encontrar erros inesperados.</td>
-</tr></table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_arvores">Árvores</h2>
-<div class="sectionbody">
-<div class="quoteblock">
-<div class="title">Objetivos do capítulo</div>
-<div class="content">
-<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-objetivo 1
-</p>
-</li>
-<li>
-<p>
-objetivo 2
-</p>
-</li>
-<li>
-<p>
-objetivo N
-</p>
-</li>
-</ul></div>
-</div>
-<div class="attribution">
-</div></div>
-<div class="paragraph"><p>Neste lugar você deve apresentar o conteúdo em forma de diálogo.</p></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Nota</div>
-</td>
-<td class="content">Para começar a escrever um novo capítulo, copie este arquivo e
-salve com outro nome (não utilize espaço no nome do arquivo). Em seguida,
-atualize o arquivo <strong>livro.asc</strong> para incluir o novo arquivo criado.
-Consulte o manual.</td>
-</tr></table>
-</div>
-<div class="sect2">
-<h3 id="_minha_primeira_secao_5">Minha primeira seção</h3>
-<div class="paragraph"><p>Texto da sua seção.</p></div>
-<div class="sect3">
-<h4 id="_exemplo_de_subsecao_5">Exemplo de subseção</h4>
-<div class="paragraph"><p>Texto da subseção.</p></div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_minha_segunda_secao_5">Minha segunda seção</h3>
-<div class="paragraph"><p>Texto da sua seção.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_recapitulando_6">Recapitulando</h3>
-<div class="paragraph"><p>Revisão do que foi aprendido.</p></div>
-<div class="paragraph"><p>Reserve o último parágrafo para realizar uma <strong>ponte</strong> para o próximo capítulo.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_atividades_5">Atividades</h3>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-</ol></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Atenção</div>
-</td>
-<td class="content"><strong>Sempre termine os arquivos com uma linha em branco</strong>, caso
-contrário você poderá encontrar erros inesperados.</td>
-</tr></table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_grafos">Grafos</h2>
-<div class="sectionbody">
-<div class="quoteblock">
-<div class="title">Objetivos do capítulo</div>
-<div class="content">
-<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-objetivo 1
-</p>
-</li>
-<li>
-<p>
-objetivo 2
-</p>
-</li>
-<li>
-<p>
-objetivo N
-</p>
-</li>
-</ul></div>
-</div>
-<div class="attribution">
-</div></div>
-<div class="paragraph"><p>Neste lugar você deve apresentar o conteúdo em forma de diálogo.</p></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Nota</div>
-</td>
-<td class="content">Para começar a escrever um novo capítulo, copie este arquivo e
-salve com outro nome (não utilize espaço no nome do arquivo). Em seguida,
-atualize o arquivo <strong>livro.asc</strong> para incluir o novo arquivo criado.
-Consulte o manual.</td>
-</tr></table>
-</div>
-<div class="sect2">
-<h3 id="_minha_primeira_secao_6">Minha primeira seção</h3>
-<div class="paragraph"><p>Texto da sua seção.</p></div>
-<div class="sect3">
-<h4 id="_exemplo_de_subsecao_6">Exemplo de subseção</h4>
-<div class="paragraph"><p>Texto da subseção.</p></div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_minha_segunda_secao_6">Minha segunda seção</h3>
-<div class="paragraph"><p>Texto da sua seção.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_recapitulando_7">Recapitulando</h3>
-<div class="paragraph"><p>Revisão do que foi aprendido.</p></div>
-<div class="paragraph"><p>Reserve o último parágrafo para realizar uma <strong>ponte</strong> para o próximo capítulo.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_atividades_6">Atividades</h3>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-</ol></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Atenção</div>
-</td>
-<td class="content"><strong>Sempre termine os arquivos com uma linha em branco</strong>, caso
-contrário você poderá encontrar erros inesperados.</td>
-</tr></table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_tabelas_de_espalhamento">Tabelas de Espalhamento</h2>
-<div class="sectionbody">
-<div class="quoteblock">
-<div class="title">Objetivos do capítulo</div>
-<div class="content">
-<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-objetivo 1
-</p>
-</li>
-<li>
-<p>
-objetivo 2
-</p>
-</li>
-<li>
-<p>
-objetivo N
-</p>
-</li>
-</ul></div>
-</div>
-<div class="attribution">
-</div></div>
-<div class="paragraph"><p>Neste lugar você deve apresentar o conteúdo em forma de diálogo.</p></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Nota</div>
-</td>
-<td class="content">Para começar a escrever um novo capítulo, copie este arquivo e
-salve com outro nome (não utilize espaço no nome do arquivo). Em seguida,
-atualize o arquivo <strong>livro.asc</strong> para incluir o novo arquivo criado.
-Consulte o manual.</td>
-</tr></table>
-</div>
-<div class="sect2">
-<h3 id="_minha_primeira_secao_7">Minha primeira seção</h3>
-<div class="paragraph"><p>Texto da sua seção.</p></div>
-<div class="sect3">
-<h4 id="_exemplo_de_subsecao_7">Exemplo de subseção</h4>
-<div class="paragraph"><p>Texto da subseção.</p></div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_minha_segunda_secao_7">Minha segunda seção</h3>
-<div class="paragraph"><p>Texto da sua seção.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_recapitulando_8">Recapitulando</h3>
-<div class="paragraph"><p>Revisão do que foi aprendido.</p></div>
-<div class="paragraph"><p>Reserve o último parágrafo para realizar uma <strong>ponte</strong> para o próximo capítulo.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_atividades_7">Atividades</h3>
-<div class="olist arabic"><ol class="arabic">
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-<li>
-<p>
-Texto da atividade.
-</p>
-</li>
-</ol></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Atenção</div>
-</td>
-<td class="content"><strong>Sempre termine os arquivos com uma linha em branco</strong>, caso
-contrário você poderá encontrar erros inesperados.</td>
-</tr></table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_algoritmos_de_busca_e_ordenacao">Algoritmos de Busca e Ordenação</h2>
-<div class="sectionbody">
-<div class="quoteblock">
-<div class="title">Objetivos do capítulo</div>
-<div class="content">
-<div class="paragraph"><p>Ao final deste capítulo você deverá ser capaz de:</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-objetivo 1
-</p>
-</li>
-<li>
-<p>
-objetivo 2
-</p>
-</li>
-<li>
-<p>
-objetivo N
-</p>
-</li>
-</ul></div>
-</div>
-<div class="attribution">
-</div></div>
-<div class="paragraph"><p>Neste lugar você deve apresentar o conteúdo em forma de diálogo.</p></div>
-<div class="admonitionblock">
-<table><tr>
-<td class="icon">
-<div class="title">Nota</div>
-</td>
-<td class="content">Para começar a escrever um novo capítulo, copie este arquivo e
-salve com outro nome (não utilize espaço no nome do arquivo). Em seguida,
-atualize o arquivo <strong>livro.asc</strong> para incluir o novo arquivo criado.
-Consulte o manual.</td>
-</tr></table>
-</div>
-<div class="sect2">
-<h3 id="_minha_primeira_secao_8">Minha primeira seção</h3>
-<div class="paragraph"><p>Texto da sua seção.</p></div>
-<div class="sect3">
-<h4 id="_exemplo_de_subsecao_8">Exemplo de subseção</h4>
-<div class="paragraph"><p>Texto da subseção.</p></div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_minha_segunda_secao_8">Minha segunda seção</h3>
-<div class="paragraph"><p>Texto da sua seção.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_recapitulando_9">Recapitulando</h3>
-<div class="paragraph"><p>Revisão do que foi aprendido.</p></div>
-<div class="paragraph"><p>Reserve o último parágrafo para realizar uma <strong>ponte</strong> para o próximo capítulo.</p></div>
-</div>
-<div class="sect2">
-<h3 id="_atividades_8">Atividades</h3>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
