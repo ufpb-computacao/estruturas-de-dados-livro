@@ -1,0 +1,1078 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+
+<article lang="en">
+<articleinfo>
+    <date>2013-04-03</date>
+</articleinfo>
+<section id="_asciidoc_cheatsheet">
+<title>AsciiDoc cheatsheet</title>
+<simpara>Nesta seção são apresentadas vários recursos do
+asciidoc. Verifique
+o código fonte para aprender qual a sintaxe que produz este texto.</simpara>
+<section id="_como_aprender_a_sintaxe_do_asciidoc">
+<title>Como aprender a sintaxe do asciidoc?</title>
+<simpara>A melhor forma é através dos exemplos contidos na página do asciidoc.</simpara>
+<variablelist>
+<varlistentry>
+<term>
+AsciiDoc cheatsheet
+</term>
+<listitem>
+<simpara>
+<ulink url="http://powerman.name/doc/asciidoc">http://powerman.name/doc/asciidoc</ulink>
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Exemplo de livro
+</term>
+<listitem>
+<simpara>
+<ulink url="https://asciidoc.googlecode.com/hg/doc/book.txt">https://asciidoc.googlecode.com/hg/doc/book.txt</ulink>
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Guida do usuário
+</term>
+<listitem>
+<simpara>
+<ulink url="http://www.methods.co.nz/asciidoc/userguide.html">http://www.methods.co.nz/asciidoc/userguide.html</ulink>
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Para matemática
+</term>
+<listitem>
+<simpara>
+<ulink url="http://www.methods.co.nz/asciidoc/latexmath.pdf">http://www.methods.co.nz/asciidoc/latexmath.pdf</ulink>
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</section>
+<section id="_seções">
+<title>Seções</title>
+<screen>== Nível de capítulo (section) 1
+Texto.
+
+=== Nível de subseção 2
+Texto.
+
+==== Level 3
+Texto.
+
+===== Level 4
+Texto.</screen>
+<caution><simpara>Não pode existir seções sem texto. Sempre coloque algum texto,
+caso contrário o arquivo não será gerado.</simpara></caution>
+</section>
+<section id="_parágrafos">
+<title>Parágrafos</title>
+<formalpara><title>Título do parágrafo opcional</title><para>Texto do parágrafo
+aqui.</para></formalpara>
+<formalpara><title>Título do parágrafo opcional</title><para>
+<literallayout class="monospaced">Texto do parágrafo aqui.
+Precisa começar com espaço em branco.</literallayout>
+</para></formalpara>
+<formalpara><title>Optional Title</title><para>
+<programlisting language="perl" linenumbering="unnumbered">die 'connect: '.$dbh-&gt;errstr;</programlisting>
+</para></formalpara>
+<simpara>Este parágrafo não faz parte do código.</simpara>
+<note><simpara>This is an example
+      single-paragraph note.</simpara></note>
+<note><simpara>This is an example
+single-paragraph note.</simpara></note>
+<tip><simpara>Texto.</simpara></tip>
+<important><simpara>Texto.</simpara></important>
+<warning><simpara>Texto.</simpara></warning>
+<caution><simpara>Texto.</simpara></caution>
+</section>
+<section id="_blocos">
+<title>Blocos</title>
+<formalpara><title>Optional Title</title><para>
+<screen>*Listing* Block
+
+Use: code or file listings</screen>
+</para></formalpara>
+<formalpara><title>Optional Title</title><para>
+<programlisting language="perl" linenumbering="unnumbered"># *Source* block
+# Use: highlight code listings
+# (require `source-highlight` or `pygmentize`)
+use DBI;
+my $dbh = DBI-&gt;connect('...',$u,$p)
+    or die "connect: $dbh-&gt;errstr";</programlisting>
+</para></formalpara>
+<sidebar>
+<title>Optional Title</title>
+<simpara><emphasis role="strong">Sidebar</emphasis> Block</simpara>
+<simpara>Use: sidebar notes :)</simpara>
+</sidebar>
+<example>
+<title>Optional Title</title>
+<simpara><emphasis role="strong">Example</emphasis> Block</simpara>
+<simpara>Use: examples :)</simpara>
+<simpara>Default caption "Example:"
+can be changed using</simpara>
+<literallayout class="monospaced">[caption="Custom: "]</literallayout>
+<simpara>before example block.</simpara>
+</example>
+<note>
+<title>Optional Title</title>
+<simpara><emphasis role="strong">NOTE</emphasis> Block</simpara>
+<simpara>Use: multi-paragraph notes.</simpara>
+</note>
+<formalpara><title>Optional Title</title><para>
+<literallayout class="monospaced">*Literal* Block
+
+Use: workaround when literal
+paragraph (indented) like
+  1. First.
+  2. Second.
+incorrectly processed as list.</literallayout>
+</para></formalpara>
+<blockquote>
+<title>Optional Title</title>
+<attribution>
+cite author
+<citetitle>cite source</citetitle>
+</attribution>
+<simpara><emphasis role="strong">Quote</emphasis> Block</simpara>
+<simpara>Use: cite somebody</simpara>
+</blockquote>
+</section>
+<section id="texto-secao">
+<title>Text</title>
+<simpara>forçando<?asciidoc-br?>
+quebra de linha.</simpara>
+<simpara>normal, <emphasis>italic</emphasis>, <emphasis role="strong">bold</emphasis>, <literal>mono</literal>.</simpara>
+<simpara>&#8220;double quoted&#8221;, &#8216;single quoted&#8217;.</simpara>
+<simpara>normal, <superscript>super</superscript>, <subscript>sub</subscript>.</simpara>
+<simpara>Command: <literal>ls -al</literal></simpara>
+<simpara>Path: <emphasis>/some/filez.txt</emphasis>, <emphasis>.b</emphasis></simpara>
+<simpara>&#169; &#174; &#8482;&#8201;&#8212;&#8201;&#8230; &#8594; &#8592; &#8658; &#8656; &#182;</simpara>
+<simpara><?asciidoc-hr?></simpara>
+</section>
+<section id="macro-secao">
+<title>Macros: Referencias, images &amp; include</title>
+<simpara>Exemplo de referências.</simpara>
+<simpara><anchor id="anchor-2" xreflabel="[anchor-2]"/>
+Paragraph or block 2.</simpara>
+<simpara>Exemplo de referencias: <xref linkend="texto-secao"/>,
+<link linkend="texto-secao">Capitulo sobre texto</link>.</simpara>
+<figure><title>Block image</title>
+<mediaobject>
+  <imageobject>
+  <imagedata fileref="images/novo-capitulo/bug.png" width="60%" scalefit="1"/>
+  </imageobject>
+  <textobject><phrase>images/novo-capitulo/bug.png</phrase></textobject>
+</mediaobject>
+</figure>
+</section>
+<section id="_código_fonte_de_programas">
+<title>Código fonte de programas</title>
+<simpara>Exemplo de código fonte.</simpara>
+<screen>/* Hello World program */
+
+#include&lt;stdio.h&gt;   // <co id="CO1-1"/>
+
+main()
+{
+    printf("Hello World");   // <co id="CO1-2"/> imprime "Hello Word" na tela.
+}</screen>
+<calloutlist>
+<callout arearefs="CO1-1">
+<para>
+Incluindo biblioteca de entrada/saída.
+</para>
+</callout>
+<callout arearefs="CO1-2">
+<para>
+Chamada à função printf, que envia para a saída padrão (o console) o texto recebido.
+</para>
+</callout>
+</calloutlist>
+<section id="_trecho_de_código">
+<title>Trecho de código</title>
+<simpara>Exemplo de trecho de código.</simpara>
+<literallayout class="monospaced">#include&lt;stdio.h&gt;
+main() { printf("Hello World"); }</literallayout>
+</section>
+</section>
+<section id="_listas">
+<title>Listas</title>
+<itemizedlist><title>Bulleted</title>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bullet
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+bullet
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bullet
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bullet
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bullet
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+</itemizedlist>
+<itemizedlist><title>Bulleted 2</title>
+<listitem>
+<simpara>
+bullet
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+<orderedlist numeration="arabic"><title>Ordered</title>
+<listitem>
+<simpara>
+number
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+number
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+letter
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+letter
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+number
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+loweralpha
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+loweralpha
+</simpara>
+<orderedlist numeration="lowerroman">
+<listitem>
+<simpara>
+lowerroman
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+lowerroman
+</simpara>
+<orderedlist numeration="upperalpha">
+<listitem>
+<simpara>
+upperalpha
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+upperalpha
+</simpara>
+<orderedlist numeration="upperroman">
+<listitem>
+<simpara>
+upperroman
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+upperroman
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+upperalpha
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+lowerroman
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+loweralpha
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+number
+</simpara>
+</listitem>
+</orderedlist>
+<orderedlist numeration="loweralpha"><title>Ordered 2</title>
+<listitem>
+<simpara>
+letter
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+letter
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+letter2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+letter2
+</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+number
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+number
+</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+number2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+number2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+number2
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+number2
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+number
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+letter2
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+letter
+</simpara>
+</listitem>
+</orderedlist>
+<variablelist><title>Labeled</title>
+<varlistentry>
+<term>
+Termo 1
+</term>
+<listitem>
+<simpara>
+    Definição 1
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Termo 2
+</term>
+<listitem>
+<simpara>
+    Definição 2
+</simpara>
+<variablelist>
+<varlistentry>
+<term>
+Termo 2.1
+</term>
+<listitem>
+<simpara>
+        Definição 2.1
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Termo 2.2
+</term>
+<listitem>
+<simpara>
+        Definição 2.2
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Termo 3
+</term>
+<listitem>
+<simpara>
+    Definição 3
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Termo 4
+</term>
+<listitem>
+<simpara>
+Definição 4
+</simpara>
+<variablelist>
+<varlistentry>
+<term>
+Termo 4.1
+</term>
+<listitem>
+<simpara>
+Definição 4.1
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Termo 4.2
+</term>
+<listitem>
+<simpara>
+Definição 4.2
+</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Termo 4.3
+</term>
+<listitem>
+<simpara>
+Definição 4.3
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+Termo 5
+</term>
+<listitem>
+<simpara>
+Definição 5
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<variablelist><title>Labeled 2</title>
+<varlistentry>
+<term>
+Termo 1
+</term>
+<listitem>
+<simpara>
+    Definição 1
+</simpara>
+<variablelist>
+<varlistentry>
+<term>
+Termo 1.1
+</term>
+<listitem>
+<simpara>
+        Definição 1.1
+</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+</varlistentry>
+</variablelist>
+<table tabstyle="horizontal" frame="none" colsep="0" rowsep="0"><title>Labeled horizontal</title><tgroup cols="2"><colspec colwidth="15*"/><colspec colwidth="85*"/><tbody valign="top">
+<row>
+<entry>
+<simpara>
+Termo 1
+</simpara>
+</entry>
+<entry>
+<simpara>
+Definição 1. ashkjahgsjhagkjshgkjhag jhasgjh agfsjhgafsjhgafhsgfjasjh
+aj shgkjahsg khagskjhagskjhsak.
+</simpara>
+</entry>
+</row>
+<row>
+<entry>
+<simpara>
+Termo 2
+</simpara>
+</entry>
+<entry>
+<simpara>
+Definição 2 kajshkljahskjah lskjha lkjshlaksjlkagsksjahgskjhgk ahsgka
+la shlkajhsl kjahlskjahls.
+</simpara>
+</entry>
+</row>
+</tbody></tgroup></table>
+<qandaset><title>Q&amp;A</title>
+<qandaentry>
+<question>
+<simpara>
+Questão 1
+</simpara>
+</question>
+<answer>
+<simpara>
+    Resposta da pergunta 1 aqui.
+</simpara>
+</answer>
+</qandaentry>
+<qandaentry>
+<question>
+<simpara>
+Questão 2
+</simpara>
+</question>
+<answer>
+<simpara>
+Resposta da pergunta 2 aqui.
+</simpara>
+</answer>
+</qandaentry>
+</qandaset>
+<itemizedlist><title>Indent is optional</title>
+<listitem>
+<simpara>
+bullet
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+another bullet
+</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+number
+</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+again number
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+letter
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+again letter
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+letter
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+number
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+</itemizedlist>
+<orderedlist numeration="arabic"><title>Break two lists</title>
+<listitem>
+<simpara>
+number
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+number
+</simpara>
+</listitem>
+</orderedlist>
+<simpara>Independent paragraph break list.</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+number
+</simpara>
+</listitem>
+</orderedlist>
+<orderedlist numeration="arabic"><title>Header break list too</title>
+<listitem>
+<simpara>
+number
+</simpara>
+</listitem>
+</orderedlist>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+List block define list boundary too
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+number
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+number
+</simpara>
+</listitem>
+</orderedlist>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+number
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+number
+</simpara>
+</listitem>
+</orderedlist>
+<itemizedlist><title>Continuation</title>
+<listitem>
+<simpara>
+bullet
+continuation
+</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+number
+  continuation
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+bullet
+</simpara>
+<literallayout class="monospaced">literal continuation</literallayout>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+letter
+</simpara>
+<simpara>Non-literal continuation.</simpara>
+<screen>any block can be
+
+included in list</screen>
+<simpara>Last continuation.</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</itemizedlist>
+</listitem>
+</orderedlist>
+</listitem>
+</itemizedlist>
+<itemizedlist><title>List block allow sublist inclusion</title>
+<listitem>
+<simpara>
+bullet
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+bullet
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+</itemizedlist>
+<itemizedlist>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+bullet
+</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+bullet
+</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+number
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+letter
+</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+number
+</simpara>
+</listitem>
+</orderedlist>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+letter
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+letter
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+number
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_tabelas">
+<title>Tabelas</title>
+<simpara>You can fill table from CSV file using <literal>include::</literal> macros inside table.</simpara>
+<table
+frame="all"
+rowsep="1" colsep="1"
+>
+<title>An example table</title>
+<tgroup cols="3">
+<colspec colname="col_1" colwidth="33*"/>
+<colspec colname="col_2" colwidth="33*"/>
+<colspec colname="col_3" colwidth="33*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Col 1</entry>
+<entry align="left" valign="top">Col 2      </entry>
+<entry align="left" valign="top">Col 3</entry>
+</row>
+</thead>
+<tfoot>
+<row>
+<entry align="left" valign="top"><simpara>6</simpara></entry>
+<entry align="left" valign="top"><simpara>Three items</simpara></entry>
+<entry align="left" valign="top"><simpara>d</simpara></entry>
+</row>
+</tfoot>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>1</simpara></entry>
+<entry align="left" valign="top"><simpara>Item 1</simpara></entry>
+<entry align="left" valign="top"><simpara>a</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>2</simpara></entry>
+<entry align="left" valign="top"><simpara>Item 2</simpara></entry>
+<entry align="left" valign="top"><simpara>b</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>3</simpara></entry>
+<entry align="left" valign="top"><simpara>Item 3</simpara></entry>
+<entry align="left" valign="top"><simpara>c</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<table
+frame="topbot"
+rowsep="0" colsep="0"
+>
+<title>CSV data, 15% each column</title>
+<?dbhtml table-width="60%"?>
+<?dbfo table-width="60%"?>
+<?dblatex table-width="60%"?>
+<tgroup cols="4">
+<colspec colname="col_1" colwidth="64*"/>
+<colspec colname="col_2" colwidth="64*"/>
+<colspec colname="col_3" colwidth="64*"/>
+<colspec colname="col_4" colwidth="64*"/>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>1</simpara></entry>
+<entry align="left" valign="top"><simpara>2</simpara></entry>
+<entry align="left" valign="top"><simpara>3</simpara></entry>
+<entry align="left" valign="top"><simpara>4</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>a</simpara></entry>
+<entry align="left" valign="top"><simpara>b</simpara></entry>
+<entry align="left" valign="top"><simpara>c</simpara></entry>
+<entry align="left" valign="top"><simpara>d</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>A</simpara></entry>
+<entry align="left" valign="top"><simpara>B</simpara></entry>
+<entry align="left" valign="top"><simpara>C</simpara></entry>
+<entry align="left" valign="top"><simpara>D</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<informaltable
+frame="all"
+rowsep="1" colsep="0"
+>
+<tgroup cols="5">
+<colspec colname="col_1" colwidth="20*"/>
+<colspec colname="col_2" colwidth="20*"/>
+<colspec colname="col_3" colwidth="20*"/>
+<colspec colname="col_4" colwidth="20*"/>
+<colspec colname="col_5" colwidth="20*"/>
+<thead>
+<row>
+<entry align="center" valign="top">ID</entry>
+<entry align="left" valign="top">FName</entry>
+<entry align="left" valign="top">LName</entry>
+<entry align="left" valign="top">Address</entry>
+<entry align="right" valign="top">Phone</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="center" valign="top"><simpara>1</simpara></entry>
+<entry align="left" valign="top"><simpara>Vasya</simpara></entry>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Pupkin</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>London</simpara></entry>
+<entry align="right" valign="top"><simpara><literal>+123</literal></simpara></entry>
+</row>
+<row>
+<entry align="center" valign="top"><simpara>2</simpara></entry>
+<entry align="left" valign="top"><simpara>X</simpara></entry>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Y</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>A,B</simpara></entry>
+<entry align="right" valign="top"><simpara><literal>45678</literal></simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+<table
+frame="all"
+rowsep="1" colsep="1"
+>
+<title>Multiline cells, row/col span</title>
+<tgroup cols="4">
+<colspec colname="col_1" colwidth="25*"/>
+<colspec colname="col_2" colwidth="25*"/>
+<colspec colname="col_3" colwidth="25*"/>
+<colspec colname="col_4" colwidth="25*"/>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>Date</simpara></entry>
+<entry align="left" valign="top"><simpara>Duration</simpara></entry>
+<entry align="left" valign="top"><simpara>Avg HR</simpara></entry>
+<entry align="left" valign="top"><simpara>Notes</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>22-Aug-08</simpara></entry>
+<entry align="center" valign="middle" morerows="1"><simpara>10:24</simpara></entry>
+<entry align="left" valign="top"><simpara>157</simpara></entry>
+<entry align="left" valign="top"><simpara>Worked out MSHR (max sustainable
+heart rate) by going hard
+for this interval.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>22-Aug-08</simpara></entry>
+<entry align="left" valign="top"><simpara>152</simpara></entry>
+<entry align="left" valign="top"><simpara>Back-to-back with previous interval.</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>24-Aug-08</simpara></entry>
+<entry align="center" valign="top" namest="col_2" nameend="col_4"><simpara>none</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</section>
+<section id="_matemática">
+<title>Matemática</title>
+<simpara>Ver <ulink url="https://asciidoc.googlecode.com/hg/doc/latexmath.txt">https://asciidoc.googlecode.com/hg/doc/latexmath.txt</ulink> e comparar com
+<ulink url="http://www.methods.co.nz/asciidoc/latexmath.pdf">http://www.methods.co.nz/asciidoc/latexmath.pdf</ulink></simpara>
+<equation id="equacao-qualquer"><title>Uma equação qualquer.</title>
+<alt><![CDATA[\[C = \alpha + \beta Y^{\gamma} + \epsilon\]]]></alt>
+<mediaobject><textobject><phrase></phrase></textobject></mediaobject>
+</equation>
+<simpara>Colocar equação no meio do texto,
+<inlineequation>
+<alt><![CDATA[$C = \alpha + \beta Y^{\gamma} + \epsilon$]]></alt>
+<inlinemediaobject><textobject><phrase></phrase></textobject></inlinemediaobject>
+</inlineequation>, também é
+possível. Mas o mais legal é referencia-la (ver <xref linkend="equacao-qualquer"/>).</simpara>
+</section>
+</section>
+</article>
