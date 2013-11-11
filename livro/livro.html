@@ -805,6 +805,7 @@ possível de comparações.</p></div>
 <div class="paragraph"><p>As principais linguagens de programação estão equipadas com um conjunto de tipos de dados, como números inteiros e de ponto flutuante, que nos permitem lidar com dados para os quais o processador do computador oferece suporte nativo. Estes tipos de dados pré-definidos são abstrações do que o processador realmente oferece uma vez que escondem detalhes sobre sua execução e limitações.</p></div>
 <div class="paragraph"><p>Por exemplo, quanto utilizamos números de ponto flutuante estamos preocupados principalmente com seu valor e com quais operações podem ser aplicadas a eles. Considere o trecho de código abaixo que calcula o comprimento da hipotenusa de um triângulo com catetos a e b.</p></div>
 <div class="listingblock">
+<div class="title">Cálculo do comprimento da hipotenusa de um triângulo retângulo de catetos <em>a</em> e <em>b</em></div>
 <div class="content"><!-- Generator: GNU source-highlight 3.1.4
 by Lorenzo Bettini
 http://www.lorenzobettini.it
@@ -841,6 +842,7 @@ pois, no final, estamos interessados em resolver o problema.</p></div>
 </tr></table>
 </div>
 <div class="listingblock">
+<div class="title">Definição da estrutura de um Nó</div>
 <div class="content"><!-- Generator: GNU source-highlight 3.1.4
 by Lorenzo Bettini
 http://www.lorenzobettini.it
@@ -853,6 +855,7 @@ http://www.gnu.org/software/src-highlite -->
 <span style="color: #FF0000">}</span> Node<span style="color: #990000">;</span></tt></pre></div></div>
 <div class="paragraph"><p>As operações básicas a serem aplicadas à nossa estrutura de <em>Nó</em> são definidas a seguir.</p></div>
 <div class="listingblock">
+<div class="title">Definição das operações básicas aplicáveis à estrutura de Nó</div>
 <div class="content"><!-- Generator: GNU source-highlight 3.1.4
 by Lorenzo Bettini
 http://www.lorenzobettini.it
@@ -875,6 +878,7 @@ Node<span style="color: #990000">*</span> <span style="font-weight: bold"><span 
 <div class="paragraph"><p>Neste momento, estamos preocupados apenas que o <em>Nó</em> possa armazenar valores de alguma forma.  O tipo do dado, neste momento, não é relevante. Em algumas linguagens de programação, o  tipo não precisa ser definido (linguagens  dinamicamente tipadas como Scheme, Smalltalk ou Python).  Em outras linguagens o tipo pode  precisar ser definido explicitamente, (linguagens estaticamente  tipadas como C).  Há ainda uma terceira opção, na qual a decisão sobre o tipo do elemento  pode ser atrasada até  o momento em que o tipo é efetivamente utilizado (linguagens que suportam tipos genéricos como C++ e Java).</p></div>
 <div class="paragraph"><p>Cada uma das operações especificadas pode ser implementada de forma relativamente simples:</p></div>
 <div class="listingblock">
+<div class="title">Implementação das operações básicas aplicáveis à estrutura de Nó</div>
 <div class="content"><!-- Generator: GNU source-highlight 3.1.4
 by Lorenzo Bettini
 http://www.lorenzobettini.it
@@ -922,8 +926,9 @@ Node<span style="color: #990000">*</span> <span style="font-weight: bold"><span 
 <div class="sect2">
 <h3 id="_encadeando_nos">Encadeando Nós</h3>
 <div class="paragraph"><p>Apesar da estrutura de um nó ser bastante simples, ela nos permite resolver problemas bastante interessantes. Porém, primeiro vamos dar uma olhada em um programa que não precisa utilizar a nossa estrutura de nó.</p></div>
-<div class="paragraph"><p>O programa a seguir lê da entrada padrão uma série de números inteiros até encontrar o final da entrada e  imprime o maior valor lido e a média de todos os números:</p></div>
+<div class="paragraph"><p>O programa a seguir lê da entrada padrão uma série de números inteiros até encontrar o final da entrada e imprime o maior valor lido e a média de todos os números:</p></div>
 <div class="listingblock">
+<div class="title">Código para encontrar o maior elemento e a média de um conjunto de valores lidos da entrada padrão</div>
 <div class="content"><!-- Generator: GNU source-highlight 3.1.4
 by Lorenzo Bettini
 http://www.lorenzobettini.it
@@ -954,6 +959,7 @@ http://www.gnu.org/software/src-highlite -->
 <div class="paragraph"><p>Por exemplo, suponha que criemos, para armazenar o estado do programa, 200 variáveis inteiras, cada uma com 64 bits. Mesmo a implementação mais eficiente só poderá computar os resultados para 2<sup>64*200</sup> entradas  diferentes. Apesar desse ser um número muito grande de combinações, uma lista com 300 números de 64 bits  exigiria ainda mais bits para ser codificada.</p></div>
 <div class="paragraph"><p>Ao invés de criar uma solução com limitações que dificultam a implementação (como ter apenas um número constante de variáveis), podemos utilizar as propriedades da nossa abstração de nó para nos permitir armazenar tantos números quanto nos permita a memória do computador:</p></div>
 <div class="listingblock">
+<div class="title">Segunda versão para o código que encontra o maior elemento e a média de um conjunto de valores lidos da entrada padrão</div>
 <div class="content"><!-- Generator: GNU source-highlight 3.1.4
 by Lorenzo Bettini
 http://www.lorenzobettini.it
@@ -1170,8 +1176,8 @@ Ser capaz de identificar a classe de crescimento assintótico de uma determinada
 </div>
 </div>
 <div class="sect2">
-<h3 id="_a_notacao_em_o_em_em_omicron_em">A notação <em>O</em> (<em>omicron</em>)</h3>
-<div class="paragraph"><p>A notação  <em>O</em> (<em>pronunciada big-oh</em>) é o método formal utilizado para expressar o <em>limite superior</em> no tempo de execução de um algoritmo. É uma medida da maior quantidade de tempo que um determinado algoritmo pode precisar para completar sua tarefa.</p></div>
+<h3 id="_a_notacao_big_o">A notação Big-O</h3>
+<div class="paragraph"><p>A notação  <em>O</em> é o método formal utilizado para expressar o <em>limite superior</em> no tempo de execução de um algoritmo. É uma medida da maior quantidade de tempo que um determinado algoritmo pode precisar para completar sua tarefa.</p></div>
 <div class="paragraph"><p>De maneira mais formal, para duas funções não-negativas, <em>f(n)</em> e <em>g(n)</em>, se existe um inteiro <em>n<sub>0</sub></em> e uma constante <em>c</em> &gt; 0 tal que para todos os inteiros <em>n</em> &gt; <em>n<sub>0</sub></em>, <em>f(n)</em> ≤ <em>cg(n)</em>, então <em>f(n)</em> tem complexidade <em>big oh</em> <em>g(n)</em>, denotada por <em>f(n) = O(g(n))</em>.</p></div>
 <div class="paragraph"><p>No gráfico a seguir é possível observar visualmente o comportamento das funções <em>f</em> e <em>g</em>. Note que para <em>n</em> &gt; <em>n<sub>0</sub></em>, <em>f(n)</em> ≤ <em>cg(n)</em>.</p></div>
 <div class="imageblock">
@@ -1285,18 +1291,18 @@ Prove que <em>n = O(2<sup>n/4</sup>)</em>.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_notacao__em_omega_em">Notação Ω (<em>omega</em>)</h3>
-<div class="paragraph"><p>A notação Ω (<em>omega</em>) é utilizada para expressar o <em>limite inferior</em> no tempo de execução de um algoritmo. É uma medida da menor quantidade de tempo que um determinado algoritmo pode precisar para completar sua tarefa.</p></div>
-<div class="paragraph"><p>Para duas funções não negativas, <em>f(n)</em> e <em>g(n)</em>, se existe um inteiro <em>n<sub>0</sub></em> e uma constante <em>c &gt; 0</em> tal que para todos os inteiros <em>n ≥ n<sub>0</sub></em>, <em>f(n) ≥  cg(n)</em>, <em>f(n)</em> tem complexidade <em>omega</em> <em>g(n)</em>, denotado por <em>f(n) = Ω(g(n))</em>.</p></div>
+<h3 id="_notacao_big_omega">Notação Big-Omega</h3>
+<div class="paragraph"><p>A notação $\Omega$ (<em>omega</em>) é utilizada para expressar o <em>limite inferior</em> no tempo de execução de um algoritmo. É uma medida da menor quantidade de tempo que um determinado algoritmo pode precisar para completar sua tarefa.</p></div>
+<div class="paragraph"><p>Para duas funções não negativas, <em>f(n)</em> e <em>g(n)</em>, se existe um inteiro <em>n<sub>0</sub></em> e uma constante <em>c &gt; 0</em> tal que para todos os inteiros <em>n ≥ n<sub>0</sub></em>, <em>f(n) ≥  cg(n)</em>, <em>f(n)</em> tem complexidade <em>omega</em> <em>g(n)</em>, denotado por <em>f(n) = $\Omega$(g(n))</em>.</p></div>
 <div class="paragraph"><p>Esta é praticamente a mesma definição para a notação <em>O</em>, com a exceção de que <em>f(n) ≥ cg(n)</em> implica em dizer que <em>g(n)</em> representa o <em>melhor caso</em> para <em>f(n)</em>, como ilustrado na figura abaixo. Neste caso, <em>g(n)</em> descreve o <em>melhor</em> que pode acontecer para um determinado tamanho de entrada.</p></div>
 <div class="imageblock">
 <div class="content">
 <img src="imagens/capitulo-02/notacao-bigOmega.gif" alt="imagens/capitulo-02/notacao-bigOmega.gif" />
 </div>
-<div class="title">Figura 3. Notação <em>Ω</em></div>
+<div class="title">Figura 3. Notação <em>$\Omega$</em></div>
 </div>
 <div class="exampleblock">
-<div class="title">Exemplo 5. Funções com complexidade <em>Ω(n)</em></div>
+<div class="title">Exemplo 5. Funções com complexidade <em>$\Omega$(n)</em></div>
 <div class="content">
 <div class="paragraph"><p><em>f(n) = n</em></p></div>
 <div class="paragraph"><p><em>f(n) = n/1000</em></p></div>
@@ -1306,7 +1312,7 @@ Prove que <em>n = O(2<sup>n/4</sup>)</em>.
 <div class="paragraph"><p><em>f(n) = 1000n<sup>2</sup> + 50n</em></p></div>
 </div></div>
 <div class="exampleblock">
-<div class="title">Exemplo 6. Funções com complexidade inferior a <em>Ω(n<sup>2</sup>)</em></div>
+<div class="title">Exemplo 6. Funções com complexidade inferior a <em>$\Omega$(n<sup>2</sup>)</em></div>
 <div class="content">
 <div class="paragraph"><p><em>f(n) = n</em></p></div>
 <div class="paragraph"><p><em>f(n) = n<sup>1.9</sup></em></p></div>
@@ -1317,54 +1323,54 @@ Prove que <em>n = O(2<sup>n/4</sup>)</em>.
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-Prove que <em>100 lg n − 10n + 2n lg n = Ω(n lg n)</em>.
+Prove que <em>100 lg n − 10n + 2n lg n = $\Omega$(n lg n)</em>.
 </p>
 </li>
 <li>
 <p>
-É verdade que <em>2<sup>n+1</sup> = Ω(2^n)</em> ?
+É verdade que <em>2<sup>n+1</sup> = $\Omega$(2^n)</em> ?
 </p>
 </li>
 <li>
 <p>
-É verdade que <em>3<sup>n</sup> = Ω(2ˆn^)</em> ?
+É verdade que <em>3<sup>n</sup> = $\Omega$(2<sup>n</sup>)</em> ?
 </p>
 </li>
 </ol></div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_notacao_theta_em_theta_em">Notação $\theta$ (<em>theta</em>)</h3>
-<div class="paragraph"><p>A notação Θ (<em>theta</em>) é utilizada para definir um <em>limite assintótico restrito</em> para o tempo de execução de um algoritmo. É uma medida que define tanto limites superiores quanto inferiores para o crescimento da função <em>f(n)</em>.</p></div>
-<div class="paragraph"><p>Sejam duas funções não-negativas <em>f(n)</em> e <em>g(n)</em>, <em>f(n)</em> é dita theta de <em>g(n)</em> se e somente se <em>f(n) = O(g(n))</em> e <em>f(n) = Ω(g(n))</em>, denotado por <em>f(n) = Ω(g(n))</em>.</p></div>
+<h3 id="_notacao_theta">Notação Theta</h3>
+<div class="paragraph"><p>A notação $\Theta$ (<em>theta</em>) é utilizada para definir um <em>limite assintótico restrito</em> para o tempo de execução de um algoritmo. É uma medida que define tanto limites superiores quanto inferiores para o crescimento da função <em>f(n)</em>.</p></div>
+<div class="paragraph"><p>Sejam duas funções não-negativas <em>f(n)</em> e <em>g(n)</em>, <em>f(n)</em> é dita theta de <em>g(n)</em> se e somente se <em>f(n) = O(g(n))</em> e <em>f(n) = $\Omega$(g(n))</em>, denotado por <em>f(n) = $\Omega$(g(n))</em>.</p></div>
 <div class="paragraph"><p>Isto significa que a função <em>f(n)</em> é limite tanto superior quanto inferiormente, pela função <em>g(n)</em>, conforme ilustrado na figura abaixo.</p></div>
 <div class="imageblock">
 <div class="content">
 <img src="imagens/capitulo-02/notacao-theta.gif" alt="imagens/capitulo-02/notacao-theta.gif" />
 </div>
-<div class="title">Figura 4. Notação <em>Θ</em></div>
+<div class="title">Figura 4. Notação <em>$\Theta$</em></div>
 </div>
 <div class="sect3">
 <h4 id="_exercicios_3">Exercícios</h4>
 <div class="olist arabic"><ol class="arabic">
 <li>
 <p>
-É verdade que  <em>(3/2)n<sup>2</sup> + (7/2)n<sup>3</sup> − 4 = Θ(n<sup>2</sup>)</em> ?
+É verdade que  <em>(3/2)n<sup>2</sup> + (7/2)n<sup>3</sup> − 4 = $\Theta$(n<sup>2</sup>)</em> ?
 </p>
 </li>
 <li>
 <p>
-É verdade que <em>9999n<sup>2</sup> = Θ(n<sup>2</sup>)</em> ?
+É verdade que <em>9999n<sup>2</sup> = $\Theta$(n<sup>2</sup>)</em> ?
 </p>
 </li>
 <li>
 <p>
-É verdade que <em>n<sup>2</sup>/1000 − 999n = Θ(n<sup>2</sup>)</em> ?
+É verdade que <em>n<sup>2</sup>/1000 − 999n = $\Theta$(n<sup>2</sup>)</em> ?
 </p>
 </li>
 <li>
 <p>
-É verdade que <em>log<sub>2</sub>n + 1 = Θ(log<sub>10</sub>n)</em> ?
+É verdade que <em>log<sub>2</sub>n + 1 = $\Theta$(log<sub>10</sub>n)</em> ?
 </p>
 </li>
 </ol></div>
@@ -1373,14 +1379,14 @@ Prove que <em>100 lg n − 10n + 2n lg n = Ω(n lg n)</em>.
 <div class="sect2">
 <h3 id="_outras_notacoes">Outras notações</h3>
 <div class="sect3">
-<h4 id="_notacao_em_o_em_em_omicron_em">Notação <em>o</em> (<em>omicron</em>)</h4>
-<div class="paragraph"><p>A notação <em>o</em> (<em>pronunciada little oh</em>) representa uma versão mais solta da notação <em>O</em>. Nesta notação, <em>g(n)</em> limita a função <em>f(n)</em> superiormente mas não representa um limite assintótico restrito.</p></div>
-<div class="paragraph"><p>Sejam duas funções não-negativas, <em>f(n)</em> e <em>g(n)</em>, <em>f(n)</em> é dita <em>little oh</em> de <em>g(n)</em> se e somente se <em>f(n) = O(g(n))</em> mas <em>f(n) ≠ Θ(g(n))</em>, denotando-se por <em>f(n) = o(g(n))</em>.</p></div>
+<h4 id="_notacao_little_o">Notação Little-o</h4>
+<div class="paragraph"><p>A notação <em>o</em> representa uma versão mais solta da notação <em>O</em>. Nesta notação, <em>g(n)</em> limita a função <em>f(n)</em> superiormente mas não representa um limite assintótico restrito.</p></div>
+<div class="paragraph"><p>Sejam duas funções não-negativas, <em>f(n)</em> e <em>g(n)</em>, <em>f(n)</em> é dita <em>little oh</em> de <em>g(n)</em> se e somente se <em>f(n) = O(g(n))</em> mas <em>f(n) ≠ $\Theta$(g(n))</em>, denotando-se por <em>f(n) = o(g(n))</em>.</p></div>
 </div>
 <div class="sect3">
-<h4 id="_notacao_em__em_em_omega_em">Notação <em>ω</em> (<em>omega</em>)</h4>
-<div class="paragraph"><p>A notação <em>ω</em> (<em>pronunciada little omega</em>) representa uma versão mais solta da notação <em>Ω</em>. Nesta notação <em>g(n)</em> limita a função <em>f(n)</em> inferiormente mas não representa um limite assintótico restrito.</p></div>
-<div class="paragraph"><p>Sejam duas funções não-negativas, <em>f(n)</em> e <em>g(n)</em>, <em>f(n)</em> é dita <em>little omega</em> de <em>g(n)</em> se e somente se <em>f(n) = Ω(g(n))</em> mas <em>f(n) ≠ Θ(g(n))</em>, denotando-se por <em>f(n) = ω(g(n))</em>.</p></div>
+<h4 id="_notacao_little_omega">Notação Little-omega</h4>
+<div class="paragraph"><p>A notação <em>$\omega$</em> (<em>pronunciada little omega</em>) representa uma versão mais solta da notação <em>$\Omega$</em>. Nesta notação <em>g(n)</em> limita a função <em>f(n)</em> inferiormente mas não representa um limite assintótico restrito.</p></div>
+<div class="paragraph"><p>Sejam duas funções não-negativas, <em>f(n)</em> e <em>g(n)</em>, <em>f(n)</em> é dita <em>little omega</em> de <em>g(n)</em> se e somente se <em>f(n) = $\Omega$(g(n))</em> mas <em>f(n) ≠ $\Theta$(g(n))</em>, denotando-se por <em>f(n) = $\omega$(g(n))</em>.</p></div>
 </div>
 </div>
 <div class="sect2">
@@ -1389,6 +1395,7 @@ Prove que <em>100 lg n − 10n + 2n lg n = Ω(n lg n)</em>.
 <div class="paragraph"><p>Isto é particularmente importante no projeto de estruturas de dados pois desejamos utilizar uma estrutura que se comporte de forma eficiente quanto mais dados são fornecidos. Entretanto, é importante compreender que nem sempre algoritmos que são eficientes para grandes volumes de dados são simples e eficientes para pequenos volumes dados.</p></div>
 <div class="paragraph"><p>A notação assintótica é geralmente utilizada como uma forma conveniente de expressar o que acontece com uma função no pior e no melhor caso. Por exemplo, se você deseja escrever uma função que pesquisa um arranjo de números em busca do menor valor:</p></div>
 <div class="listingblock">
+<div class="title">Código para encontrar o menor elemento de um arranjo</div>
 <div class="content"><!-- Generator: GNU source-highlight 3.1.4
 by Lorenzo Bettini
 http://www.lorenzobettini.it
@@ -1406,6 +1413,7 @@ http://www.gnu.org/software/src-highlite -->
 <div class="paragraph"><p>Então, como podemos utilizar a notação assintótica para descrever a complexidade da função <em>findMin()</em> ? Se a função for utilizada para encontrar o valor mínimo de um arranjo com 87 elementos o <em>for</em> realizará 87 iterações, mesmo que o menor elemento seja o primeiro a ser visitado. De maneira análoga, para <em>n</em> elementos o <em>for</em> realizará <em>n</em> iterações. Portanto, podemos dizer que a função <em>findMin()</em> tem tempo de execução <em>O(n)</em>.</p></div>
 <div class="paragraph"><p>O que dizer agora acerca da função abaixo:</p></div>
 <div class="listingblock">
+<div class="title">Código para encontrar a soma do menor e maior elementos de um arranjo</div>
 <div class="content"><!-- Generator: GNU source-highlight 3.1.4
 by Lorenzo Bettini
 http://www.lorenzobettini.it
@@ -1436,10 +1444,10 @@ http://www.gnu.org/software/src-highlite -->
 <div class="paragraph"><p>Neste capítulo vimos uma noção sobre a comparação assintótica de funções e conhecemos as principais notações utilizadas para expressar o relacionamento assintótico entre duas funções.</p></div>
 <div class="paragraph"><p>Uma analogia imprecisa entre a comparação assintótica de duas funções <em>f</em> e <em>g</em> e a relação entre seus valores é dada a seguir:</p></div>
 <div class="paragraph"><p><em>f(n) = O(g(n))</em>  ≈  <em>f(n) ≤ g(n)</em></p></div>
-<div class="paragraph"><p><em>f(n) = Ω(g(n))</em>  ≈  <em>f(n) ≥ g(n)</em></p></div>
-<div class="paragraph"><p><em>f(n) = Θ(g(n))</em>  ≈  <em>f(n) = g(n)</em></p></div>
+<div class="paragraph"><p><em>f(n) = $\Omega$(g(n))</em>  ≈  <em>f(n) ≥ g(n)</em></p></div>
+<div class="paragraph"><p><em>f(n) = $\Theta$(g(n))</em>  ≈  <em>f(n) = g(n)</em></p></div>
 <div class="paragraph"><p><em>f(n) = o(g(n))</em>  ≈  <em>f(n) &lt; g(n)</em></p></div>
-<div class="paragraph"><p><em>f(n) = ω(g(n))</em>  ≈ <em>f(n) &gt; g(n)</em></p></div>
+<div class="paragraph"><p><em>f(n) = $\omega$(g(n))</em>  ≈ <em>f(n) &gt; g(n)</em></p></div>
 <div class="paragraph"><p>Estas notações, particularmente a notação <em>O</em>, serão utilizadas no decorrer deste livro para expressar complexidade temporal de algoritmos e complexidade espacial de estruturas de dados.</p></div>
 <div class="paragraph"><p>No próximo capítulo iniciamos efetivamente o estudo de estruturas de dados abordando os arranjos (<em>arrays</em>) unidimensionais, também denotados <em>vetores</em> e arranjos multi-dimensionais,  que podem ser denominados de <em>matrizes</em> no caso de termos apenas duas dimensões.</p></div>
 </div>
@@ -1457,38 +1465,168 @@ http://www.gnu.org/software/src-highlite -->
 <div class="ulist"><ul>
 <li>
 <p>
-objetivo 1
+Entender o conceito e funcionamento de um arranjo
 </p>
 </li>
 <li>
 <p>
-objetivo 2
-</p>
-</li>
-<li>
-<p>
-objetivo N
+Implementar funções utilizando arranjos unidimensionais e multi-dimensionais em uma linguagem de programação
 </p>
 </li>
 </ul></div>
 </div></div>
-<div class="paragraph"><p>blah blah blah</p></div>
+<div class="paragraph"><p>Um arranjo (do inglês <em>array</em>) e uma estrutura de dados linear utilizada principalmente para armazenar dados similares. É um método particular para armazenar elementos de um conjunto de dados <em>indexável</em>. Os elementos são armazenados sequencialmente em blocos dentro do arranjo. Cada elemento é referenciado através de um índice.</p></div>
+<div class="paragraph"><p>O índice é normalmente um número utilizado para endereçar um elemento do arranjo. Por exemplo, se desejamos armazenar informações sobre cada um dos dias do mês de Agosto, precisaríamos criar um arranjo capaz de armazenar 31 valores, um para cada dia do mês. As regras de indexação dependem da linguagem de programação utilizada, porém, a maioria das linguagens utiliza 0 ou 1 como índice par ao primeiro elemento do arranjo.</p></div>
+<div class="paragraph"><p>O conceito de arranjo pode parecer desafiador para leitores com pouco experiência em programação mas é, na verdade, algo bastante simples. Pense em um caderno com páginas numeradas de 1 até 12. Cada página pode conter ou não dados. O caderno é um arranjo de páginas. Cada página é um <em>elemento</em> do arranjo de páginas denominado <em>caderno</em>. Podemos extrair informações de forma programática de uma página nos referindo a ela através de seu índice (caderno[4] é uma referência ao conteúdo da quarta página do arranjo <em>caderno</em>.).</p></div>
+<div class="imageblock">
+<div class="content">
+<img src="imagens/capitulo-03/arranjo-unidimensional.png" alt="imagens/capitulo-03/arranjo-unidimensional.png" />
 </div>
-<div class="sect2">
-<h3 id="_arranjos_unidimensionais">Arranjos Unidimensionais</h3>
-<div class="paragraph"><p>blah blah blah</p></div>
+<div class="title">Figura 5. Um caderno (<em>arranjo</em>) com 12 páginas (<em>elementos</em>)</div>
 </div>
-<div class="sect2">
-<h3 id="_arranjos_multidimensionais">Arranjos Multidimensionais</h3>
-<div class="paragraph"><p>blah blah blah</p></div>
+<div class="paragraph"><p>Arranjos podem ser também multi-dimensionais - ao invés de acessar oelementos de uma lista unidimensional, os elementos são acessados através de dois ou mais índices, de forma semelhante a uma matriz.</p></div>
+<div class="paragraph"><p>Arranjos multi-dimensionais são tão simples quanto o arranjo do nosso exemplo anterior. Para visualizar um arranjo multi-dimensional imagine um calendário. Cada página do calendário, com índices variando de 1 a 12, representam um mês, cada um contendo aproximadamente 30 elementos, que representam os dias. Cada dia pode possuir informação associadas a ele. Portanto, de forma programática, <em>Calendário[4][15]</em> seria uma referência ao 15<sup>o</sup> dia do 4<sup>o</sup>mês. Portanto, teríamos um arranjo bi-dimensional.  Para visualizar um arranjo tridimensional basta quebrar cada dia em 24 horas. Agora, teríamos algo como <em>Calendario[4][15][9]</em> para nos referir a 9<sup>a</sup> hora do 15<sup>o</sup> dia do 4<sup>o</sup> mês.</p></div>
+<div class="imageblock">
+<div class="content">
+<img src="imagens/capitulo-03/arranjo-bidimensional.png" alt="imagens/capitulo-03/arranjo-bidimensional.png" />
 </div>
-<div class="sect2">
-<h3 id="_eficiencia">Eficiência</h3>
-<div class="paragraph"><p>blah blah blah</p></div>
+<div class="title">Figura 6. Um arranjo bi-dimensional de 6 elementos por 4</div>
+</div>
+<div class="paragraph"><p>A seguir definimos as três operações básicas para manipulação de arranjos unidimensionais.</p></div>
+<div class="listingblock">
+<div class="title">Definição das operações básicas para manipulação de arranjos unidimensionais</div>
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #000000">    1:</span> <span style="font-style: italic"><span style="color: #9A1900">//Cria um arranjo de n elementos indexados de 0 a n - 1, inclusive.</span></span>
+<span style="color: #000000">    2:</span> Element <span style="color: #990000">*</span> <span style="font-weight: bold"><span style="color: #000000">makeArray</span></span><span style="color: #990000">(</span><span style="color: #009900">int</span> n<span style="color: #990000">);</span>
+<span style="color: #000000">    3:</span>
+<span style="color: #000000">    4:</span> <span style="font-style: italic"><span style="color: #9A1900">//Retorna o valor do elemento de índice index.</span></span>
+<span style="color: #000000">    5:</span> <span style="font-style: italic"><span style="color: #9A1900">//O valor de index precisar estar no intervalo 0 &lt;= index &lt;= (n - 1)</span></span>
+<span style="color: #000000">    6:</span> <span style="color: #008080">Element</span> <span style="font-weight: bold"><span style="color: #000000">getValueAt</span></span><span style="color: #990000">(</span>Element <span style="color: #990000">*,</span> <span style="color: #009900">int</span> index<span style="color: #990000">);</span>
+<span style="color: #000000">    7:</span>
+<span style="color: #000000">    8:</span>
+<span style="color: #000000">    9:</span> <span style="font-style: italic"><span style="color: #9A1900">//Altera o valor do elemento de índice index no arranjo para o valor newValue.</span></span>
+<span style="color: #000000">   10:</span> <span style="color: #009900">void</span> <span style="font-weight: bold"><span style="color: #000000">setValueAt</span></span><span style="color: #990000">(</span>Element <span style="color: #990000">*,</span> <span style="color: #009900">int</span> index<span style="color: #990000">,</span> <span style="color: #008080">Element</span> newValue<span style="color: #990000">);</span></tt></pre></div></div>
+<div class="paragraph"><p>Arranjos garantem tempo <em>constante</em> para acessos de leitura e escrita, <em>O(1)</em>, no entanto, várias operações de consulta (encontrar o menor valor, encontrar o maior valor, encontrar o índice de um determinado elemento, etc) possuem complexidade linear , <em>O(n)</em>.</p></div>
+<div class="paragraph"><p>A implementação de arranjos é bastante eficiente na maioria das linguagem de programação uma vez que suas operações computam o endereço de cada elemento do arranjo através de uma função simples baseada no <em>endereço base</em> do arranjo.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Aviso</div>
+</td>
+<td class="content">Na maioria das linguagens de programação, um arranjo é definido por um <em>endereço base</em> e um limite. Tentativas de acesso a elementos em posições fora do intervalo [base, base + limite] geralmente resultam em exceções na execução de um programa.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>A implementação de arranjos difere bastante de uma linguagem de programação para outra. Algumas linguagens permitem que um arranjo seja redimensionado automaticamente ou que contenham elementos de diferentes tipos (como em Perl). Outra linguagens são mais estritas e exigem que o tipo e tamanho do arranjo sejam conhecidos em tempo de execução (como em C).</p></div>
+<div class="paragraph"><p>Arranjos são geralmente mapeados diretamente para espaços contíguos de memória e são, portanto, a estrutura de armazenamento "mais natural" na maioria das linguagens de programação de alto nível.</p></div>
+<div class="paragraph"><p>Arranjos lineares simples são a base para grande parte das demais estruturas de dados. Várias linguagens de programação, inclusive, não permitem que o programador aloque memória para qualquer outra estrutura além dos arranjos. Isso é uma forma a garantir que todas as demais estruturas de dados sejam implementados utilizando arranjos como base. A exceção seriam as listas encadeadas, que podem ser implementados utilizados objetos alocados individualmente. Porém, também é possível implementar uma lista encadeada utilizando um arranjo.</p></div>
+<div class="sect3">
+<h4 id="_tipos_e_limites">Tipos e Limites</h4>
+<div class="paragraph"><p>Os índices de um arranjo precisam ser de um mesmo tipo. Geralmente é utilizado o tipo inteiro padrão da linguagem mas existem linguagens como <em>Ada</em> e <em>Pascal</em> que permitem a utilização de qualquer tipo discreto como índice de um arranjo. Linguagens de <em>script</em>, como <em>Python</em>, permitem que qualquer tipo possa ser utilizado como índice para um arranjo (<em>arranjos associativos</em>).</p></div>
+<div class="paragraph"><p>Cada arranjo possui um limite inferior e superior para seus índices. Algumas linguagens de programação fixam o valor do limite inferior em <em>0</em> (<em>C, C++, C#, Java</em>) ou 1 (<em>FORTRAN 66</em>). Outras linguagens (<em>Ada, PL/I, Pascal</em>) permitem que o limite inferior sejam livremente definido, inclusive com valores negativos.</p></div>
+<div class="paragraph"><p>O terceiro aspecto relacionado ao acesso a arranjos é a checagem de validade do índice e a definição do que acontecem quando um índice inválido é fornecido. Este é um ponto muito importante pois software malicioso como <em>vírus</em> e <em>vermes</em>  geralmente se aproveitam de falhas de checagem nos limites e arranjos para contaminar programas legítimos.</p></div>
+<div class="paragraph"><p>Existem três opções mais comuns para checagem de limites em arranjos:</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+A maioria das linguagens (<em>Ada, PL/I, Pascal, Java, C#</em>) checa os limites do arranjo e lança uma exceção quando se tenta acessar um elemento fora do arranjo.
+</p>
+</li>
+<li>
+<p>
+Algumas poucas linguagens (<em>C, C++</em>) não checam por acessos fora dos limites do arranjo e simplesmente retornam algum valor arbitrário quando um elemento inválido é acessado.
+</p>
+</li>
+<li>
+<p>
+Linguagens de <em>script</em> geralmente expandem automaticamente o tamanho do arranjo quando dados fora do limite inicial do arranjo são acessados.
+</p>
+</li>
+</ol></div>
+</div>
+<div class="sect3">
+<h4 id="_declarando_arranjos">Declarando Arranjos</h4>
+<div class="paragraph"><p>A declaração de um arranjo difere bastante de uma linguagem de programação para outra e é afetada diretamente pelas funcionalidades fornecidas por cada uma delas.</p></div>
+<div class="paragraph"><p>A forma de declaração mais simples ocorre quando a linguagem define um valor mínimo e tipo fixo para os índices. Se você precisa um arranjo para armazenar seus rendimentos mensais você poderia declará-lo em linguagem <em>C</em> da seguinte forma:</p></div>
+<div class="listingblock">
+<div class="title">Declaração de um arranjo unidimensional em linguagem <em>C</em></div>
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">typedef</span></span> <span style="color: #009900">double</span> Income<span style="color: #990000">[</span><span style="color: #993399">12</span><span style="color: #990000">];</span></tt></pre></div></div>
+<div class="paragraph"><p>Esta declaração define um novo tipo denominado <em>Income</em> que representa um arranjo de números em ponto flutuante com os índices dos elementos variando de <em>0</em> a <em>11</em>.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Sugestão</div>
+</td>
+<td class="content">Recomendamos a leitura de XX para uma descrição completa da sintaxe para definição de arranjos em linguagem <em>C</em>.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>Algumas linguagens permitem que se especifique o valor mínimo e máximo e o tipo do índice . A declaração nesse caso se torna um pouco mais complexa. A seguir apresentamos um exemplo de declaração de arranjos na linguagem <em>Ada</em>:</p></div>
+<div class="listingblock">
+<div class="title">Declaração de um arranjo em linguagem <em>Ada</em></div>
+<div class="content"><!-- Generator: GNU source-highlight 3.1.4
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="font-weight: bold"><span style="color: #0000FF">type</span></span> Month <span style="font-weight: bold"><span style="color: #0000FF">is</span></span> <span style="font-weight: bold"><span style="color: #0000FF">range</span></span> <span style="color: #993399">1</span> <span style="color: #990000">..</span> <span style="color: #993399">12</span><span style="color: #990000">;</span>
+<span style="font-weight: bold"><span style="color: #0000FF">type</span></span> Income <span style="font-weight: bold"><span style="color: #0000FF">is</span></span> <span style="font-weight: bold"><span style="color: #0000FF">array</span></span><span style="color: #990000">(</span>Month<span style="color: #990000">)</span> <span style="font-weight: bold"><span style="color: #0000FF">of</span></span> <span style="color: #009900">Float</span><span style="color: #990000">;</span></tt></pre></div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Sugestão</div>
+</td>
+<td class="content">Recomendamos a leitura de YY para uma descrição completa da sintaxe para definição de arranjos em linguagem <em>Ada</em>.</td>
+</tr></table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_exercicios_4">Exercícios</h4>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Forneça uma implementação com complexidade <em>O(1)</em> para as três operações básicas para manipulação de arranjos unidimensionais definidas neste capítulo: <em>makeArray</em>, <em>getValueAt</em>, <em>setValueAt</em>.
+</p>
+</li>
+<li>
+<p>
+Assuma que estas funções são a única forma de acesso aos elementos de um arranjo. Como estas funções poderiam ser utilizadas para manipular elementos em um arranjo bi_dimensional?
+</p>
+</li>
+<li>
+<p>
+Novamente assumindo que estas funções são a única forma de acesso aos elementos de um arranjo, forneça implementações com complexidade <em>O(n)</em> para as seguintes funções:
+</p>
+<div class="olist loweralpha"><ol class="loweralpha">
+<li>
+<p>
+Encontrar o menor elemento de um arranjo unidimensional
+</p>
+</li>
+<li>
+<p>
+Encontrar o maior elemento de um arranjo bi-dimensional
+</p>
+</li>
+<li>
+<p>
+Encontrar o índice de um elemento de arranjo unidimensional (-1 se o elemento não for encontrado).
+</p>
+</li>
+</ol></div>
+</li>
+</ol></div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_recaptulando_2">Recaptulando</h3>
-<div class="paragraph"><p>blah blah blah</p></div>
+<div class="paragraph"><p>Arranjos são em muitas linguagens de programação a estrutura de dados base para a construção de outras estruturas.</p></div>
+<div class="paragraph"><p>Neste capítulos aprendemos um pouco sobre o funcionamento destas estruturas e tivemos a oportunidade de praticar a implementação de código utilizando arranjos unidimensionais e multi-dimensionais.</p></div>
+<div class="paragraph"><p>No próximo capítulo começaremos a estudar uma família de estruturas de dados bastante semelhantes às estruturas que já estudamos (cadeia no capítulo 1 e arranjo no capítulo 3) mas que oferecem um nova gama de funcionalidades e oportunidades: as estruturas de lista.</p></div>
 </div>
 </div>
 </div>
@@ -1538,7 +1676,7 @@ objetivo N
 <div class="paragraph"><p>blah blah blah</p></div>
 </div>
 <div class="sect2">
-<h3 id="_eficiencia_2">Eficiência</h3>
+<h3 id="_eficiencia">Eficiência</h3>
 <div class="paragraph"><p>blah blah blah</p></div>
 </div>
 <div class="sect2">
@@ -1918,7 +2056,7 @@ contrário você poderá encontrar erros inesperados.</td>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2013-11-07 18:32:47 BRT
+Last updated 2013-11-11 13:49:27 BRT
 </div>
 </div>
 </body>
