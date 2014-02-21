@@ -1,4 +1,5 @@
 #include "node.h"
+#include <stdlib.h>
 
 /**
  *	Cria um nó com valor v e next como próximo nó

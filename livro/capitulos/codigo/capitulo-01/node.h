@@ -1,17 +1,14 @@
 #ifndef ELEMENT_T
 #define ELEMENT_T 1
-
 /**
  *	Tipo básico de dado a ser armazenado na estrutura.
  */
 typedef int Element;
-
 #endif
 
 
 #ifndef NODE_T
 #define NODE_T 1
-
 /**
  *	Estrutura básica de um Nó
  */
@@ -19,7 +16,6 @@ typedef struct Node_ {
 	Element		value;		//armazena o valor contido neste nó
 	struct Node_*	next;		//apontador para o proximo nó; possivelmente null
 } Node;
-
 #endif
 
 /**
