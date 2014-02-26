@@ -18,3 +18,5 @@ livro/capitulos/*.asc~
 /log.txt
 releases
 
+/livro/capitulos/code/capitulo-01/maxemedia
+/livro/capitulos/code/capitulo-01/maxemedia2
