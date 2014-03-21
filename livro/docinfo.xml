@@ -7,6 +7,18 @@
 
   <revhistory>
     <revision>
+      <revnumber>v0.2.0</revnumber>
+      <date>21/3/2014</date>
+      <authorinitials>Eduardo</authorinitials>
+      <revremark>
+- Revisão do capítulo 2 #6
+      </revremark>
+    </revision>
+  </revhistory>
+
+
+  <revhistory>
+    <revision>
       <revnumber>v0.1.0</revnumber>
       <date>27/2/2014</date>
       <authorinitials>AND</authorinitials>
