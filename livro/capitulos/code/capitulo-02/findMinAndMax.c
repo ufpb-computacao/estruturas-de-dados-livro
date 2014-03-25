@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <limits.h>
 
+/**
+* Busca em `array`, de tamanho `size`, e retorna os valores
+* máximo e mínimo através dos ponteiros `minimum` e `maximum`.
+*/
 void findMinAndMax(int array[], int size, int * minimum, 
     int * maximum) {
   int min = INT_MAX;
