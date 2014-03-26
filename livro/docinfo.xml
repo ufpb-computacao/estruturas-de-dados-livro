@@ -3,9 +3,20 @@
   rudder-doc-docinfo.xml
   DocBook document information file for rudder-doc.txt.
 -->
-  <edition>v0.2.0</edition>
+  <edition>v0.3.0</edition>
 
   <revhistory>
+
+    <revision>
+      <revnumber>v0.3.0</revnumber>
+      <date>26/3/2014</date>
+      <authorinitials>Eduardo</authorinitials>
+      <revremark>
+- Revisão do Capítulo 3 #9
+      </revremark>
+    </revision>
+
+
     <revision>
       <revnumber>v0.2.0</revnumber>
       <date>21/3/2014</date>
@@ -14,10 +25,7 @@
 - Revisão do capítulo 2 #6
       </revremark>
     </revision>
-  </revhistory>
 
-
-  <revhistory>
     <revision>
       <revnumber>v0.1.0</revnumber>
       <date>27/2/2014</date>
@@ -26,6 +34,7 @@
 Capítulo 1 Revisado.
       </revremark>
     </revision>
+
   </revhistory>
 
 
