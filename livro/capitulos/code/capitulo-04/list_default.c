@@ -1,5 +1,5 @@
 /**
- *	Retorna 1 se a lista estiver vazia. Tem complexidade O(n). 
+ *	Retorna 1 se a lista estiver vazia. Tem complexidade O(1). 
  */
 int isEmpty(List list) {
 	return getBegin(list) == getEnd(list);
@@ -24,7 +24,7 @@ int getSize(List list) {
 ItemType getNth(List list, int n) {
 	Iterator it = getBegin(list);
 	int i;
-	for( it = 0; i < n; i++) {
+	for( i = 0; i < n; i++) {
 		moveNext(it);
 	}
 	return getValue(it);
