@@ -8,7 +8,7 @@
 Vector createVector() {
 	
 	Vector vector;
-	vector.data = (Element *) malloc(10 * sizeof(Element));
+	vector.data = (Element *) malloc(16 * sizeof(Element));
 	vector.size = 0;
 	vector.capacity = 16;
 	
