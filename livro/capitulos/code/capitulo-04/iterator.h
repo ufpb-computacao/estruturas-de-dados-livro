@@ -1,5 +1,6 @@
 /**
- * Retorna o elemento da lista apontado por este iterador. Tem complexidade O(1).
+ * Retorna o elemento da lista apontado por este iterador. 
+ * Tem complexidade O(1).
  */
 Element getElement(Iterator it);
 
@@ -16,7 +17,7 @@ void setElement(Iterator it, Element newElement);
 Iterator moveNext(Iterator it);
 
 /**
- * Retorna 1 se os dois iteradores apontam para o mesmo elemento da lista.
- * Tem complexidade O(1).
+ * Retorna 1 se os dois iteradores apontam para o mesmo elemento 
+ * da lista. Tem complexidade O(1).
  */
 int equal(Iterator it0, Iterator it1);
