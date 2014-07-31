@@ -1,64 +1,68 @@
+<edition>{edition}</edition>
 
-<!--
-  rudder-doc-docinfo.xml
-  DocBook document information file for rudder-doc.txt.
--->
-  <edition>v0.3.0</edition>
+<revhistory>
 
-  <revhistory>
+  <revision>
+    <revnumber>v0.3.1</revnumber>
+    <date>31/7/2014</date>
+    <authorinitials>Eduardo</authorinitials>
+    <revremark>
+- Padronização visual dos Objetivos (#12).
+- Remoção de capítulos não escritos (#13).
+- Inclusão da Ficha Catalográfica (#15).
+    </revremark>
+  </revision>
 
-    <revision>
-      <revnumber>v0.3.0</revnumber>
-      <date>26/3/2014</date>
-      <authorinitials>Eduardo</authorinitials>
-      <revremark>
+  <revision>
+    <revnumber>v0.3.0</revnumber>
+    <date>26/3/2014</date>
+    <authorinitials>Eduardo</authorinitials>
+    <revremark>
 - Revisão do Capítulo 3 #9
-      </revremark>
-    </revision>
+    </revremark>
+  </revision>
 
 
-    <revision>
-      <revnumber>v0.2.0</revnumber>
-      <date>21/3/2014</date>
-      <authorinitials>Eduardo</authorinitials>
-      <revremark>
+  <revision>
+    <revnumber>v0.2.0</revnumber>
+    <date>21/3/2014</date>
+    <authorinitials>Eduardo</authorinitials>
+    <revremark>
 - Revisão do capítulo 2 #6
-      </revremark>
-    </revision>
+    </revremark>
+  </revision>
 
-    <revision>
-      <revnumber>v0.1.0</revnumber>
-      <date>27/2/2014</date>
-      <authorinitials>AND</authorinitials>
-      <revremark>
+  <revision>
+    <revnumber>v0.1.0</revnumber>
+    <date>27/2/2014</date>
+    <authorinitials>AND</authorinitials>
+    <revremark>
 Capítulo 1 Revisado.
-      </revremark>
-    </revision>
+    </revremark>
+  </revision>
 
-  </revhistory>
+</revhistory>
 
 
-  <authorgroup>
-    <author>
-      <firstname>Alexandre</firstname>
-      <surname>Duarte</surname>
-      <affiliation>
-        <jobtitle>Professor</jobtitle>
-        <orgname>Universidade Federal da Paraíba</orgname>
-      </affiliation>
-      <authorblurb>
-        <para>
-          Principal contribuidor do livro.
-        </para>
-      </authorblurb>
-    </author>
+<authorgroup>
+  <author>
+    <firstname>Alexandre</firstname>
+    <surname>Duarte</surname>
+    <affiliation>
+      <jobtitle>Professor</jobtitle>
+      <orgname>Universidade Federal da Paraíba</orgname>
+    </affiliation>
+    <authorblurb>
+      <para>
+        Principal contribuidor do livro.
+      </para>
+    </authorblurb>
+  </author>
+</authorgroup>
 
-    <editor>
-      <firstname>Eduardo</firstname>
-      <surname>Medeiros</surname>
-      <othername>Santana</othername>
-    </editor>
-
-  </authorgroup>
-  
- 
+<othercredit>
+    <firstname>Eduardo</firstname>
+    <surname>Medeiros</surname>
+    <othername>Santana</othername>
+  <contrib>Editor</contrib>
+</othercredit>
