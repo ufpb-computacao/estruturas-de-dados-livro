@@ -3,6 +3,17 @@
 <revhistory>
 
   <revision>
+    <revnumber>v0.3.2</revnumber>
+    <date>1/8/2014</date>
+    <authorinitials>Eduardo</authorinitials>
+    <revremark>
+- Revisão do Capítulo 4 (#11).
+    </revremark>
+  </revision>
+
+
+
+  <revision>
     <revnumber>v0.3.1</revnumber>
     <date>31/7/2014</date>
     <authorinitials>Eduardo</authorinitials>
