@@ -7,12 +7,10 @@
  * capacidade inicial igual a 16.
  */
 Vector createVector() {
-
   Vector vector;
   vector.data = (Element *) malloc(16 * sizeof(Element));
   vector.size = 0;
   vector.capacity = 16;
-
   return vector;
 }
 
@@ -99,7 +97,7 @@ void ensureCapacity(Vector *vector, int newCapacity) {
   vector->data = newData;
 
   //por fim, atualizamos a nova capacidade do vector.
-  vector->capacity = cap;	
+  vector->capacity = cap;
 }
 
 /**
@@ -128,10 +126,9 @@ void insertAfter(V_Iterator *it, Element newElement) {
  * Tem complexidade O(n).
  */
 void removeAfter(V_Iterator *it) {
-
   // Deslocando todos os elementos entre as posições index + 1 e 
   // size uma casa para a esquerda
-  for(int i = it->index + 1; i < it->vector->size - 1; i++ )
+  for(int i = it->index + 1; i < (it->vector->size - 1); i++ )
     it->vector->data[i] = it->vector->data[i + 1];
 
   // Atualizando o tamanho.
@@ -143,11 +140,10 @@ void removeAfter(V_Iterator *it) {
  * Tem complexidade O(n).
  */
 void prepend(Vector *vector, Element newElement){
-
-  V_Iterator it = getBegin(vector);
+  V_Iterator it = getBegin(vector); // it aponta para o primeiro
   it.index--; //Faz o iterador apontar para o elemento localizado 
               // antes do primeiro elemento do vector
-  insertAfter(&it, newElement);
+  insertAfter(&it, newElement); // insere no início (depois de antes)
 }
 
 /**
@@ -155,7 +151,7 @@ void prepend(Vector *vector, Element newElement){
  * Tem complexidade O(n).
  */
 void removeFirst(Vector *vector) {
-  V_Iterator it = getBegin(vector);
+  V_Iterator it = getBegin(vector); // it aponta para o primeiro
   it.index--;  //Aponta para o elemento antes do primeiro elemento
-  removeAfter(&it);
+  removeAfter(&it); // remove o primeiro (depois de antes do primeiro)
 }

@@ -12,7 +12,6 @@
 typedef int Element;
 #endif
 
-
 #ifndef LL_ITEMTYPE
 #define LL_ITEMTYPE 1
 /**
@@ -20,7 +19,6 @@ typedef int Element;
  */
 typedef Node LL_ItemType;
 #endif
-
 
 #ifndef LINKEDLIST
 #define LINKEDLIST 1
@@ -37,7 +35,6 @@ typedef LL_ItemType* LinkedList;
  */
 typedef LinkedList LL_Iterator;
 #endif
-
 
 /**
  * Retorna um iterador de lista (será definido em breve) que aponta 
@@ -61,7 +58,7 @@ LL_Iterator getEnd(LinkedList list) {
  * Tem complexidade O(1).
  */
 LinkedList prepend(LinkedList list, Element newElement) {	
-	return makeNode(newElement,list);
+  return makeNode(newElement,list);
 }
 
 /**

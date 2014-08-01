@@ -10,7 +10,6 @@
 typedef int Element;
 #endif
 
-
 #ifndef LL_ITEMTYPE
 #define LL_ITEMTYPE 1
 /**
@@ -18,7 +17,6 @@ typedef int Element;
  */
 typedef Node LL_ItemType;
 #endif
-
 
 #ifndef LINKEDLIST
 #define LINKEDLIST 1

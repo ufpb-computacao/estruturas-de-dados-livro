@@ -31,7 +31,6 @@ typedef struct {
 } V_Iterator;
 #endif
 
-
 /**
  * Retorna o elemento do vector apontado por este iterador. 
  * Tem complexidade O(1).
