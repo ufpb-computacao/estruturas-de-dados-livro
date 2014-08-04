@@ -8,29 +8,31 @@ typedef LinkedList Stack;
 #endif
 
 /**
- * Insere um elemento no topo da pilha. Tem complexidade O(1)
+ * Insere um elemento no topo da pilha. Tem complexidade O(1).
  */
 Stack push(Stack stack, Element item) {
-	return prepend(stack,item);
+  return prepend(stack,item);
 }
 
 /**
- * Retorna o elemento no topo da pilha sem removê-lo. Tem complexidade O(1)
+ * Retorna o elemento no topo da pilha sem removê-lo.
+ * Tem complexidade O(1)
  */
 Element top(Stack stack) {
-	return getElement(getBegin(stack));
+  return getElement(getBegin(stack));
 }
 
 /**
- * Remove o elemento no topo da pilha. Tem complexidade O(1)
+ * Remove o elemento no topo da pilha. Tem complexidade O(1).
  */
 Stack pop(Stack stack) {
-	return removeFirst(stack);
+  return removeFirst(stack);
 }
 
 /**
- * Retorna sempre 0 uma vez que esta implementação se baseia em uma lista encadadeada
+ * Retorna sempre 0 uma vez que esta implementação se baseia em uma
+ * lista encadadeada.
  */
 int isFull(Stack stack) {
-	return 0;
+  return 0;
 }
