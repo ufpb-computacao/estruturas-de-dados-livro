@@ -3,6 +3,18 @@
 <revhistory>
 
   <revision>
+    <revnumber>v0.3.3</revnumber>
+    <date>6/8/2014</date>
+    <authorinitials>Eduardo</authorinitials>
+    <revremark>
+- Revisão do Capítulo 5 (#16).
+- Utilização de monospace em funções e variáveis (#17).
+- Inclusão de links para os códigos no github (#26).
+- Remoção de referência à Linguagem livre de contexto (#32).
+    </revremark>
+  </revision>
+
+  <revision>
     <revnumber>v0.3.2</revnumber>
     <date>1/8/2014</date>
     <authorinitials>Eduardo</authorinitials>
