@@ -23,6 +23,12 @@ PROJECT_NAME = File.basename(Dir.getwd)
 LIVRO_URL = `git config --get livro.url`.strip
 GITHUB_REPO = `git config remote.origin.url`.strip.gsub('git@github.com:','').gsub('.git','')
 
+# release
+REPOSITORIO_PATH=`git rev-parse --show-toplevel`.strip
+#@RELEASE_DIR = ''
+@tag = ''
+@SEJDA_BIN = '/home/santana/ambiente/sejda/bin/sejda-console'
+
 directory @RELEASE_DIR
 
 CLEAN.include('releases')
@@ -46,7 +52,7 @@ namespace "wip" do
   file RELEASE_WIP_PDF do
     system "#{@A2X_BIN} #{A2X_COMMAND} #{@RELEASE_DIR}/#{@BOOK_SOURCE_DIR}/wip.adoc"
   end
-  
+
   desc "Open wip pdf"
   task :open => RELEASE_WIP_PDF do |t|
       puts "#{OPEN_PDF_CMD} #{@RELEASE_DIR}/#{@BOOK_SOURCE_DIR}/wip.pdf"
@@ -97,7 +103,7 @@ namespace "book" do
   task "edit" do
     system "gvim #{@BOOK_SOURCE}"
   end
-  
+
   desc "Release new edition book"
   task :release, [:tag] do |t, args|
     #PROJECT = sh "`git config --get remote.origin.url | cut -f 2 -d / | cut -f 1 -d .`"
@@ -109,7 +115,7 @@ namespace "book" do
     mv "livro.pdf", "#{PROJECT_NAME}-#{args.tag}.pdf"
     #Dir.mkdir(File.join(Dir.home, ".foo"), 0700)
   end
-  
+
 end
 
 desc "Extract files from repository (git archive)"
@@ -128,24 +134,24 @@ namespace "tag" do
   task :list do
     sh "git tag --list"
   end
-  
+
   desc "Aplly a tag to the project. The tag can be used as the edition."
   task :apply, [:tag] do |t, args|
     sh "git status"
     sh "git tag -a #{args.tag} -m 'Gerando versão #{args.tag}'"
   end
-  
+
   desc "Delete a tag applied."
   task :delete, [:tag] do |t,args|
     sh "git tag -d #{args.tag}"
   end
-  
+
   desc "Push tags"
   task "push" do
     sh "git push origin --tags"
   end
 
-  desc "Generate revision history, compare HEAD and tag. 
+  desc "Generate revision history, compare HEAD and tag.
   The tag is optional, if not specified it will use the last tag applied."
   task :revision, [:tag] do |t, args|
     last_tag = `git describe --abbrev=0`.strip
@@ -165,14 +171,14 @@ namespace "tag" do
     </revision>\n\n"
     puts revision
   end
-  
-  desc "Open docinfo for edition. 
+
+  desc "Open docinfo for edition.
   Before apply tag you should edit docinfo and add the revision history."
   task :docinfo do
     puts "#{OPEN_PDF_CMD} #{@RELEASE_DIR}/#{@BOOK_SOURCE_DIR}/wip.pdf"
     system "xdg-open #{@BOOK_SOURCE_DIR}/docinfo.xml"
   end
-  
+
 end
 
 
@@ -194,7 +200,8 @@ end
 
 desc "Download new Rakefile"
 task :uprake do
-  `wget --output-document=Rakefile https://raw.githubusercontent.com/edusantana/novo-livro/master/Rakefile`
+  `wget --output-document=Rakefile https://raw.githubusercontent.com/edusantana/asciidoc-book-template-with-rake-and-github/master/Rakefile`
+  `wget --output-document=livro/capitulos/feedback.adoc https://raw.githubusercontent.com/edusantana/asciidoc-book-template-with-rake-and-github/master/livro/capitulos/feedback.adoc`
 end
 
 
@@ -224,32 +231,104 @@ FileList['livro/images/**/*.dot'].each do |source|
   task :dot => epsfile
 end
 
-
 namespace "github" do
-  desc "List issues from github milestone"
+  desc "List issues from github milestone. Default milestone state is closed, can also be all."
   task :issues, [:milestone] do |t,args|
     puts "Acessing: #{GITHUB_REPO} milestone=#{args.milestone}"
     require 'octokit'
 #    require 'highline/import'
     client = Octokit::Client.new
     milestone = nil
-    milestones = client.list_milestones(GITHUB_REPO)
+    milestones = client.list_milestones(GITHUB_REPO, state: 'all', sort: 'created', direction: 'desc')
     opcoes = milestones.map {|m| m[:title]}
-    
+
     if (args.milestone) then
+      #puts "milestones: #{milestones}"
       milestones.each do |m|
         if m[:title] == args.milestone then
           milestone = m
         end
       end
     else
-      milestone = milestones[-1]
+      milestone = milestones[0]
     end
-    puts "Milestone: #{milestone[:title]}"
-    
-    issues = client.list_issues(GITHUB_REPO, state:'Closed', milestone:milestone[:number], direction:'asc')
+    puts "Milestone: #{milestone[:title]} #{milestone[:state].upcase}"
+
+    puts ""
+    puts "Para adicionar ao docinfo.xml:\n"
+    issues = client.list_issues(GITHUB_REPO, milestone:milestone[:number], sort: 'created', direction: 'asc', state:'all')
+    open_issues = []
     issues.each do |i|
-      puts "- #{i[:title]} (##{i[:number]})."
+      if (i[:state] == 'open') then
+        open_issues << i[:number]
+      end
+    end
+    if (open_issues.size > 0) then
+      puts "Open issues: #{open_issues}"
+      puts ""
+    end
+    issues.each do |i|
+      puts "<ulink url=\"{gitrepo}/issues/#{i[:number]}\">#{i[:title]};</ulink>"
+    end
+    puts ""
+    puts "Para adicionar ao release notes no github:"
+    issues.each do |i|
+      puts "- #{i[:title]} (##{i[:number]});"
+    end
+
+    puts ""
+    puts "Para commits:"
+    issues.each do |i|
+      puts "#{i[:title]} closes ##{i[:number]}"
+    end
+
+
+  end
+end
+
+namespace "release" do
+
+  desc "Archive files from git tag. If not tag is passed, the last tag applied will be used."
+  task :archive, [:tag] do |t, args|
+    last_tag = `git describe --abbrev=0`.strip
+    args.with_defaults(:tag => last_tag)
+    @tag = args.tag
+    @RELEASE_DIR = "releases/#{args.tag}"
+    Dir.chdir(REPOSITORIO_PATH) do
+      system "git archive --format=tar --prefix=#{@RELEASE_DIR}/ #{@tag} | (tar xf -) "
     end
   end
+
+  desc "Build book release. If not tag is passed, the last tag applied will be used."
+  task :build, [:tag] do |t, args|
+    last_tag = `git describe --abbrev=0`.strip
+    args.with_defaults(:tag => last_tag)
+    @tag = args.tag
+    @RELEASE_DIR = "releases/#{args.tag}"
+    release_dir = "releases/#{args.tag}"
+    target_file = "releases/#{@PROJECT_NAME}-#{@tag}.pdf"
+    editora_file = "#{release_dir}/livro/editora/editora.pdf"
+    livro_source = "#{release_dir}/livro/livro.asc"
+    livro_pdf = "#{release_dir}/livro/livro.pdf"
+
+    directory release_dir
+    file livro_source => [release_dir]
+    file livro_pdf => [livro_source] do
+      Dir.chdir(@RELEASE_DIR) do
+        @A2X_COMMAND="-v -k -f pdf --icons -a docinfo1 -a edition=#{@tag} -a lang=pt-BR -d book --dblatex-opts '-T computacao -P latex.babel.language=brazilian' -a livro-pdf"
+        system "#{@A2X_BIN} #{@A2X_COMMAND} livro/livro.asc"
+      end
+    end
+    file target_file => [livro_pdf] do
+      if File.exist? editora_file then
+        system "#{@SEJDA_BIN} merge -f #{editora_file} #{livro_pdf} -o #{target_file}"
+      else
+        mv livro_pdf, target_file
+      end
+    end
+
+    Rake::Task[target_file].invoke()
+
+  end # build
+
 end
