@@ -7,10 +7,10 @@
     <date>6/8/2014</date>
     <authorinitials>Eduardo</authorinitials>
     <revremark>
-- Revisão do Capítulo 5 (#16).
-- Utilização de monospace em funções e variáveis (#17).
-- Inclusão de links para os códigos no github (#26).
-- Remoção de referência à Linguagem livre de contexto (#32).
+<ulink url="{gitrepo}/issues/16">Revisão do Capítulo 5;</ulink>
+<ulink url="{gitrepo}/issues/17">Utilização de monospace em funções e variáveis;</ulink>
+<ulink url="{gitrepo}/issues/26">Inclusão de links para os códigos no github;</ulink>
+<ulink url="{gitrepo}/issues/32">Remoção de referência à Linguagem livre de contexto;</ulink>
     </revremark>
   </revision>
 
@@ -19,20 +19,19 @@
     <date>1/8/2014</date>
     <authorinitials>Eduardo</authorinitials>
     <revremark>
-- Revisão do Capítulo 4 (#11).
+<ulink url="{gitrepo}/issues/11">Revisão do Capítulo 4;</ulink>
+<ulink url="{gitrepo}/issues/25">Correção ortográfica;</ulink>
     </revremark>
   </revision>
-
-
 
   <revision>
     <revnumber>v0.3.1</revnumber>
     <date>31/7/2014</date>
     <authorinitials>Eduardo</authorinitials>
     <revremark>
-- Padronização visual dos Objetivos (#12).
-- Remoção de capítulos não escritos (#13).
-- Inclusão da Ficha Catalográfica (#15).
+<ulink url="{gitrepo}/issues/12">Padronização visual dos Objetivos;</ulink>
+<ulink url="{gitrepo}/issues/13">Remoção de capítulos não escritos;</ulink>
+<ulink url="{gitrepo}/issues/15">Inclusão da Ficha Catalográfica;</ulink>
     </revremark>
   </revision>
 
@@ -41,24 +40,23 @@
     <date>26/3/2014</date>
     <authorinitials>Eduardo</authorinitials>
     <revremark>
-- Revisão do Capítulo 3 #9
+<ulink url="{gitrepo}/issues/9">Revisão do Capítulo 3;</ulink>
     </revremark>
   </revision>
-
 
   <revision>
     <revnumber>v0.2.0</revnumber>
     <date>21/3/2014</date>
     <authorinitials>Eduardo</authorinitials>
     <revremark>
-- Revisão do capítulo 2 #6
+<ulink url="{gitrepo}/issues/6">Revisão do Capítulo 2;</ulink>
     </revremark>
   </revision>
 
   <revision>
     <revnumber>v0.1.0</revnumber>
     <date>27/2/2014</date>
-    <authorinitials>AND</authorinitials>
+    <authorinitials>Alexandre</authorinitials>
     <revremark>
 Capítulo 1 Revisado.
     </revremark>
