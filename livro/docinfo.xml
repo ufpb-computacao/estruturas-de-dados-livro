@@ -3,6 +3,17 @@
 <revhistory>
 
   <revision>
+    <revnumber>v0.3.4</revnumber>
+    <date>1/10/2014</date>
+    <authorinitials>Eduardo</authorinitials>
+    <revremark>
+<ulink url="{gitrepo}/issues/37">Adição de links no histórico de revisão;</ulink>
+<ulink url="{gitrepo}/issues/38">Solicitando feedback ao final de cada capítulo;</ulink>
+<ulink url="{gitrepo}/issues/39">Prefácio: explicando como baixar os códigos do livro;</ulink>
+    </revremark>
+  </revision>
+
+  <revision>
     <revnumber>v0.3.3</revnumber>
     <date>6/8/2014</date>
     <authorinitials>Eduardo</authorinitials>
