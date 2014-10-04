@@ -1,26 +1,27 @@
-#include "stack.c"
 #include <stdio.h>
+#include <stdlib.h>
+#include "stack.c"
 
 int main() {
 
-  int number, digit;
+  int numero, digito;
   Stack stack;
-  
+
   printf("Digite um número decimal: ");
-  scanf( "%d", &number);
+  scanf( "%d", &numero);
 
   //Realiza a conversão, empilhando os digitos
-  while( number > 0 ) {
-    digit = number % 2;
-    stack = push(stack,digit);
-    number = number / 2;
+  while( numero > 0 ) {
+    digito = numero % 2;
+    stack = push(stack,digito);
+    numero = numero / 2;
   }
 
   //Desempilha e imprime os digitos.
   while( !isEmpty(stack)) {
-    digit = top(stack);
+    digito = top(stack);
     stack = pop(stack);
-    printf( "%d", digit);
+    printf( "%d", digito);
   }
   printf( "\n");
 
