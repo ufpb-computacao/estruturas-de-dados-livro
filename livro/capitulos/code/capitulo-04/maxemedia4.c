@@ -1,13 +1,12 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 #include "vector.c"
-
-#define INF 2147483647   //Maior valor que um inteiro pode assumir.
 
 int main() {
   int count = 0;
   int total = 0;
-  int largest = -1*(INF-1);
+  int largest = INT_MIN;
   Element i;
 
   Vector vector = createVector();
@@ -28,10 +27,10 @@ int main() {
 
   while( it.index < vector.size ) {
     i = getElement(&it);  
-    if( largest % i == 0 ) {
+//    if( largest % i == 0 ) {
       total += i;
       count++;
-    }
+//    }
     moveNext(&it);
   }
   if(count != 0)
