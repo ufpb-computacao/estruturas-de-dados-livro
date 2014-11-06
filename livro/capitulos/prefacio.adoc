@@ -1,0 +1,27 @@
+=== Público alvo
+
+O público alvo desse livro são os alunos de Licenciatura em
+Computação, na modalidade à distância footnote::[Embora ele tenha sido
+feito para atender aos alunos da Universidade Federal da Paraíba, o
+seu uso não se restringe a esta universidade, podendo ser adotado por
+outras universidades do sistema UAB.].  Ele foi concebido para ser
+utilizado numa disciplina de 'Estrutura de Dados', no terceiro
+semestre do curso.
+
+[[como_estudar]]
+=== Como você deve estudar cada capítulo
+
+* Leia a visão geral do capítulo
+* Estude os conteúdos das seções
+* Realize as atividades no final do capítulo
+* Verifique se você atingiu os objetivos do capítulo
+
+.Na sala de aula do curso
+* Tire dúvidas e discuta sobre as atividades do livro com outros
+  integrantes do curso
+* Leia materiais complementares eventualmente disponibilizados
+* Realize as atividades propostas pelo professor da disciplina
+
+////
+Sempre terminar o arquivo com uma nova linha.
+////
