@@ -2,6 +2,16 @@
 
 <revhistory>
 
+<revision>
+  <revnumber>v1.0.0</revnumber>
+  <date>5/11/2014</date>
+  <authorinitials>Eduardo</authorinitials>
+  <revremark>
+<ulink url="{gitrepo}/issues/31">cap5: Adição Calculadora Polonesa como aplicação de Pilha;</ulink>
+<ulink url="{gitrepo}/issues/45">Revisão das imagens para impressão;</ulink>
+  </revremark>
+</revision>
+
   <revision>
     <revnumber>v0.3.4</revnumber>
     <date>1/10/2014</date>
