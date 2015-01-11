@@ -1,0 +1,57 @@
+.Objetivos do capítulo
+____
+Ao final deste capítulo você deverá ser capaz de:
+
+1. *Entender* o que é uma árvore e suas características básicas,
+*reconhecendo* e *descrevendo* características de árvores apresentadas.
+(Efetivo/factual)
+
+2. *Entender* as classificações de árvores e propriedades genéricas,
+*exemplificando* árvores de diferentes categorias e *inferindo* suas
+propriedades. (Conhecimento Conceitual)
+
+3. *Aplicar* as operações básicas de árvores e entender os algoritmos
+de buscas, *executando* as operações básicas e *explicando* os algoritmos
+de busca. (Conhecimento Procedural)
+
+4. *Lembrar* dos conceitos de Rotação e Balanceamento e suas
+aplicabilidades, *reproduzindo* os conceitos e suas aplicações.
+(Conhecimento Procedural)
+
+5. *Avaliar* a eficiência dos algoritmos de buscas em árvores,
+*criticando* características das árvores para maximizar a eficiência das
+buscas. (Conhecimento Procedural)
+
+6. *Lembrar* de aplicações de árvores na computação e entender como as
+árvores podem ser armazenadas, *reconhecendo* as aplicações de árvores e
+*explicando* formas de armazenamento das árvores. (Conhecimento
+Metacognitivo)
+
+7. *Criar* uma implementação de árvore em uma linguagem de
+programação, *implementando* as operações básicas de um tipo de árvore
+em uma linguagem de programação. (Metacognitivo)
+
+____
+
+.Classificação dos objetivos
+[cols="^13,^10,^10,^10,^10,^10,^10", grid="cols",frame="none"]
+|====
+1.2+s| Conhecimento 6+s| Processo Cognitivo
+|                 Lembrar  |Entender  | Aplicar |  Analisar  | Avaliar | Criar
+| Factual        |         | 1        |         |            |         |
+| Conceitual     |         | 2        |         |            |         |
+| Procedural     | 4       | 3        | 3       |            | 5       |
+| Metacognitivo  | 6       | 6        |         |            |         |  7
+|  2+s|Conhecimento 2+s|Competência 2+s|Habilidade
+|====
+
+////
+A *elaboração dos objetivos de aprendizagem* e *divisão das seções* do
+capítulo seguem a taxonomia de Bloom revisada, para
+compreender esta classificação recomendo a leitura de  ``Taxonomia de
+Bloom: revisão teórica e apresentação das adequações do instrumento
+para definição de objetivos instrucionai'', disponível em
+http://www.scielo.br/pdf/gp/v17n2/a15v17n2.pdf.
+////
+
+

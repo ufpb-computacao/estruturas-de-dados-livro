@@ -1,0 +1,298 @@
+=== O que são árvores e quais suas características?
+
+////
+1. *Entender* o que é uma árvore e suas características básicas,
+*reconhecendo* e *descrevendo* características de árvores apresentadas.
+(Efetivo/factual)
+////
+
+////
+.Elementos de organização prévia
+
+- Papel, lápis e borracha
+- caderno-arvore.asciidoc
+- Internet, busca por "graphviz online". 
+Ex: http://sandbox.kidstrythisathome.com/erdos/
+http://www.webgraphviz.com/
+http://ashitani.jp/gv/
+
+////
+
+==== Introdução
+
+.Descubra porque as árvores são invertidas na computação!
+image::images/arvores/arvore-invertida.pdf[scaledwidth="60%"]
+
+Nesta seção apresentamos a terminologia relacionada às árvores, e 
+os conceitos básicos. 
+
+.Questões a serem respondidas
+****
+. O que é uma árvore e como ela difere das demais estruturas?
+. Como árvores são representadas?
+. O que é um nó? 
+. Quais as relações (de parentesco) entre os nós?
+. Que são folhas, raiz e nós terminais de uma árvore?
+. O que é o grau de um nó?
+. Qual o nível de um nó?
+. Qual a altura de uma árvore?
+****
+
+==== Conhecimento da Terminologia
+
+
+
+===== Árvore
+
+Antes de apresentar a definição formal de uma árvore você terá
+a oportunidade elaborar o seu próprio entendimento do que é uma árvore.
+
+.Atividade: O que caracteriza uma árvore? 
+____ 
+
+Caso você esteja estudando no computador você pode imprimir a página ou baixar o
+https://github.com/edusantana/mergulhando-de-cabeca-na-ead/blob/master/livro/caderno-arvore.asciidoc[caderno digital]  
+e escrever nele. 
+
+Na <<fig_construindo_conceito_arvore>> somente os gráficos da parte
+superior *são árvores*, os da inferior *não são árvores*. *Analise* os
+gráficos, *tente entender* o que caracteriza uma árvore e *escreva* o
+seu entendimento na caixa  a seguir.
+
+////
+Adicionar um ditado popular motivacional, como:
+Minha avó dizia, quem belisca não petisca.
+////
+
+____
+
+image::images/caixa6cm.pdf[]
+
+.Ilustrações para elaboração do conceito de árvore
+[[fig_construindo_conceito_arvore]]
+image::images/arvores/arvore-ou-grafo.pdf[scaledwidth="80%"]
+
+<<<
+
+////
+****
+Eu pedi para minha filha fazer este teste e ela escreveu o seguinte:
+
+[quote]
+Para ser uma árvore o gráfico não pode ser divido, todas as bolinhas
+precisam ter um tracinho nelas. Se tiver uma bolinha se ligando com outra
+mais de uma vez, então também não é árvore. E se tiver uma área
+fechada, então também não é uma árvore.
+
+Você chegou a uma solução parecida?
+****
+////
+
+Você teve dificuldades em achar palavras para referenciar os
+elementos?  Precisamos lembrar de quatro conceitos de *((grafos))* para
+enunciar a definição formal de árvore, são eles: *vértices*,
+*arestas*, *ciclos* e *grafo conexo*.footnote:[Caso você não se lembra
+destes conceitos, você poderá inferi-los.]  
+
+Os dois primeiros conceitos são: *vértices* e *arestas*.
+Na teoria dos grafos, as _bolinhas_ são chamadas de *vértices* e os
+_traços_ de *((arestas))* (ver <<fig_arvore_nomenclatura>>).
+
+[[fig_arvore_nomenclatura]]
+.Nomenclatura dos elementos dos grafos
+image::images/arvores/arvore-nomenclatura.pdf[scaledwidth="30%"]
+
+O terceiro conceito é _ciclo_, os *ciclos* dos grafos estão 
+apresentados na <<fig_ciclos>>. 
+
+[[fig_ciclos]]
+.Grafos com os cliclos envidenciados.
+image::images/arvores/ciclos.pdf[]
+
+O quarto e último conceito é *conexo*. Um grafo *não é conexo* quando
+há um vértice, ou um conjunto deles, sem ligação com os demais (ver
+<<fig_nao_conexo>>).
+
+[[fig_nao_conexo]]
+.Grafos não conexos.
+image::images/arvores/nao-conexo.pdf[]
+
+Agora que relembramos os quatro conceitos de grafo, podemos enunciar
+a definição formal de árvore:
+
+.Definição de Árvore
+****
+*((Árvore))* é um ((grafo)) _conexo_ e sem _ciclos_.
+
+****
+
+Agora que você já conhece a definição formal de árvore, tente explicar
+as razões dos grafos inferiores da <<fig_construindo_conceito_arvore>>
+não serem árvores, utilize o espaço a seguir para isso:
+
+image::images/caixa6cm.pdf[]
+
+<<<
+
+.Resposta comentada
+****
+Na parte inferior da <<fig_construindo_conceito_arvore>>, todos os
+grafos da primeira linha _não são árvores porque não são conexos_, como
+evidenciados na <<fig_nao_conexo>>.
+
+Na segunda linha, todos os gafos _não são árvores porque possuem ciclos_,
+como indicados na <<fig_ciclos>>.
+
+****
+
+Embora a teoria de grafos seja essencial para compreender o que são
+árvores, as árvores possuem uma nomenclatura própria, que veremos
+a seguir.
+
+===== Nó
+
+.Definição
+****
+Todos os vértices de uma árvore são chamados de *nós* (_plural de nó_). 
+****
+
+Os nós das árvores geralmente possuem _valores_ associados, que são
+representados dentro deles. Na <<fig_arvores_com_nos_valorados>> estão
+apresentados os valores que cada nó possui. Perceba que não há
+restrição sobre a repetição ou ordem dos valores dos nós.
+
+.Árvores com nós e seus respectivos valores
+[[fig_arvores_com_nos_valorados]]
+image::images/arvores/arvores_com_nos_valorados.pdf[]
+
+===== Aresta
+
+As **((arestas))** são as ligações entre os nós. A
+<<fig_arvores_com_arestas_destacadas>> apresenta as mesmas árvores da
+<<fig_arvores_com_nos_valorados>>, mas com as arestas destacadas.
+
+.Arestas destacadas nas árvores
+[[fig_arvores_com_arestas_destacadas]]
+image::images/arvores/arvores_com_arestas_destacadas.pdf[]
+
+
+==== Elementos específicos
+
+===== Nó Raiz
+
+(((Árvore, raiz)))
+
+A representação usual de árvore apresenta o _nó inicial_ no topo da
+árvore. Este nó é chamade de *nó raiz*, ou simplesmente, *raiz* da
+árvore.  Na <<fig_raizes>> as raizes de cada árvore estão destacadas.
+
+.Árvores com suas raizes destacadas
+[[fig_raizes]]
+image::images/arvores/raizes.pdf[scaledwidth="90%"]
+
+===== Pai e Filho
+
+(((Nó, pai))) (((Nó, filho)))
+
+Um nó é considerado *pai* de outro nó se ele possuir uma aresta
+conectando com o outro nó abaixo dele. Dizemos que o nó de baixo é
+*filho* do nó de cima, seu *pai* (ver <<fig_pais_filhos>>). 
+
+////
+O nó raiz
+e as folhas são casos especiais, a raiz é o único nó que não possui
+pai, e as folhas não possuem filhos.
+////
+
+[[fig_pais_filhos]]
+.Ilustração das relações de pai e filho entre os nós de uma árvore
+image::images/arvores/pais_filhos.pdf[]
+
+
+===== Folhas ou nós terminais
+
+(((Folha))) (((Nó,terminal)))
+
+Numa árvore, todos os nós que não possuem filhos são chamados 
+de *nós terminais* ou *folhas*. A <<fig_folhas_nos_terminais>> destaca
+os nós terminais ou folhas da árvore.
+
+[[fig_folhas_nos_terminais]]
+.As folhas são os nós terminais -- todos os nós que não possuem filhos.
+image::images/arvores/fig_folhas_nos_terminais.pdf[scaledwidth="65%"]
+
+Os nomes *folhas* e *raiz* provém da visualização de uma árvore invertida,
+com a raiz em cima e as folhas em baixo, como indicado na <<fig_folhas_raiz>>.
+
+[[fig_folhas_raiz]]
+.Numa árvore o nó de cima é a raiz e nós de baixo são as folhas, ou nós terminais.
+image::images/arvores/fig_folhas_raiz.pdf[scaledwidth="65%"]
+
+==== Conhecimento de detalhes
+
+===== Nível de um nó
+
+(((Nó, Nível)))
+
+O *nível* de um nó pode ser entendido como o seu nível de profundidade
+na árvore (ver <<fig_niveis_nos>>). O primeiro nó, a raiz, pertence ao
+nível 0, os seus filhos pertencem ao nível 1, os filhos de seus filhos
+ao nível 2 e assim por adiante, até às folhas. Na <<fig_niveis_nos>>,
+o nó em destaque pertence ao nível 3.
+
+[[fig_niveis_nos]]
+.Demonstração dos níveis de uma árvore, o nó em destaque pertence ao nível 3.
+image::images/arvores/niveis_nos.pdf[scaledwidth="65%"]
+
+
+===== Grau de um nó
+
+(((Nó, Grau)))
+
+O *grau* de um nó corresponde a quantidade de filhos que ele possui.
+
+Por exemplo, na <<fig_grau_no>> temos dois nós de grau 2, o nó A tem
+grau 4, o nó B tem grau 3 e o restante tem grau 1.
+
+[[fig_grau_no]]
+.Árvore indicando os graus dos nós: R=2, B=3 e A=4.
+image::images/arvores/grau_no.pdf[scaledwidth="40%"]
+
+===== Grau de uma árvore
+
+(((Árvore, Grau)))
+
+O *grau de uma árvore* equivale ao maior grau de todos os seus nós.
+Por exemplo, o grau da árvore na <<fig_grau_no>> é *4* e da árvore da
+<<fig_niveis_nos>> é *2*.
+
+===== Caminho da raiz até um nó
+
+O *caminho* de um nó corresponde ao sub-grafo formado a partir da
+raiz até chegar ao nó.
+
+Na <<fig_caminho>> temos árvores com um nó destacado, e o caminho das
+raizes até estes nós. O caminho até um nó também pode ser descrito
+informando todos os nós percorridos pelo caminho, na última árvore
+ele poderia ser descrito apenas por *ABCD*.
+
+
+[[fig_caminho]]
+.Caminhos dos nós destacadas.
+image::images/arvores/caminho.pdf[]
+
+
+===== Altura
+
+(((Árvore, Altura)))
+
+A *altura* (tamanho ou profundidade) de uma árvore corresponde ao maior nível
+dos seus nós mais 1.
+
+Na <<fig_arvore_tamanho>>, da esquerda para direita, as alturas das
+árvores são respectivamente: 3, 3, 4 e 2.
+
+[[fig_arvore_tamanho]]
+.Árvores com suas indicações de altura
+image::images/arvores/altura_arvore.pdf[]
+

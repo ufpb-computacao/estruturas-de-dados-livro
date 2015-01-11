@@ -1,0 +1,11 @@
+
+.Elementos de organização prévia
+
+- A parte final deste capítulo requer que você possua um compilador de
+uma linguagem de programação de sua preferência instalado,  caso não
+possua um instalado, recomendo iniciar o download enquanto estuda as
+outras seções.
+
+////
+A última parte requer compilador
+////

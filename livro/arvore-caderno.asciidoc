@@ -1,0 +1,71 @@
+= Caderno Árvores =
+
+== Objetivo 1
+
+=== O que caracteriza uma árvore?
+
+Escreva, com suas próprias palavras, o seu conceito de árvore:
+
+____
+
+(Escreva o seu conceito aqui).
+
+____
+
+===== Reconhecendo características básicas em árvores apresentadas
+
+As características da primeira árvore já foram reconhecidas, na
+tabela, faça o mesmo para as demais árvores.
+
+*Nó N na Árvore (b)* +
+Nível de nó:  +
+Pai do nó:  +
+Filho(s) do nó:  +
+Caminho até o nó: +
+Grau de nó:  +
+Grau da árvore: +
+Altura da Árvore: +
+Maior folha (ordem alfabética): +
+
+
+*Nó J na Árvore (c)* +
+Nível de nó:  +
+Pai do nó:  +
+Filho(s) do nó:  +
+Caminho até o nó:  +
+Grau de nó:  +
+Grau de árvore:  +
+Altura da Árvore:  +
+Maior folha (ordem alfabética):  +
+
+
+*Nó B na Árvore (d)* +
+Nível de nó:  +
+Pai do nó:  +
+Filho(s) do nó:  +
+Caminho até o nó:  +
+Grau de nó:  +
+Grau de árvore:  +
+Altura da Árvore:  +
+Maior folha (ordem alfabética): +
+
+
+===== Descrevendo as características de árvores com suas próprias palavras
+
+
+.Conceitos estudados
+____
+
+Árvore; Nó; Aresta; Nó Raiz; Nó pai/filho; Folhas; Nível de um Nó;
+Grau de Nó/Árvore; Caminho; Altura da Árvore;
+
+____
+
+*Escolha dois conceitos* da lista e descreva-os com suas *próprias
+*palavras*:
+
+Primeiro Conceito::
+Descrição do primeiro conceito aqui.
+
+Segundo Conceito::
+Descrição do segundo conceito aqui.

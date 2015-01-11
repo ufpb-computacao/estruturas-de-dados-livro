@@ -1,0 +1,209 @@
+==== Autoavaliação
+
+.Objetivo da seção
+____
+Ao final desta seção você deverá ser capaz de:
+
+*Entender* o que é uma árvore e suas características básicas,
+*reconhecendo* e *descrevendo* características de árvores apresentadas.
+
+____
+
+A proposta de verificação do objetivo da seção possui duas partes,
+que veremos a seguir.
+
+===== Reconhecendo características básicas em árvores apresentadas
+
+Para atender à primeira parte do objetivo da seção *você deverá
+reconhecer as características das árvores apresentadas*. Na
+<<fig_verificando_aprendizado_objetivo1>> são apresentadas quatro
+árvores, com um nó em destaque em cada uma delas. As características
+da primeira árvore já foram reconhecidas, na tabela, faça o mesmo
+para as demais árvores.
+
+<<<
+
+image:images/pagina-com-atividade.pdf[]
+
+[[fig_verificando_aprendizado_objetivo1]]
+.Árvores para serem utilizadas no reconhecimento das características
+image::images/arvores/verificando-aprendizado-objetivo1.pdf[]
+
+[cols="1a,1a", frame="none", grip="none"]
+|====
+| 
+*Nó Y e Árvore (a)* + 
+Nível de nó: *2* +
+Pai do nó: *S* +
+Filho(s) do nó: *J* +
+Caminho até o nó: *WSY* +
+Grau de nó: *1* +
+Grau da árvore: *2* +
+Altura da Árvore: *4* +
+Maior folha (ordem alfabética): *M* +
+|
+*Nó N na Árvore (b)* +
+Nível de nó:  +
+Pai do nó:  +
+Filho(s) do nó:  +
+Caminho até o nó: +
+Grau de nó:  +
+Grau da árvore: +
+Altura da Árvore: +
+Maior folha (ordem alfabética): +
+
+|
+*Nó J na Árvore (c)* +
+Nível de nó:  +
+Pai do nó:  +
+Filho(s) do nó:  +
+Caminho até o nó:  +
+Grau de nó:  +
+Grau de árvore:  +
+Altura da Árvore:  +
+Maior folha (ordem alfabética):  +
+
+|
+*Nó B na Árvore (d)* +
+Nível de nó:  +
+Pai do nó:  +
+Filho(s) do nó:  +
+Caminho até o nó:  +
+Grau de nó:  +
+Grau de árvore:  +
+Altura da Árvore:  +
+Maior folha (ordem alfabética): +
+
+|====
+
+
+<<<
+
+.Resolução 
+
+Para facilitar a compreensão, as folhas e os nós de maior grau foram
+realçados na figura a seguir:
+
+image::images/arvores/verificando-aprendizado-objetivo1-solucao.pdf[]
+
+[cols="1a,1a", frame="none"]
+|====
+|
+*Nó Y e Árvore (a)* + 
+Nível de nó: 2 +
+Pai do nó: S +
+Filho(s) do nó: J +
+Caminho até o nó: WSY +
+Grau de nó: 1 +
+Grau da árvore: 2 +
+Altura da Árvore: 4 +
+Maior folha (ordem alfabética): M +
+|
+*Nó N na Árvore (b)* +
+Nível de nó: 1 +
+Pai do nó: G +
+Filho(s) do nó: C,T,H +
+Caminho até o nó: GN +
+Grau de nó: 3 +
+Grau de árvore: 4 (grau do nó C) +
+Altura da Árvore: 5 +
+Maior folha (ordem alfabética): T +
+
+|
+*Nó J na Árvore (c)* +
+Nível de nó: 2 +
+Pai do nó: N +
+Filho(s) do nó: não possui filhos +
+Caminho até o nó: PNJ +
+Grau de nó: 0 +
+Grau de árvore: 3 (grau do nó P) +
+Altura da Árvore: 4 +
+Maior folha (ordem alfabética): K +
+
+|
+*Nó B na Árvore (d)* +
+Nível de nó: 4 +
+Pai do nó: C +
+Filho(s) do nó: A +
+Caminho até o nó: GEDCB +
+Grau de nó: 1 +
+Grau de árvore: 2 (grau do nó G) +
+Altura da Árvore: 6 +
+Maior folha (ordem alfabética): F +
+
+|====
+
+<<<
+
+===== Descrevendo as características de árvores com suas próprias palavras
+
+image:images/pagina-com-atividade.pdf[]
+
+++++
+<simpara>
+<ulink url="https://github.com/edusantana/estruturas-de-dados-livro/tree/master/livro/">
+<inlinemediaobject>
+  <imageobject>
+    <imagedata fileref="images/pagina-com-atividade.pdf"/>
+  </imageobject>
+  <textobject><phrase>images/pagina-com-atividade.pdf</phrase></textobject>
+</inlinemediaobject>
+</ulink>
+</simpara>
+++++
+
+
+Nesta segunda etapa, você deverá descrever os conceitos estudados
+com suas próprias palavras.
+
+.Conceitos estudados
+____
+
+Árvore; Nó; Aresta; Nó Raiz; Nó pai/filho; Folhas; Nível de um Nó;
+Grau de Nó/Árvore; Caminho; Altura da Árvore;
+
+____
+
+O propósito desta atividade é proporcionar um momento de reflexão
+sobre os conteúdos estudados. *Escolha dois conceitos* da lista e
+descreva-os com suas *próprias palavras*:
+
+image::images/caixa3cm.pdf[]
+
+image::images/caixa3cm.pdf[]
+
+<<<
+
+.Resposta 
+
+Essa atividade não possui respostas únicas, pois os entendimentos
+registrados são pessoais. É importante que você tenha praticado
+explicar os conceitos com suas próprias palavras, evitando reproduzir
+as definições formais apresentadas. Segue exemplo de possível resposta:
+
+.Conceito: Nó
+****
+Um _nó_ possui um valor, um pai único e pode ter vários ou nenhum filhos. 
+****
+
+.Conceito: Altura da Árvore
+****
+A altura da árvore corresponde _a quantidade de nós_ do maior caminho
+da raiz a qualquer nó de sua árvore.
+****
+
+
+.Certifique-se de ter compreendido todos os conteúdos antes de prosseguir
+[NOTE]
+--
+Depois de realizar as atividadess e verificar as respostas 
+comentadas, você está confiante que compreendeu os assuntos apresentados? 
+
+Caso você ainda tenha alguma dúvida, releia as seções relacionadas
+ou busque outras fontes (como as video aulas
+http://youtu.be/iLvpaqAoVD8 e http://youtu.be/U7IiLJlMfnU).
+  
+Certifique-se de ter compreendido todos os conteúdos antes de
+prosseguir, eles são essenciais para a compreensão do
+restante do capítulo.
+--

@@ -1,0 +1,60 @@
+== Árvores
+
+:cap: cap2
+:img: images/{cap}
+:online: {gitrepo}/blob/master/livro/code/{cap}
+:local: code/{cap}
+
+-  what will be learnt in the unit
+
+- Explain what the session will be about, it can be done in one of two forms:
+
+expository:: In this case, the learners are shown a high level view of what they will learn. 
++
+Example: When teaching how to create a web page, ﬁrst show learners some simple 
+pages and say ‘I am going to show you how to create a page like this’. This high level 
+view provides learners with a reference point that helps give meaning to the new bits of 
+knowledge they are going to acquire.
+  
+comparative:: In this case, the teacher reminds learners of something they already know 
+that will be useful in helping them understand the new teaching. 
+_
+Example: When teaching learners how to ﬁnd a percentage difference, the teacher can ﬁrst 
+remind them how to calculate a percentage.
+
+
+.Importância deste capítulo
+****
+-  why that material is important to the learners
+****
+
+include::arvore-objetivos.adoc[]
+include::arvore-organizacao-previa.adoc[]
+
+include::arvore-objetivo1-factual.adoc[]
+
+include::arvore-objetivo1-autoavaliacao.adoc[]
+
+include::arvore-objetivo2-conceitual.adoc[]
+
+include::arvore-objetivo3-procedural-algoritimos.adoc[]
+
+include::arvore-objetivo4-procedural-balanceamento.adoc[]
+
+include::arvore-objetivo5-procedural-eficiencia-busca.adoc[]
+
+include::arvore-objetivo6-meta-armazenamento-aplicacoes.adoc[]
+
+include::arvore-objetivo7-meta-implementacao.adoc[]
+
+
+
+////
+
+=== Auto-Avaliação
+
+Remind learners what the session was about and check that they have learnt it.
+
+- at least one self-assessment question.
+
+////
