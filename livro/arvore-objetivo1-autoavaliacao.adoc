@@ -1,15 +1,19 @@
 ==== Autoavaliação
 
+:caderno: https://www.linkedin.com/profile/view?id=332775837
+
 .Objetivo da seção
 ____
 Ao final desta seção você deverá ser capaz de:
 
-*Entender* o que é uma árvore e suas características básicas,
-*reconhecendo* e *descrevendo* características de árvores apresentadas.
+*Entender* o que é uma árvore e suas características básicas e
+*lembrar* dos termos técnicos em inglês, *reconhecendo* e *descrevendo*
+características de árvores apresentadas; e *reconhecendo* e
+*reproduzindo* os termos em inglês apresentados.
 
 ____
 
-A proposta de verificação do objetivo da seção possui duas partes,
+A proposta de verificação do objetivo da seção possui três partes,
 que veremos a seguir.
 
 ===== Reconhecendo características básicas em árvores apresentadas
@@ -23,7 +27,16 @@ para as demais árvores.
 
 <<<
 
-image:images/pagina-com-atividade.pdf[]
+++++
+<simpara>
+<ulink url="{caderno}">
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/pagina-com-atividade.pdf"/>
+</imageobject>
+</inlinemediaobject></ulink></simpara>
+++++
+
 
 [[fig_verificando_aprendizado_objetivo1]]
 .Árvores para serem utilizadas no reconhecimento das características
@@ -40,7 +53,7 @@ Caminho até o nó: *WSY* +
 Grau de nó: *1* +
 Grau da árvore: *2* +
 Altura da Árvore: *4* +
-Maior folha (ordem alfabética): *M* +
+Todas as folhas: *F, M, J, A, H*
 |
 *Nó N na Árvore (b)* +
 Nível de nó:  +
@@ -50,7 +63,7 @@ Caminho até o nó: +
 Grau de nó:  +
 Grau da árvore: +
 Altura da Árvore: +
-Maior folha (ordem alfabética): +
+Todas as folhas:
 
 |
 *Nó J na Árvore (c)* +
@@ -61,7 +74,7 @@ Caminho até o nó:  +
 Grau de nó:  +
 Grau de árvore:  +
 Altura da Árvore:  +
-Maior folha (ordem alfabética):  +
+Todas as folhas:
 
 |
 *Nó B na Árvore (d)* +
@@ -72,7 +85,7 @@ Caminho até o nó:  +
 Grau de nó:  +
 Grau de árvore:  +
 Altura da Árvore:  +
-Maior folha (ordem alfabética): +
+Todas as folhas:
 
 |====
 
@@ -97,7 +110,7 @@ Caminho até o nó: WSY +
 Grau de nó: 1 +
 Grau da árvore: 2 +
 Altura da Árvore: 4 +
-Maior folha (ordem alfabética): M +
+Todas as folhas: F, M, J, A, H
 |
 *Nó N na Árvore (b)* +
 Nível de nó: 1 +
@@ -107,7 +120,7 @@ Caminho até o nó: GN +
 Grau de nó: 3 +
 Grau de árvore: 4 (grau do nó C) +
 Altura da Árvore: 5 +
-Maior folha (ordem alfabética): T +
+Todas as folhas: K, M, L, P, E, B, A, T, Q
 
 |
 *Nó J na Árvore (c)* +
@@ -118,7 +131,7 @@ Caminho até o nó: PNJ +
 Grau de nó: 0 +
 Grau de árvore: 3 (grau do nó P) +
 Altura da Árvore: 4 +
-Maior folha (ordem alfabética): K +
+Todas as folhas: F, E, K, J, D, C, H, B, A
 
 |
 *Nó B na Árvore (d)* +
@@ -129,7 +142,7 @@ Caminho até o nó: GEDCB +
 Grau de nó: 1 +
 Grau de árvore: 2 (grau do nó G) +
 Altura da Árvore: 6 +
-Maior folha (ordem alfabética): F +
+Todas as folhas: F, A
 
 |====
 
@@ -137,19 +150,14 @@ Maior folha (ordem alfabética): F +
 
 ===== Descrevendo as características de árvores com suas próprias palavras
 
-image:images/pagina-com-atividade.pdf[]
-
 ++++
 <simpara>
-<ulink url="https://github.com/edusantana/estruturas-de-dados-livro/tree/master/livro/">
+<ulink url="{caderno}">
 <inlinemediaobject>
-  <imageobject>
-    <imagedata fileref="images/pagina-com-atividade.pdf"/>
-  </imageobject>
-  <textobject><phrase>images/pagina-com-atividade.pdf</phrase></textobject>
-</inlinemediaobject>
-</ulink>
-</simpara>
+<imageobject>
+<imagedata fileref="images/pagina-com-atividade.pdf"/>
+</imageobject>
+</inlinemediaobject></ulink></simpara>
 ++++
 
 
@@ -191,6 +199,269 @@ Um _nó_ possui um valor, um pai único e pode ter vários ou nenhum filhos.
 A altura da árvore corresponde _a quantidade de nós_ do maior caminho
 da raiz a qualquer nó de sua árvore.
 ****
+
+<<<
+
+===== Reconhecendo os termos em inglês apresentados
+
+++++
+<simpara>
+<ulink url="{caderno}">
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/pagina-com-atividade.pdf"/>
+</imageobject>
+</inlinemediaobject></ulink></simpara>
+++++
+
+
+////
+http://www.introprogramming.info/english-intro-csharp-book/read-online/chapter-17-trees-and-graphs/
+https://www.princeton.edu/~achaney/tmve/wiki100k/docs/Tree_%28data_structure%29.html
+http://interactivepython.org/runestone/static/pythonds/Trees/trees.html
+http://interactivepython.org/runestone/static/pythonds/Trees/implementation.html
+////
+
+Utilizando as árvores da figura abaixo, verifique que você consegue
+reconhecer os termos em inglês, respondendo as intruções. Algumas
+respostas já foram preenchidas para facilitar o seu entendimento.
+
+image::images/arvores/verificando-aprendizado-objetivo1-ingles.pdf[scaledwidth="80%"]
+
+
+[cols="1a,1a", frame="none", grip="none"]
+|====
+| 
+Children of node V at First Tree: *A, H* +
+Children of node N at Second Tree: +
+Children of node C at Last Tree:
+|
+
+Parent of node V at First Tree: *X* +
+Parent of node N at Second Tree: +
+Parent of node C at Last Tree:
+
+|
+Degree of node V at First Tree: *2* +
+Degree of node N at Second Tree: +
+Degree of node N at Third Tree: +
+Degree of node C at Last Tree: 
+
+|
+Descendants of S at first tree: *Z, F, M, Y, J* +
+Descendants of N at second tree: +
+Descendants of M at third tree: +
+Descendants of D at last tree:
+
+|
+*Path from Root to Node A* +
+At first tree: *WXVA* +
+At second tree: +
+At last tree: 
+|
+*Level of Node F* +
+At first tree: *3* +
+At second tree: +
+At last tree:  
+
+|
+*One internal Node* +
+Of first tree: *X* +
+Of second tree: +
+Of third tree: +
+Of Last tree:
+
+|
+
+Leaves of first tree: +
+One leaf of second tree: *P* +
+One leaf of third tree: +
+Leaves of last tree: *A, F*
+|
+Root node of each tree: *W, `___`, `___`, `___`*
+|
+Degrees of all trees: *2, `___`, `___`, `___`*
+
+|====
+
+<<<
+
+image::images/arvores/verificando-aprendizado-objetivo1-ingles.pdf[scaledwidth="40%"]
+
+
+.Resolução
+
+Esta atividade é parecida com a primeira, mas o diferencial são as 
+instruções em inglês. Segue as traduções das intruções e as respostas.
+
+[cols="1a,1a", frame="none", grip="none"]
+|====
+| 
+Children of node V at First Tree: *A, H* +
+_(Os filhos do nó V na primeira árvore)_ +
+Children of node N at Second Tree: *C, T, H* +
+_(Os filhos do nó N na segunda árvore)_ +
+Children of node C at Last Tree: *B* +
+_(Os filhos do nó C na última árvore)_
+|
+
+Parent of node V at First Tree: *X* +
+_(O pai do nó V na primeira árvore)_ +
+Parent of node N at Second Tree: *G* +
+_(O pai do nó N na primeira árvore)_ +
+Parent of node C at Last Tree: *D* +
+_(O pai do nó C na primeira árvore)_
+
+|
+Degree of node V at First Tree: *2* +
+_(O grau do nó V na primeira árvore)_ +
+Degree of node N at Second Tree: *3* +
+_(O grau do nó N na segunda árvore)_ +
+Degree of node N at Third Tree: *2* +
+_(O grau do nó N na terceira árvore)_ +
+Degree of node C at Last Tree: *1* +
+_(O grau do nó C na últuma árvore)_
+
+|
+Descendants of S at first tree: *Z, F, M, Y, J* +
+_(Os descendentes de S na primeira árvore)_ +
+Descendants of N at second tree: *C, P, E, B, A, T, H, Q* +
+_(Os descendentes de N na segunda árvore)_ +
+Descendants of M at third tree: *H, G, B, A* +
+_(Os descendentes de M na terceira árvore)_ +
+Descendants of D at last tree: *C, B, A* +
+_(Os descendentes de D na última árvore)_
+|
+*Path from Root to Node A* +
+_(Caminho da raiz até o nó A)_ +
+At first tree: *WXVA* +
+_(Na primeira árvore)_ +
+At second tree: *GNCA* +
+_(Na segunda árvore)_ +
+At last tree: *GEDCBA* +
+_(Na última árvore)_ 
+|
+*Level of Node F* +
+_(Nível do nó F)_ +
+At first tree: *3* +
+_(Na primeira árvore)_ +
+At second tree: *1* +
+_(Na segunda árvore)_ +
+At last tree: *1* +
+_(Na última árvore)_
+
+|
+*One internal Node* +
+_(Um nó interno)_ +
+Of first tree: *X* +
+Of second tree: *C* +
+Of third tree: *L* +
+Of Last tree: *D* +
+
+|
+
+Leaves of first tree: *F, M, J, A, H* +
+_(Folhas da primeira árvore)_ +
+One leaf of second tree: *P* +
+_(Uma folha da segunda árvore)_ +
+One leaf of third tree: *A* +
+_(Uma folha da terceira árvore)_ +
+Leaves of last tree: *A, F* +
+_(Folhas da última árvore)_
+|
+Root node of each tree: *W, G, P, G* +
+_(Nó raiz de cada árvore)_
+|
+Degree of each trees: *2, 4, 3 e 2* +
+_(Grau de cada árvore)_
+
+|====
+
+IMPORTANT: Reconhecer estas terminologias em inglês é essencial para
+um profissional de computação.
+
+<<<
+
+===== Reproduzindo os termos em inglês apresentados
+
+++++
+<simpara>
+<ulink url="{caderno}">
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/pagina-com-atividade.pdf"/>
+</imageobject>
+</inlinemediaobject></ulink></simpara>
+++++
+
+
+____
+
+*Árvore* é uma estrutura de dados que possui muitos *nós*. Cada *nó*
+possui um *valor* e pode está conectado com outros nós através de
+*arestas*. Um nó pode ter muitos *filhos*, mas apenas um único pai.
+O primeiro nó é chamado de *raiz* da árvore. E um nó sem um *filho*
+é chamado de nó terminal ou *folha*. 
+____
+
+____
+
+`________________` is a data structure that has many
+`__________________`. Each `________________` has a `____________` and may be
+connected to others nodes through `__________________`.  A node can
+have many `________________________`, but only one
+`________________________`. The first node is called the
+`________________` of the tree. And a node without a
+`____________________` is called terminal node or `________________`.
+
+_____
+
+[quote]
+_Tree_ is a data structure that has many _nodes_. Each _node_
+has a _value_ and may be connected to others nodes through _edges_. 
+A node can have many _children_, but only one _parent_.
+The first node is called the _root_ of the tree. And a node without
+a _child_ is called terminal node or _leaf_.
+
+
+Complete as seguintes sentenças com os termos em inglês:
+
+Na primeira *árvore*, o pai do *nó* J é Y. +
+At the first `__________`, the parent of the `__________` J is Y.
+
+Não existe uma *aresta* conectando os nós S e X. +
+It doens't exist an `__________` connecting nodes S and X.
+
+P é um *filho* do nó C. Os *filhos* de C são P, E, B e A. +
+P Y is a `__________` of the node C. The `______________` of C are P, E, B e A.
+
+A *raiz* da última árvore é G. +
+The `__________` of the last tree is G.
+
+<<<
+
+.Resolução 
+Segue as respostas da atividade.
+
+Na primeira *árvore*, o pai do *nó* J é Y. +
+At the first _tree_, the parent of the _node_ J is Y.
+
+Não existe uma *aresta* conectando os nós S e X. +
+It doens't exist an _edge_ connecting nodes S and X.
+
+P é um *filho* do nó C. Os *filhos* de C são P, E, B e A. +
+P Y is a _child_ of the node C. The _children_ of C are P, E, B e A.
+
+A *raiz* da última árvore é G. +
+The _root_ of the last tree is G.
+
+NOTE: Se você conhece as palavras do inglês _father_ e _son_ (pai e
+filho masculino) perceberá que os termos técnicos não possuem
+uma tradução literal para o português. Quando estamos falando de
+árvores, o _filho_ é _child_ (que a tradução literal seria criança) e
+o nó _pai_ não é _father_, mas _parent_ (que a tradução literal
+equivale ao singular de _os pais_, designado para ambos os sexos).
+
 
 
 .Certifique-se de ter compreendido todos os conteúdos antes de prosseguir
