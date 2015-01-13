@@ -1,9 +1,10 @@
 === O que são árvores e quais suas características?
 
 ////
-1. *Entender* o que é uma árvore e suas características básicas,
-*reconhecendo* e *descrevendo* características de árvores apresentadas.
-(Efetivo/factual)
+1. *Entender* o que é uma árvore e suas características básicas e
+*lembrar* dos termos técnicos em inglês, *reconhecendo* e
+*descrevendo* características de árvores apresentadas e *reproduzindo*
+os termos em inglês apresentados. (Efetivo/factual)
 ////
 
 ////
@@ -39,8 +40,6 @@ os conceitos básicos.
 ****
 
 ==== Conhecimento da Terminologia
-
-
 
 ===== Árvore
 
@@ -190,7 +189,7 @@ A representação usual de árvore apresenta o _nó inicial_ no topo da
 [[fig_raizes]]
 image::images/arvores/raizes.pdf[scaledwidth="90%"]
 
-===== Pai e Filho
+===== Pai, filho, irmãos, descendentes e ascendentes
 
 (((Nó, pai))) (((Nó, filho)))
 
@@ -208,14 +207,34 @@ pai, e as folhas não possuem filhos.
 .Ilustração das relações de pai e filho entre os nós de uma árvore
 image::images/arvores/pais_filhos.pdf[]
 
+Um nó é dito irmão do outro, quando eles possuem o mesmo pai. 
+
+[[fig_irmaos]]
+.Os nós coloridos com a mesma cor são irmãos entre si, os brancos não possuem irmãos.
+image::images/arvores/irmaos.pdf[scaledwidth="40%"]
+
+Na <<fig_irmaos>>::
+
+Os irmãos de *X* são: `____`, `____` e *N*. +
+O único irmão de *P* é `____`. +
+Os nós que não possuem irmãos são `____`, `____` e *H*.
+
+
+(((Nó, descendentes))) (((Nó, ascendentes)))
+
+Os *descendentes* de um nó são todos os seus filhos, e os filhos deles
+até as folhas. Os *ascendentes* são o seu pai, o pai do seu pai, até
+chegar na raiz da árvore.
+
+image::images/arvores/descendentes_ascendentes.pdf[scaledwidth="50%"]
 
 ===== Folhas ou nós terminais
 
 (((Folha))) (((Nó,terminal)))
 
-Numa árvore, todos os nós que não possuem filhos são chamados 
-de *nós terminais* ou *folhas*. A <<fig_folhas_nos_terminais>> destaca
-os nós terminais ou folhas da árvore.
+Numa árvore, todos os nós que não possuem filhos são chamados  de *nós
+terminais* ou *folhas*, os demais nós são os *nós internos* (ver na 
+<<fig_folhas_nos_terminais>>).
 
 [[fig_folhas_nos_terminais]]
 .As folhas são os nós terminais -- todos os nós que não possuem filhos.
@@ -226,7 +245,7 @@ com a raiz em cima e as folhas em baixo, como indicado na <<fig_folhas_raiz>>.
 
 [[fig_folhas_raiz]]
 .Numa árvore o nó de cima é a raiz e nós de baixo são as folhas, ou nós terminais.
-image::images/arvores/fig_folhas_raiz.pdf[scaledwidth="65%"]
+image::images/arvores/fig_folhas_raiz.pdf[scaledwidth="50%"]
 
 ==== Conhecimento de detalhes
 
@@ -242,7 +261,7 @@ o nó em destaque pertence ao nível 3.
 
 [[fig_niveis_nos]]
 .Demonstração dos níveis de uma árvore, o nó em destaque pertence ao nível 3.
-image::images/arvores/niveis_nos.pdf[scaledwidth="65%"]
+image::images/arvores/niveis_nos.pdf[scaledwidth="50%"]
 
 
 ===== Grau de um nó
@@ -295,4 +314,39 @@ Na <<fig_arvore_tamanho>>, da esquerda para direita, as alturas das
 [[fig_arvore_tamanho]]
 .Árvores com suas indicações de altura
 image::images/arvores/altura_arvore.pdf[]
+
+==== Inglês técnico
+
+A tabela a seguir apresenta os termos técnicos em inglês relacionado
+aos assuntos apresentados nesta seção.
+
+[cols="^1,^1e",frame="topbot",options="header", width="70%"]
+|====
+| Termo em português | Termo em inglês
+| Estrutura de dados | Data structure
+| Grafo | Graph
+| Árvore | Tree
+| Nó | Node
+| Valor | Value
+| Aresta | Edge
+| Raiz | Root
+| Primeiro, Segundo, Terceiro | First, Second, Third
+| Último | Last
+| Pai | Parent
+| Filho | Child (plural: children)
+| Irmão | Sibling
+| Descendente | Descendant
+| Ascendente | Ascendant
+| Folha | Leaf (plural: leaves)
+| Nó terminal | Terminal node
+| Nó interno | Internal node
+| Nível | Level
+| Grau  | Degree
+| Caminho | Path
+| Altura  | Height 
+| Profundidade | Depth
+|====
+
+TIP: Você pode utilizar estes termos em buscas no google, por exemplo,
+para pesquisar sobre nós internos em árvores acesse: https://www.google.com/search?q=tree+internal+node.
 

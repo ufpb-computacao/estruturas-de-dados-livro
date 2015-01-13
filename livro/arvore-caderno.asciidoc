@@ -16,7 +16,7 @@ ____
 
 As características da primeira árvore já foram reconhecidas, na
 tabela, faça o mesmo para as demais árvores.
-
+ 
 *Nó N na Árvore (b)* +
 Nível de nó:  +
 Pai do nó:  +
@@ -25,7 +25,7 @@ Caminho até o nó: +
 Grau de nó:  +
 Grau da árvore: +
 Altura da Árvore: +
-Maior folha (ordem alfabética): +
+Todas as folhas:
 
 
 *Nó J na Árvore (c)* +
@@ -36,7 +36,7 @@ Caminho até o nó:  +
 Grau de nó:  +
 Grau de árvore:  +
 Altura da Árvore:  +
-Maior folha (ordem alfabética):  +
+Todas as folhas:
 
 
 *Nó B na Árvore (d)* +
@@ -47,11 +47,10 @@ Caminho até o nó:  +
 Grau de nó:  +
 Grau de árvore:  +
 Altura da Árvore:  +
-Maior folha (ordem alfabética): +
+Todas as folhas:
 
 
 ===== Descrevendo as características de árvores com suas próprias palavras
-
 
 .Conceitos estudados
 ____
@@ -69,3 +68,77 @@ Descrição do primeiro conceito aqui.
 
 Segundo Conceito::
 Descrição do segundo conceito aqui.
+
+
+===== Reconhecendo os termos em inglês apresentados
+
+[cols="1a,1a", frame="none", grip="none"]
+|====
+| 
+Children of node V at First Tree: *A, H* +
+Children of node N at Second Tree: +
+Children of node C at Last Tree:
+|
+
+Parent of node V at First Tree: *X* +
+Parent of node N at Second Tree: +
+Parent of node C at Last Tree:
+
+|
+Degree of node V at First Tree: *2* +
+Degree of node N at Second Tree: +
+Degree of node N at Third Tree: +
+Degree of node C at Last Tree: 
+
+|
+Descendants of S at first tree: *Z, F, M, Y, J* +
+Descendants of N at second tree: +
+Descendants of M at third tree: +
+Descendants of D at last tree:
+
+|
+*Path from Root to Node A* +
+At first tree: *WXVA* +
+At second tree: +
+At last tree: 
+|
+*Level of Node F* +
+At first tree: *3* +
+At second tree: +
+At last tree:  
+
+|
+*One internal Node* +
+Of first tree: *X* +
+Of second tree: +
+Of third tree: +
+Of Last tree:
+
+|
+
+Leaves of first tree: +
+One leaf of second tree: *P* +
+One leaf of third tree: +
+Leaves of last tree: *A, F*
+|
+Root node of each tree: *W, `___`, `___`, `___`*
+|
+Degrees of all trees: *2, `___`, `___`, `___`*
+
+|====
+
+===== Reproduzindo os termos em inglês apresentados
+
+Agora complete o texto a seguir com os respectivos termos em inglês:
+
+____
+
+`________________` is a data structure that has many
+`__________________`. Each `________________` has a `____________` and may be
+connected to others nodes through `__________________`.  A node can
+have many `________________________`, but only one
+`________________________`. The first node is called the
+`________________` of the tree. And a node without a
+`____________________` is called terminal node or `________________`.
+
+_____

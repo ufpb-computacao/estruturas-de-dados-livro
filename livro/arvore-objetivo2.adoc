@@ -1,0 +1,62 @@
+=== O que são árvores e quais suas características?
+
+////
+1. *Entender* o que é uma árvore e suas características básicas,
+*reconhecendo* e *descrevendo* características de árvores apresentadas.
+(Efetivo/factual)
+////
+
+////
+.Elementos de organização prévia
+
+- Papel, lápis e borracha
+- caderno-arvore.asciidoc
+- Internet, busca por "graphviz online". 
+Ex: http://sandbox.kidstrythisathome.com/erdos/
+http://www.webgraphviz.com/
+http://ashitani.jp/gv/
+
+////
+
+==== Introdução
+
+
+++++
+<remark>Aspecto motivacional da seção PENDENTE</remark>
+++++
+
+////
+.Descubra porque as árvores são invertidas na computação!
+image::images/arvores/arvore-invertida.pdf[scaledwidth="60%"]
+////
+
+Nesta seção apresentamos as classificações de árvores e alguns
+princípios básicos. 
+
+.Questões a serem respondidas
+****
+. Quais os tipos mais comuns de árvores?
+. Como funciona a recursividade em árvores?
+****
+
+==== Classificação
+
+===== Árvore Binária
+TODO.
+
+===== Árvore Binária de busca
+TODO.
+
+===== Árvore genérica
+TODO.
+
+===== Árvore B
+TODO.
+
+==== Conhecimento de princípios
+
+
+===== Recursividade
+
+TODO.
+

@@ -1,0 +1,61 @@
+
+<<<
+
+==== Autoavaliação
+
+:caderno: https://www.linkedin.com/profile/view?id=332775837
+
+++++
+<simpara>
+<ulink url="{caderno}">
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/pagina-com-atividade.pdf"/>
+</imageobject>
+</inlinemediaobject></ulink></simpara>
+++++
+
+.Objetivo da seção
+____
+Ao final desta seção você deverá ser capaz de:
+
+*Entender* as classificações de árvores e propriedades genéricas,
+*exemplificando* árvores de diferentes categorias, *comparando* 
+as estruturas das categorias e *inferindo* suas propriedades.
+____
+
+A proposta de verificação do objetivo da seção possui três partes,
+que veremos a seguir.
+
+===== Exemplificando árvores de diferentes categorias
+
+Para atender à primeira parte do objetivo da seção *você deverá
+exemplificar árvores de diferentes categorias*. 
+Para cada categoria a seguir, desenhe uma árvore que a represente: 
+*Árvore Binária*, *Árvore Binária de busca*, *Árvore genérica*,
+*Árvore B*.
+
+image::images/arvores/verificando-aprendizado-objetivo2-tipos.pdf[]
+
+===== Comparando as estruturas das categorias
+
+|====
+| Afirmações V/F                  | Binária  | Binária de busca | Genérica   | B
+| Possui até 2 filhos             | Sim      | Sim              | Não        | Não
+| Máxima quantidade de filhos     | 2        | 2                | sem limite | limado pela ordem
+|====
+
+.Certifique-se de ter compreendido todos os conteúdos antes de prosseguir
+[NOTE]
+--
+Depois de realizar as atividadess e verificar as respostas 
+comentadas, você está confiante que compreendeu os assuntos apresentados? 
+
+Caso você ainda tenha alguma dúvida, releia as seções relacionadas
+ou busque outras fontes (como as video aulas
+http://youtu.be/iLvpaqAoVD8 e http://youtu.be/U7IiLJlMfnU).
+  
+Certifique-se de ter compreendido todos os conteúdos antes de
+prosseguir, eles são essenciais para a compreensão do
+restante do capítulo.
+--

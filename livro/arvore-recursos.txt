@@ -1,0 +1,72 @@
+PDFs
+http://www.univasf.edu.br/~jorge.cavalcanti/Mat_Disc_Parte10.pdf ****
+
+http://claudiaboeres.pbworks.com/f/CursoTeoriaDosGrafoAula08.pdf *
+
+
+http://www.dsc.ufcg.edu.br/~abrantes/CursosAnteriores/TG051/arvores.pdf *
+
+Paginas
+
+http://www.professeurs.polymtl.ca/michel.gagnon/Disciplinas/Bac/Grafos/Arvores/arvores.html
+
+
+
+
+==== Vídeos ====
+Aula 67 Introdução sobre Árvore (5:25): 
+http://youtu.be/iLvpaqAoVD8
+
+Aula 68 - Árvores - Propriedades (4:30)
+http://youtu.be/U7IiLJlMfnU
+
+Aula 69 - Árvore Binária: Definição
+http://youtu.be/9WxCeWX9qDs
+
+[ED] Aula 70 - Árvore Binária: Implementação
+http://youtu.be/TR8ZLUKmcPc
+
+[ED] Aula 71 - Criando e destruindo uma árvore binária
+http://youtu.be/QAJkoJW8bEc
+
+[ED] Aula 72 - Árvore Binária: informações básicas 
+http://youtu.be/qVnNdmx4fOA
+
+[ED] Aula 73 - Percorrendo uma Árvore Binária
+http://youtu.be/z7XwVVYQRAA
+
+[ED] Aula 74 - Árvore Binária de Busca
+http://youtu.be/M7cb4HjePJk
+
+
+
+
+==== ARVORE B ====
+ARVORE B
+http://pt.slideshare.net/anujmodi555/b-trees-in-data-structure
+
+
+Ordem m (impar)
+
+Cada pode ter no máximo m filhos
+Todas as folhas estão no mesmo nível
+Todos os nós internos (excento a raiz) tem pelo menos [m/2] filhos
+A raiz é um folha ou tem 2 ou até m filhos
+Uma folha contém no máximo m-1 chaves
+
+
+B-tree
+Definition: A balanced search tree in which every node has between ceiling( m/2) and m children, where m>1 is a fixed integer. m is the order. The root may have as few as 2 children. This is a good structure if much of the tree is in slow memory (disk), since the height, and hence the number of accesses, can be kept small, say one or two, by picking a large m.
+Also known as balanced multiway tree. 
+http://xlinux.nist.gov/dads/HTML/btree.html
+
+
+http://www.cs.nott.ac.uk/~nza/G52ADS/btrees2.pdf
+
+
+
+PORTUGUES
+http://www.lcad.icmc.usp.br/~nonato/ED/B_arvore/btree.htm
+
+Slide útil para referenciar:
+http://www2.ic.uff.br/~ferraz/EDII/Ppt/BTree01.ppt

@@ -146,6 +146,8 @@ Todas as folhas: F, A
 
 |====
 
+
+
 <<<
 
 ===== Descrevendo as características de árvores com suas próprias palavras
@@ -288,11 +290,10 @@ Degrees of all trees: *2, `___`, `___`, `___`*
 
 image::images/arvores/verificando-aprendizado-objetivo1-ingles.pdf[scaledwidth="40%"]
 
-
 .Resolução
 
 Esta atividade é parecida com a primeira, mas o diferencial são as 
-instruções em inglês. Segue as traduções das intruções e as respostas.
+instruções em inglês. Segue as respostas e traduções das intruções.
 
 [cols="1a,1a", frame="none", grip="none"]
 |====
@@ -377,7 +378,7 @@ _(Grau de cada árvore)_
 
 |====
 
-IMPORTANT: Reconhecer estas terminologias em inglês é essencial para
+TIP: Reconhecer terminologias em inglês é essencial para
 um profissional de computação.
 
 <<<
@@ -394,15 +395,27 @@ um profissional de computação.
 </inlinemediaobject></ulink></simpara>
 ++++
 
+Além de reconhecer os termos técnicos em inglês é importante que você
+pratique sua escrita. Esta habilidade é necessária quando você está
+escrevendo um código e precisa chamar funções escritas por terceiros.
+
+Durante o curso é esperado que você desenvolva uma habilidade
+que chamamos de _inglês técnico_. Que irá habilitá-lo a ler 
+documentações, em inglês, sobre os conteúdos de computação.
+
+Para desenvolver esta habilidade, leia o texto a seguir atenciosamente:
 
 ____
 
 *Árvore* é uma estrutura de dados que possui muitos *nós*. Cada *nó*
 possui um *valor* e pode está conectado com outros nós através de
-*arestas*. Um nó pode ter muitos *filhos*, mas apenas um único pai.
+*arestas*. Um nó pode ter muitos *filhos*, mas apenas um único *pai*.
 O primeiro nó é chamado de *raiz* da árvore. E um nó sem um *filho*
 é chamado de nó terminal ou *folha*. 
+
 ____
+
+Agora complete o texto a seguir com os respectivos termos em inglês:
 
 ____
 
@@ -416,6 +429,13 @@ have many `________________________`, but only one
 
 _____
 
+TIP: Busque realizar esta atividade _mesmo que_ possua pouco conhecimento
+do inglês. 
+
+<<<
+
+Confira sua resposta:
+
 [quote]
 _Tree_ is a data structure that has many _nodes_. Each _node_
 has a _value_ and may be connected to others nodes through _edges_. 
@@ -424,37 +444,6 @@ The first node is called the _root_ of the tree. And a node without
 a _child_ is called terminal node or _leaf_.
 
 
-Complete as seguintes sentenças com os termos em inglês:
-
-Na primeira *árvore*, o pai do *nó* J é Y. +
-At the first `__________`, the parent of the `__________` J is Y.
-
-Não existe uma *aresta* conectando os nós S e X. +
-It doens't exist an `__________` connecting nodes S and X.
-
-P é um *filho* do nó C. Os *filhos* de C são P, E, B e A. +
-P Y is a `__________` of the node C. The `______________` of C are P, E, B e A.
-
-A *raiz* da última árvore é G. +
-The `__________` of the last tree is G.
-
-<<<
-
-.Resolução 
-Segue as respostas da atividade.
-
-Na primeira *árvore*, o pai do *nó* J é Y. +
-At the first _tree_, the parent of the _node_ J is Y.
-
-Não existe uma *aresta* conectando os nós S e X. +
-It doens't exist an _edge_ connecting nodes S and X.
-
-P é um *filho* do nó C. Os *filhos* de C são P, E, B e A. +
-P Y is a _child_ of the node C. The _children_ of C are P, E, B e A.
-
-A *raiz* da última árvore é G. +
-The _root_ of the last tree is G.
-
 NOTE: Se você conhece as palavras do inglês _father_ e _son_ (pai e
 filho masculino) perceberá que os termos técnicos não possuem
 uma tradução literal para o português. Quando estamos falando de
@@ -462,6 +451,10 @@ uma tradução literal para o português. Quando estamos falando de
 o nó _pai_ não é _father_, mas _parent_ (que a tradução literal
 equivale ao singular de _os pais_, designado para ambos os sexos).
 
+
+Como você se saiu nesta atividade? Não se preocupe se teve
+dificuldades, o importante é dar passos em direção a sua formação no
+inglês técnico.
 
 
 .Certifique-se de ter compreendido todos os conteúdos antes de prosseguir

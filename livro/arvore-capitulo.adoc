@@ -31,21 +31,23 @@ remind them how to calculate a percentage.
 include::arvore-objetivos.adoc[]
 include::arvore-organizacao-previa.adoc[]
 
-include::arvore-objetivo1-factual.adoc[]
+include::arvore-objetivo1.adoc[]
 
 include::arvore-objetivo1-autoavaliacao.adoc[]
 
-include::arvore-objetivo2-conceitual.adoc[]
+include::arvore-objetivo2.adoc[]
 
-include::arvore-objetivo3-procedural-algoritimos.adoc[]
+include::arvore-objetivo2-autoavaliacao.adoc[]
 
-include::arvore-objetivo4-procedural-balanceamento.adoc[]
+include::arvore-objetivo3.adoc[]
 
-include::arvore-objetivo5-procedural-eficiencia-busca.adoc[]
+include::arvore-objetivo4.adoc[]
 
-include::arvore-objetivo6-meta-armazenamento-aplicacoes.adoc[]
+include::arvore-objetivo5.adoc[]
 
-include::arvore-objetivo7-meta-implementacao.adoc[]
+include::arvore-objetivo6.adoc[]
+
+include::arvore-objetivo7.adoc[]
 
 
 
