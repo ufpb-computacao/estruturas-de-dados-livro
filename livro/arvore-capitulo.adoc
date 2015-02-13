@@ -5,6 +5,9 @@
 :online: {gitrepo}/blob/master/livro/code/{cap}
 :local: code/{cap}
 
+////
+Ignorar o texto em inglês a seguir, ele será substituído.
+
 -  what will be learnt in the unit
 
 - Explain what the session will be about, it can be done in one of two forms:
@@ -27,6 +30,8 @@ remind them how to calculate a percentage.
 ****
 -  why that material is important to the learners
 ****
+
+////
 
 include::arvore-objetivos.adoc[]
 include::arvore-organizacao-previa.adoc[]

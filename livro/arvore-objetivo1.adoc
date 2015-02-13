@@ -155,10 +155,11 @@ a seguir.
 Todos os vértices de uma árvore são chamados de *nós* (_plural de nó_). 
 ****
 
-Os nós das árvores geralmente possuem _valores_ associados, que são
-representados dentro deles. Na <<fig_arvores_com_nos_valorados>> estão
-apresentados os valores que cada nó possui. Perceba que não há
-restrição sobre a repetição ou ordem dos valores dos nós.
+Os nós das árvores geralmente possuem _valores_ (ou chaves)
+associados, que são representados dentro deles. Na
+<<fig_arvores_com_nos_valorados>> estão apresentados os valores que
+cada nó possui. Perceba que não há restrição sobre a repetição ou
+ordem dos valores dos nós.
 
 .Árvores com nós e seus respectivos valores
 [[fig_arvores_com_nos_valorados]]
@@ -181,9 +182,9 @@ image::images/arvores/arvores_com_arestas_destacadas.pdf[]
 
 (((Árvore, raiz)))
 
-A representação usual de árvore apresenta o _nó inicial_ no topo da
-árvore. Este nó é chamade de *nó raiz*, ou simplesmente, *raiz* da
-árvore.  Na <<fig_raizes>> as raizes de cada árvore estão destacadas.
+A representação usual de árvore apresenta o _nó inicial_ no topo.
+Este nó é chamade de *nó raiz*, ou simplesmente, *raiz* da árvore.  Na
+<<fig_raizes>> as raizes de cada árvore estão destacadas.
 
 .Árvores com suas raizes destacadas
 [[fig_raizes]]
@@ -195,7 +196,7 @@ image::images/arvores/raizes.pdf[scaledwidth="90%"]
 
 Um nó é considerado *pai* de outro nó se ele possuir uma aresta
 conectando com o outro nó abaixo dele. Dizemos que o nó de baixo é
-*filho* do nó de cima, seu *pai* (ver <<fig_pais_filhos>>). 
+*filho* do nó de cima (ver <<fig_pais_filhos>>). 
 
 ////
 O nó raiz
@@ -317,7 +318,7 @@ image::images/arvores/altura_arvore.pdf[]
 
 ==== Inglês técnico
 
-A tabela a seguir apresenta os termos técnicos em inglês relacionado
+A tabela a seguir apresenta os termos técnicos em inglês relacionados
 aos assuntos apresentados nesta seção.
 
 [cols="^1,^1e",frame="topbot",options="header", width="70%"]
@@ -328,6 +329,7 @@ aos assuntos apresentados nesta seção.
 | Árvore | Tree
 | Nó | Node
 | Valor | Value
+| Chave | Key
 | Aresta | Edge
 | Raiz | Root
 | Primeiro, Segundo, Terceiro | First, Second, Third

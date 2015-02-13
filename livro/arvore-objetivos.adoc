@@ -3,13 +3,16 @@ ____
 Ao final deste capítulo você deverá ser capaz de:
 
 1. *Entender* o que é uma árvore e suas características básicas e
-*lembrar* dos termos técnicos em inglês, *reconhecendo* e
-*descrevendo* características de árvores apresentadas e *reproduzindo*
-os termos em inglês apresentados. (Efetivo/factual)
+*lembrar* dos termos técnicos em inglês, *reconhecendo* e *descrevendo*
+características de árvores apresentadas; e *reconhecendo* e
+*reproduzindo* os termos em inglês apresentados.
 
-2. *Entender* as classificações de árvores e propriedades genéricas,
-*exemplificando* árvores de diferentes categorias e *inferindo* suas
-propriedades. (Conhecimento Conceitual)
+2. *Entender* as classificações, recursividade e balanceamento de árvores,
+*analizar* as estruturas dos nós das diferentes árvores,
+*exemplificando* árvores de diferentes categorias, 
+*diferenciando* as estrutura de nós entre as categorias de árvores,
+*resumindo* os elementos de recursividade em árvores,
+*explicando* como balancear árvores apresentadas.
 
 3. *Aplicar* as operações básicas de árvores e entender os algoritmos
 de buscas, *executando* as operações básicas e *explicando* os algoritmos
@@ -34,6 +37,7 @@ em uma linguagem de programação. (Metacognitivo)
 
 ____
 
+////
 .Classificação dos objetivos
 [cols="^13,^10,^10,^10,^10,^10,^10", grid="cols",frame="none"]
 |====
@@ -45,6 +49,7 @@ ____
 | Metacognitivo  | 6       | 6        |         |            |         |  7
 |  2+s|Conhecimento 2+s|Competência 2+s|Habilidade
 |====
+////
 
 ////
 A *elaboração dos objetivos de aprendizagem* e *divisão das seções* do

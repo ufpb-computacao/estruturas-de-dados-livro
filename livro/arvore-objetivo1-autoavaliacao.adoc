@@ -1,5 +1,6 @@
 ==== Autoavaliação
 
+:img: images/arvores
 :caderno: https://www.linkedin.com/profile/view?id=332775837
 
 .Objetivo da seção
@@ -22,7 +23,7 @@ Para atender à primeira parte do objetivo da seção *você deverá
 reconhecer as características das árvores apresentadas*. Na
 <<fig_verificando_aprendizado_objetivo1>> são apresentadas quatro
 árvores, com um nó em destaque em cada uma delas. As características
-da primeira árvore já foram reconhecidas, na tabela, faça o mesmo
+da primeira árvore já foram reconhecidas, na tabela. Faça o mesmo
 para as demais árvores.
 
 <<<
@@ -95,14 +96,14 @@ Todas as folhas:
 .Resolução 
 
 Para facilitar a compreensão, as folhas e os nós de maior grau foram
-realçados na figura a seguir:
+realçados nas árvores a seguir:
 
-image::images/arvores/verificando-aprendizado-objetivo1-solucao.pdf[]
+image::images/arvores/verificando-aprendizado-objetivo1-solucao.pdf[scaledwidth="70%"]
 
 [cols="1a,1a", frame="none"]
 |====
 |
-*Nó Y e Árvore (a)* + 
+*Nó Y na Árvore (a)* + 
 Nível de nó: 2 +
 Pai do nó: S +
 Filho(s) do nó: J +
@@ -145,6 +146,20 @@ Altura da Árvore: 6 +
 Todas as folhas: F, A
 
 |====
+
+[TIP]
+.Feedback
+====
+
+Como você se saiu nesta atividade? O que você errou?
+É comum errar as _folhas_ e o _grau das árvores_, pois requer 
+pesquisar com atenção cada nó da árvore. O nível do nó e o tamanho
+da árvore pode confundir um pouco, pois o nível começa a ser contando
+de zero (a raiz tem nível zero), mas a altura começa a partir de um. 
+Após realizar esta atividade esperamos que você sinta-se confiante 
+que sabe reconhecer todos estes conteúdos.
+
+====
 
 
 
@@ -201,6 +216,115 @@ Um _nó_ possui um valor, um pai único e pode ter vários ou nenhum filhos.
 A altura da árvore corresponde _a quantidade de nós_ do maior caminho
 da raiz a qualquer nó de sua árvore.
 ****
+
+[TIP]
+.Feedback
+====
+
+Esta atividade tem a finalidade de proporcionar condições para que
+você _fixe os conteúdos estudados_. O rigor científico não está sendo
+exigido.
+
+Por exemplo, ao descrever o que é um *nó filho*, você pode ter 
+escrito que _todos os nós abaixo de um nó são filhos dele_. Esta 
+seria uma resposta perfeitamente aceitável.
+
+Se você pulou estava atividade e foi direto para a resposta,
+convido-o(a) a voltar e tentar realizá-la.
+
+====
+
+<<<
+===== Reproduzindo os termos em inglês apresentados
+
+++++
+<simpara>
+<ulink url="{caderno}">
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/pagina-com-atividade.pdf"/>
+</imageobject>
+</inlinemediaobject></ulink></simpara>
+++++
+
+image::{img}/documentacao-arvore-em-ingles.svg[]
+
+Imagine que você está trabalhando em uma empresa de desenvolvimento
+de software nacional, mas que possui uma política de documentar
+os códigos fontes em inglês.
+
+Uma tarefa de hoje consiste em documentar o funcionamento
+do código de uma árvore. Junto com o(a) parceiro(a), vocês acordaram
+que o seguinte texto deverá ser traduzido para compor a documentação
+sobre árvores em inglês:
+
+____
+
+*Árvore* é uma estrutura de dados que possui muitos *nós*. Cada *nó*
+possui um *valor* e pode está conectado com outros nós através de
+*arestas*. Um nó pode ter muitos *filhos*, mas apenas um único *pai*.
+O primeiro nó é chamado de *raiz* da árvore. E um nó sem um *filho*
+é chamado de nó terminal ou *folha*. 
+
+____
+
+Seu(ua) parceiro(a) sabe que você precisa praticar o inglês, por isso 
+ele(a) iniciou a tradução, mas deixou lacunas para você preencher.
+
+Complete o texto a seguir com os respectivos termos em inglês para
+finalizar a tradução:
+
+____
+
+`________________` is a data structure that has many
+`__________________`. Each `________________` has a `____________` and may be
+connected to others nodes through `__________________`.  A node can
+have many `________________________`, but only one
+`________________________`. The first node is called the
+`________________` of the tree. And a node without a
+`____________________` is called terminal node or `________________`.
+
+____
+
+TIP: Busque realizar esta atividade _mesmo se_ possuir pouco conhecimento
+da língua inglesa. 
+
+<<<
+
+Confira sua resposta:
+
+[quote]
+_Tree_ is a data structure that has many _nodes_. Each _node_
+has a _value_ and may be connected to others nodes through _edges_. 
+A node can have many _children_, but only one _parent_.
+The first node is called the _root_ of the tree. And a node without
+a _child_ is called terminal node or _leaf_.
+
+
+[TIP]
+.Feedback
+====
+
+Além de reconhecer os termos técnicos em inglês é importante que você
+pratique sua escrita. Esta habilidade também é necessária quando você está
+escrevendo um código e precisa chamar funções escritas por terceiros.
+
+Durante o curso é esperado que você desenvolva uma habilidade
+que chamamos de _inglês técnico_. Que irá habilitá-lo a ler e escrever
+documentações, em inglês, sobre os conteúdos de computação.
+
+Se você conhecia as palavras do inglês _father_ e _son_ (pai e
+filho masculino) perceberá que os termos técnicos não possuem
+uma tradução literal para o português. Quando estamos falando de
+árvores, o _pai_ não é _father_, mas _parent_ (que a tradução literal
+equivale ao singular de _os pais_, designado para ambos os sexos) e
+_filho_ é _child_ (que a tradução literal seria criança).
+
+Como você se saiu nesta atividade? Não se preocupe se teve
+dificuldades, o importante é dar passos em direção a sua formação no
+inglês técnico.
+
+====
 
 <<<
 
@@ -288,12 +412,11 @@ Degrees of all trees: *2, `___`, `___`, `___`*
 
 <<<
 
+////
 image::images/arvores/verificando-aprendizado-objetivo1-ingles.pdf[scaledwidth="40%"]
+////
 
-.Resolução
-
-Esta atividade é parecida com a primeira, mas o diferencial são as 
-instruções em inglês. Segue as respostas e traduções das intruções.
+Segue as respostas e traduções das instruções.
 
 [cols="1a,1a", frame="none", grip="none"]
 |====
@@ -378,89 +501,22 @@ _(Grau de cada árvore)_
 
 |====
 
-TIP: Reconhecer terminologias em inglês é essencial para
-um profissional de computação.
+[TIP]
+.Feedback
+====
 
-<<<
+Em computação inglês é essencial, os próprios comandos das 
+linguagens de programação são em inglês (`if`, `while`, `for` etc).
+É importante que você _desenvolva interesse_ em buscar conhecer os
+termos técnicos em inglês da sua área de estudo. Isto irá ajudá-lo(a)
+a encontrar novas fontes de conhecimento.
 
-===== Reproduzindo os termos em inglês apresentados
-
-++++
-<simpara>
-<ulink url="{caderno}">
-<inlinemediaobject>
-<imageobject>
-<imagedata fileref="images/pagina-com-atividade.pdf"/>
-</imageobject>
-</inlinemediaobject></ulink></simpara>
-++++
-
-Além de reconhecer os termos técnicos em inglês é importante que você
-pratique sua escrita. Esta habilidade é necessária quando você está
-escrevendo um código e precisa chamar funções escritas por terceiros.
-
-Durante o curso é esperado que você desenvolva uma habilidade
-que chamamos de _inglês técnico_. Que irá habilitá-lo a ler 
-documentações, em inglês, sobre os conteúdos de computação.
-
-Para desenvolver esta habilidade, leia o texto a seguir atenciosamente:
-
-____
-
-*Árvore* é uma estrutura de dados que possui muitos *nós*. Cada *nó*
-possui um *valor* e pode está conectado com outros nós através de
-*arestas*. Um nó pode ter muitos *filhos*, mas apenas um único *pai*.
-O primeiro nó é chamado de *raiz* da árvore. E um nó sem um *filho*
-é chamado de nó terminal ou *folha*. 
-
-____
-
-Agora complete o texto a seguir com os respectivos termos em inglês:
-
-____
-
-`________________` is a data structure that has many
-`__________________`. Each `________________` has a `____________` and may be
-connected to others nodes through `__________________`.  A node can
-have many `________________________`, but only one
-`________________________`. The first node is called the
-`________________` of the tree. And a node without a
-`____________________` is called terminal node or `________________`.
-
-_____
-
-TIP: Busque realizar esta atividade _mesmo que_ possua pouco conhecimento
-do inglês. 
-
-<<<
-
-Confira sua resposta:
-
-[quote]
-_Tree_ is a data structure that has many _nodes_. Each _node_
-has a _value_ and may be connected to others nodes through _edges_. 
-A node can have many _children_, but only one _parent_.
-The first node is called the _root_ of the tree. And a node without
-a _child_ is called terminal node or _leaf_.
-
-
-NOTE: Se você conhece as palavras do inglês _father_ e _son_ (pai e
-filho masculino) perceberá que os termos técnicos não possuem
-uma tradução literal para o português. Quando estamos falando de
-árvores, o _filho_ é _child_ (que a tradução literal seria criança) e
-o nó _pai_ não é _father_, mas _parent_ (que a tradução literal
-equivale ao singular de _os pais_, designado para ambos os sexos).
-
-
-Como você se saiu nesta atividade? Não se preocupe se teve
-dificuldades, o importante é dar passos em direção a sua formação no
-inglês técnico.
-
+====
 
 .Certifique-se de ter compreendido todos os conteúdos antes de prosseguir
 [NOTE]
 --
-Depois de realizar as atividadess e verificar as respostas 
+Depois de realizar as atividades e verificar as respostas 
 comentadas, você está confiante que compreendeu os assuntos apresentados? 
 
 Caso você ainda tenha alguma dúvida, releia as seções relacionadas

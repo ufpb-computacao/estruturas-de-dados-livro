@@ -70,3 +70,14 @@ http://www.lcad.icmc.usp.br/~nonato/ED/B_arvore/btree.htm
 
 Slide útil para referenciar:
 http://www2.ic.uff.br/~ferraz/EDII/Ppt/BTree01.ppt
+
+
+
+
+
+http://infolab.stanford.edu/~ullman/focs/ch05.pdf - ingles
+
+Outras árvores: árvores avl, vermelho e preto
+
+
+http://youtu.be/coRJrcIYbF4 : árvore b

@@ -1,6 +1,6 @@
 <map version="freeplane 1.2.0">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
-<node TEXT="&#xc1;rvore" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1416332796867"><hook NAME="MapStyle" zoom="1.331">
+<node TEXT="&#xc1;rvore" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1416332796867"><hook NAME="MapStyle" zoom="1.21">
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node">
@@ -54,9 +54,10 @@
 <node TEXT="Conhecimento&#xa;Efetivo/factual" POSITION="right" ID="ID_1648591709" CREATED="1416262186614" MODIFIED="1416332591339" MOVED="1416262194013">
 <edge COLOR="#000000"/>
 <font BOLD="false"/>
-<node TEXT="Conhecimento da Terminologia" ID="ID_1494508885" CREATED="1416262186614" MODIFIED="1416332563183">
+<node TEXT="Conhecimento da Terminologia" ID="ID_1494508885" CREATED="1416262186614" MODIFIED="1422533842979">
 <edge COLOR="#000000"/>
 <font BOLD="false"/>
+<cloud COLOR="#f0f0f0" SHAPE="ARC"/>
 <node TEXT="&#xc1;rvore" ID="ID_1848262471" CREATED="1416262548228" MODIFIED="1416332563185">
 <font BOLD="false"/>
 </node>
@@ -70,9 +71,10 @@
 <font BOLD="false"/>
 </node>
 </node>
-<node TEXT="Conhecimento de detalhes&#xa;e elementos espec&#xed;ficos" ID="ID_169738623" CREATED="1416262186614" MODIFIED="1416332616821">
+<node TEXT="Conhecimento de detalhes&#xa;e elementos espec&#xed;ficos" ID="ID_169738623" CREATED="1416262186614" MODIFIED="1422533846152">
 <edge COLOR="#000000"/>
 <font BOLD="false"/>
+<cloud COLOR="#f0f0f0" SHAPE="ARC"/>
 <node TEXT="Raiz" ID="ID_367339785" CREATED="1416262597141" MODIFIED="1416332563198">
 <font BOLD="false"/>
 </node>
@@ -93,9 +95,10 @@
 <node TEXT="Conhecimento&#xa;Conceitual" POSITION="right" ID="ID_339503537" CREATED="1416262186614" MODIFIED="1416332596837" MOVED="1416262194030">
 <edge COLOR="#000000"/>
 <font BOLD="false"/>
-<node TEXT="Conhecimento de&#xa;classifica&#xe7;&#xe3;o e categoriza&#xe7;&#xe3;o" ID="ID_987255543" CREATED="1416262186623" MODIFIED="1416332719208">
+<node TEXT="Conhecimento de&#xa;classifica&#xe7;&#xe3;o e categoriza&#xe7;&#xe3;o" ID="ID_987255543" CREATED="1416262186623" MODIFIED="1422533852449">
 <edge COLOR="#000000"/>
 <font BOLD="false"/>
+<cloud COLOR="#f0f0f0" SHAPE="ARC"/>
 <node TEXT="Quantidade de filhos" ID="ID_1789658763" CREATED="1416263806915" MODIFIED="1416332563218">
 <font BOLD="false"/>
 <node TEXT="&#xc1;rvore Bin&#xe1;ria" ID="ID_312650101" CREATED="1416262985280" MODIFIED="1416332563220" MOVED="1416263816187">

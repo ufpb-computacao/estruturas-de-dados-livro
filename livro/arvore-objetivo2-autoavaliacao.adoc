@@ -19,9 +19,24 @@
 ____
 Ao final desta seção você deverá ser capaz de:
 
-*Entender* as classificações de árvores e propriedades genéricas,
-*exemplificando* árvores de diferentes categorias, *comparando* 
-as estruturas das categorias e *inferindo* suas propriedades.
+*Entender* as classificações de árvores,
+*analizar* as estruturas dos nós das diferentes árvores,
+*exemplificando* árvores de diferentes categorias, 
+*diferenciando* as estrutura de nós entre as categorias de árvores,
+*resumindo* os elementos de recursividade em árvores,
+*explicando* como balancear árvores apresentadas.
+
+
+*Entender* as classificações de árvores,
+*exemplificando* árvores de diferentes categorias.
+
+*Analizar* as estruturas dos nós das diferentes categorias de árvores,
+*diferenciando* as estrutura de nós entre as categorias de árvores.
+
+*Lembrar* dos termos técnicos em inglês, *reconhecendo* e
+*reproduzindo* os termos em inglês apresentados.
+
+
 ____
 
 A proposta de verificação do objetivo da seção possui três partes,
@@ -31,19 +46,106 @@ que veremos a seguir.
 
 Para atender à primeira parte do objetivo da seção *você deverá
 exemplificar árvores de diferentes categorias*. 
-Para cada categoria a seguir, desenhe uma árvore que a represente: 
-*Árvore Binária*, *Árvore Binária de busca*, *Árvore genérica*,
-*Árvore B*.
+Para cada categoria a seguir, desenhe uma árvore que a represente.
 
 image::images/arvores/verificando-aprendizado-objetivo2-tipos.pdf[]
 
-===== Comparando as estruturas das categorias
+<<<
 
-|====
-| Afirmações V/F                  | Binária  | Binária de busca | Genérica   | B
-| Possui até 2 filhos             | Sim      | Sim              | Não        | Não
-| Máxima quantidade de filhos     | 2        | 2                | sem limite | limado pela ordem
-|====
+Você desenhou uma *árvore binária* corretamente se  se cada nó possuir
+*exatamente um valor* (não sendo permitido que um nó possua múltiplas
+chaves) e *no máximo dois filhos*. Os filhos dos nós devem ser
+desenhados à sua *esquerda* ou *direita*. Não há restrições em relação
+aos valores dos nós, eles podem estarem em qualquer ordem. Podem
+ocorrer nós terminais em quaisquer níveis da árvore. 
+
+image::images/arvores/verificando-aprendizado-objetivo2-exemplo-arvore-binaria.pdf[]
+
+Você desenhou uma *árvore binária de busca* corretamente se cada nó
+possuir *exatamente um valor* (não sendo permitido que um nó possua
+múltiplas chaves) e *no máximo dois filhos*. Para todo nó da
+árvore, o valor do *filho a esquerda deve ser menor ou igual do que o
+seu pai*, enquanto o valor do nó da *direita deve ser maior do que o
+valor do seu pai*. Podem ocorrer nós terminais em quaisquer níveis da
+árvore.
+
+image::images/arvores/verificando-aprendizado-objetivo2-exemplo-arvore-binaria-de-busca.pdf[]
+
+Você desenhou uma *árvore genérica* corretamente se cada nó possuir
+*exatamente um valor* (não sendo permitido que um nó possua múltiplas
+chaves). Não há restrição na quantidade de filhos, os nós podem ter
+quantidades diferentes de filhos. Podem ocorrer nós terminais em
+quaisquer níveis da árvore.
+
+image::images/arvores/verificando-aprendizado-objetivo2-exemplo-arvore-generica.pdf[]
+
+Para desenhar corretamente uma *árvore B* é necessário verificar a ordem
+da árvore. Como a ordem da árvore solicitada foi 3, então o número
+máximo de chaves por nó é 3. Cada nó pode ter até 4 filhos (ordem + 1).
+Todas as folhas devem estarem no mesmo nível.
+
+image::images/arvores/verificando-aprendizado-objetivo2-exemplo-arvore-b.pdf[]
+
+
+<<<
+
+===== Diferenciando as estrutura de nós entre as categorias de árvores
+
+++++
+<simpara>
+<ulink url="{caderno}">
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/pagina-com-atividade.pdf"/>
+</imageobject>
+</inlinemediaobject></ulink></simpara>
+++++
+
+
+As árvores que estamos estudando diferem na quantidade de números de
+filhos, na ordem das chaves, na quantidade de chaves por nó e na
+localização das folhas. Algumas destas diferenças são reflexos das
+estruturas dos nós de cada árvore.
+
+Explique a diferença entre as *estruturas dos nós* das árvores binárias,
+genéricas e B.
+
+TIP: As árvores binária e binária de busca compartilham a mesma
+estrutura de nó. Você deve ignorar as restrições que não fazem parte
+da estrutura dos nós, como a ordem dos valores dos nós.
+
+image::images/caixa15cm.pdf[]
+
+<<<
+
+===== Resumindo os elementos de recursividade em árvores
+
+++++
+<simpara>
+<ulink url="{caderno}">
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="images/pagina-com-atividade.pdf"/>
+</imageobject>
+</inlinemediaobject></ulink></simpara>
+++++
+
+Muitos algoritmos que operam nas árvores são recursivos. Como você
+percebe a recursividade nas árvores?
+
+image::images/caixa9cm.pdf[]
+
+<<<
+
+.Resposta comentada
+****
+Uma árvore pode ser percebida como sendo composta de um nó e vários
+filhos, cada filho, por sua vez, pode ser percebido como sendo uma
+árvore (ou sub-árvore). Desta forma, um algoritmo que opera numa
+árvore poderia ser executado recursivamente nos filhos de um nós, que
+também são árvores.
+****
+
 
 .Certifique-se de ter compreendido todos os conteúdos antes de prosseguir
 [NOTE]

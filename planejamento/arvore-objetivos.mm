@@ -54,12 +54,10 @@
 </hook>
 <hook NAME="AutomaticEdgeColor" COUNTER="5"/>
 <font SIZE="14" BOLD="false"/>
-<node TEXT="Conhecimento&#xa;Efetivo/factual" POSITION="right" ID="ID_1648591709" CREATED="1416262186614" MODIFIED="1417715283369" MOVED="1416262194013">
+<node TEXT="Conhecimento&#xa;Efetivo/factual" POSITION="right" ID="ID_1648591709" CREATED="1416262186614" MODIFIED="1422532970504" MOVED="1416262194013">
 <edge COLOR="#000000"/>
 <font BOLD="true"/>
-<node TEXT="Objetivo 1" ID="ID_1388420423" CREATED="1417714458394" MODIFIED="1417718873380">
-<font BOLD="true"/>
-<cloud COLOR="#ffd8b0" SHAPE="ARC"/>
+<cloud COLOR="#f0f0f0" SHAPE="ARC"/>
 <node TEXT="Conhecimento da Terminologia" ID="ID_1494508885" CREATED="1416262186614" MODIFIED="1417714566795">
 <font BOLD="false"/>
 <node TEXT="&#xc1;rvore" ID="ID_1848262471" CREATED="1416262548228" MODIFIED="1416332563185">
@@ -95,15 +93,12 @@
 <node TEXT="Caminho" ID="ID_289540609" CREATED="1417741509446" MODIFIED="1417741512548"/>
 </node>
 </node>
-</node>
 <node TEXT="Conhecimento&#xa;Conceitual" POSITION="right" ID="ID_339503537" CREATED="1416262186614" MODIFIED="1417715284751" MOVED="1416262194030">
 <edge COLOR="#000000"/>
 <font BOLD="true"/>
-<node TEXT="Objetivo 2" ID="ID_680024466" CREATED="1417714467521" MODIFIED="1417718891390">
-<font BOLD="true"/>
-<cloud COLOR="#e88fc4" SHAPE="ARC"/>
-<node TEXT="Conhecimento de&#xa;classifica&#xe7;&#xe3;o e categoriza&#xe7;&#xe3;o" ID="ID_987255543" CREATED="1416262186623" MODIFIED="1417714637068">
+<node TEXT="Conhecimento de&#xa;classifica&#xe7;&#xe3;o e categoriza&#xe7;&#xe3;o" ID="ID_987255543" CREATED="1416262186623" MODIFIED="1422532938356">
 <font BOLD="false"/>
+<cloud COLOR="#f0f0f0" SHAPE="ARC"/>
 <node TEXT="Quantidade de filhos" ID="ID_1789658763" CREATED="1416263806915" MODIFIED="1416332563218">
 <font BOLD="false"/>
 <node TEXT="&#xc1;rvore Bin&#xe1;ria" ID="ID_312650101" CREATED="1416262985280" MODIFIED="1416332563220" MOVED="1416263816187">
@@ -137,15 +132,12 @@
 </node>
 </node>
 </node>
-</node>
 <node TEXT="Conhecimento&#xa;Procedural" POSITION="right" ID="ID_1668209632" CREATED="1416262186623" MODIFIED="1417715285987" MOVED="1416262194044">
 <edge COLOR="#000000"/>
 <font BOLD="true"/>
-<node TEXT="Objetivo 3" ID="ID_1208515352" CREATED="1417714471946" MODIFIED="1417718916113">
-<font BOLD="true"/>
-<cloud COLOR="#aaaeff" SHAPE="ARC"/>
-<node TEXT="Conhecimento de conte&#xfa;dos espec&#xed;ficos,&#xa;habilidades e algoritmos" ID="ID_396245448" CREATED="1416262186623" MODIFIED="1416333136562">
+<node TEXT="Conhecimento de conte&#xfa;dos espec&#xed;ficos,&#xa;habilidades e algoritmos" ID="ID_396245448" CREATED="1416262186623" MODIFIED="1422533028021">
 <font BOLD="false"/>
+<cloud COLOR="#f0f0f0" SHAPE="ARC"/>
 <node TEXT="Opera&#xe7;&#xf5;es b&#xe1;sicas" ID="ID_999580871" CREATED="1416267736549" MODIFIED="1416332563249" MOVED="1416267881908">
 <font BOLD="false"/>
 <node TEXT="Criar" ID="ID_1097751569" CREATED="1416265763917" MODIFIED="1416332563250" MOVED="1416267756888">
@@ -210,12 +202,9 @@
 </node>
 </node>
 </node>
-</node>
-<node TEXT="Objetivo 4" ID="ID_133814352" CREATED="1417714474912" MODIFIED="1417719090659">
-<font BOLD="true"/>
-<cloud COLOR="#bfc1e7" SHAPE="ARC"/>
-<node TEXT="Conhecimento de t&#xe9;cnicas espec&#xed;ficas&#xa;e m&#xe9;todos" ID="ID_292325309" CREATED="1416262186623" MODIFIED="1417714978850">
+<node TEXT="Conhecimento de t&#xe9;cnicas espec&#xed;ficas&#xa;e m&#xe9;todos" ID="ID_292325309" CREATED="1416262186623" MODIFIED="1422533030013">
 <font BOLD="false"/>
+<cloud COLOR="#f0f0f0" SHAPE="ARC"/>
 <node TEXT="Rota&#xe7;&#xf5;es" ID="ID_1634668510" CREATED="1416267150982" MODIFIED="1416332563286">
 <font BOLD="false"/>
 </node>
@@ -229,18 +218,14 @@
 </node>
 </node>
 </node>
-</node>
-<node TEXT="Objetivo 5" ID="ID_711611034" CREATED="1417714478314" MODIFIED="1417719098051">
-<font BOLD="true"/>
-<cloud COLOR="#c8c9d7" SHAPE="ARC"/>
-<node TEXT="Conhecimento de crit&#xe9;rios e percep&#xe7;&#xe3;o de como&#xa;e quando usar um procedimento espec&#xed;fico." ID="ID_224718124" CREATED="1416262186623" MODIFIED="1417714978868">
+<node TEXT="Conhecimento de crit&#xe9;rios e percep&#xe7;&#xe3;o de como&#xa;e quando usar um procedimento espec&#xed;fico." ID="ID_224718124" CREATED="1416262186623" MODIFIED="1422533031990">
 <font BOLD="false"/>
+<cloud COLOR="#f0f0f0" SHAPE="ARC"/>
 <node TEXT="Efici&#xea;ncia de busca" ID="ID_1572389555" CREATED="1416266640166" MODIFIED="1416332563297">
 <font BOLD="false"/>
 </node>
 <node TEXT="Necessidade de balancear arvore binaria" ID="ID_1877931757" CREATED="1416266724484" MODIFIED="1416332563298">
 <font BOLD="false"/>
-</node>
 </node>
 </node>
 </node>

@@ -1,4 +1,4 @@
-=== O que são árvores e quais suas características?
+=== Quais os tipos de árvores e os princípios básicos?
 
 ////
 1. *Entender* o que é uma árvore e suas características básicas,
@@ -39,6 +39,17 @@ princípios básicos.
 . Como funciona a recursividade em árvores?
 ****
 
+
+==== Princípios básicos
+
+===== Recursividade
+
+TODO.
+
+===== Quantidade de elementos de um nível
+
+TODO.
+
 ==== Classificação
 
 ===== Árvore Binária
@@ -55,8 +66,4 @@ TODO.
 
 ==== Conhecimento de princípios
 
-
-===== Recursividade
-
-TODO.
-
+xxx

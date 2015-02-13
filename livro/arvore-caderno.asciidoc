@@ -6,11 +6,10 @@
 
 Escreva, com suas próprias palavras, o seu conceito de árvore:
 
-____
+|====
+| (Escreva o seu conceito aqui).
+|====
 
-(Escreva o seu conceito aqui).
-
-____
 
 ===== Reconhecendo características básicas em árvores apresentadas
 
@@ -52,22 +51,25 @@ Todas as folhas:
 
 ===== Descrevendo as características de árvores com suas próprias palavras
 
-.Conceitos estudados
-____
-
-Árvore; Nó; Aresta; Nó Raiz; Nó pai/filho; Folhas; Nível de um Nó;
+|====
+| Árvore; Nó; Aresta; Nó Raiz; Nó pai/filho; Folhas; Nível de um Nó;
 Grau de Nó/Árvore; Caminho; Altura da Árvore;
 
-____
+|====
 
 *Escolha dois conceitos* da lista e descreva-os com suas *próprias
-*palavras*:
+palavras*:
 
 Primeiro Conceito::
-Descrição do primeiro conceito aqui.
+|====
+| Descreva o primeiro conceito aqui.
+|====
 
 Segundo Conceito::
-Descrição do segundo conceito aqui.
+|====
+| Descreva o segundo conceito aqui.
+|====
+
 
 
 ===== Reconhecendo os termos em inglês apresentados
@@ -131,7 +133,6 @@ Degrees of all trees: *2, `___`, `___`, `___`*
 
 Agora complete o texto a seguir com os respectivos termos em inglês:
 
-____
 
 `________________` is a data structure that has many
 `__________________`. Each `________________` has a `____________` and may be
@@ -141,4 +142,4 @@ have many `________________________`, but only one
 `________________` of the tree. And a node without a
 `____________________` is called terminal node or `________________`.
 
-_____
+
