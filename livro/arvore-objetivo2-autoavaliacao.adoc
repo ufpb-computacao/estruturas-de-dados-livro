@@ -3,7 +3,7 @@
 
 ==== Autoavaliação
 
-:caderno: https://www.linkedin.com/profile/view?id=332775837
+:caderno: https://github.com/edusantana/mergulhando-de-cabeca-na-ead/blob/master/livro/caderno-arvore.asciidoc
 
 ++++
 <simpara>

@@ -65,11 +65,11 @@ Minha avó dizia, quem belisca não petisca.
 
 ____
 
-image::images/caixa6cm.pdf[]
+image::images/caixa6cm.svg[]
 
 .Ilustrações para elaboração do conceito de árvore
 [[fig_construindo_conceito_arvore]]
-image::images/arvores/arvore-ou-grafo.pdf[scaledwidth="80%"]
+image::images/arvores/arvore-ou-grafo.svg[scaledwidth="80%"]
 
 <<<
 
@@ -87,8 +87,17 @@ Você chegou a uma solução parecida?
 ****
 ////
 
+[TIP]
+.Feedback
+====
+
 Você teve dificuldades em achar palavras para referenciar os
-elementos?  Precisamos lembrar de quatro conceitos de *((grafos))* para
+elementos? Nas próximas seções iremos fornecer o referencial
+teórico que facilitará você descrever o que são árvores.
+
+====
+
+Precisamos lembrar de quatro conceitos de *((grafos))* para
 enunciar a definição formal de árvore, são eles: *vértices*,
 *arestas*, *ciclos* e *grafo conexo*.footnote:[Caso você não se lembra
 destes conceitos, você poderá inferi-los.]  
@@ -99,14 +108,14 @@ _traços_ de *((arestas))* (ver <<fig_arvore_nomenclatura>>).
 
 [[fig_arvore_nomenclatura]]
 .Nomenclatura dos elementos dos grafos
-image::images/arvores/arvore-nomenclatura.pdf[scaledwidth="30%"]
+image::images/arvores/arvore-nomenclatura.svg[scaledwidth="30%"]
 
 O terceiro conceito é _ciclo_, os *ciclos* dos grafos estão 
 apresentados na <<fig_ciclos>>. 
 
 [[fig_ciclos]]
 .Grafos com os cliclos envidenciados.
-image::images/arvores/ciclos.pdf[]
+image::images/arvores/ciclos.svg[]
 
 O quarto e último conceito é *conexo*. Um grafo *não é conexo* quando
 há um vértice, ou um conjunto deles, sem ligação com os demais (ver
@@ -114,7 +123,7 @@ há um vértice, ou um conjunto deles, sem ligação com os demais (ver
 
 [[fig_nao_conexo]]
 .Grafos não conexos.
-image::images/arvores/nao-conexo.pdf[]
+image::images/arvores/nao-conexo.svg[]
 
 Agora que relembramos os quatro conceitos de grafo, podemos enunciar
 a definição formal de árvore:
@@ -129,7 +138,7 @@ Agora que você já conhece a definição formal de árvore, tente explicar
 as razões dos grafos inferiores da <<fig_construindo_conceito_arvore>>
 não serem árvores, utilize o espaço a seguir para isso:
 
-image::images/caixa6cm.pdf[]
+image::images/caixa6cm.svg[]
 
 <<<
 
@@ -144,9 +153,15 @@ como indicados na <<fig_ciclos>>.
 
 ****
 
+[TIP]
+.Feedback
+====
+
 Embora a teoria de grafos seja essencial para compreender o que são
 árvores, as árvores possuem uma nomenclatura própria, que veremos
 a seguir.
+
+====
 
 ===== Nó
 
@@ -163,7 +178,7 @@ ordem dos valores dos nós.
 
 .Árvores com nós e seus respectivos valores
 [[fig_arvores_com_nos_valorados]]
-image::images/arvores/arvores_com_nos_valorados.pdf[]
+image::images/arvores/arvores_com_nos_valorados.svg[scaledwidth="70%"]
 
 ===== Aresta
 
@@ -173,7 +188,7 @@ As **((arestas))** são as ligações entre os nós. A
 
 .Arestas destacadas nas árvores
 [[fig_arvores_com_arestas_destacadas]]
-image::images/arvores/arvores_com_arestas_destacadas.pdf[]
+image::images/arvores/arvores_com_arestas_destacadas.svg[scaledwidth="70%"]
 
 
 ==== Elementos específicos
@@ -188,7 +203,7 @@ Este nó é chamade de *nó raiz*, ou simplesmente, *raiz* da árvore.  Na
 
 .Árvores com suas raizes destacadas
 [[fig_raizes]]
-image::images/arvores/raizes.pdf[scaledwidth="90%"]
+image::images/arvores/raizes.svg[scaledwidth="90%"]
 
 ===== Pai, filho, irmãos, descendentes e ascendentes
 
@@ -206,13 +221,13 @@ pai, e as folhas não possuem filhos.
 
 [[fig_pais_filhos]]
 .Ilustração das relações de pai e filho entre os nós de uma árvore
-image::images/arvores/pais_filhos.pdf[]
+image::images/arvores/pais_filhos.svg[scaledwidth="60%"]
 
 Um nó é dito irmão do outro, quando eles possuem o mesmo pai. 
 
 [[fig_irmaos]]
 .Os nós coloridos com a mesma cor são irmãos entre si, os brancos não possuem irmãos.
-image::images/arvores/irmaos.pdf[scaledwidth="40%"]
+image::images/arvores/irmaos.svg[scaledwidth="25%"]
 
 Na <<fig_irmaos>>::
 
@@ -227,7 +242,7 @@ Os *descendentes* de um nó são todos os seus filhos, e os filhos deles
 até as folhas. Os *ascendentes* são o seu pai, o pai do seu pai, até
 chegar na raiz da árvore.
 
-image::images/arvores/descendentes_ascendentes.pdf[scaledwidth="50%"]
+image::images/arvores/descendentes_ascendentes.svg[scaledwidth="50%"]
 
 ===== Folhas ou nós terminais
 
@@ -239,14 +254,14 @@ terminais* ou *folhas*, os demais nós são os *nós internos* (ver na
 
 [[fig_folhas_nos_terminais]]
 .As folhas são os nós terminais -- todos os nós que não possuem filhos.
-image::images/arvores/fig_folhas_nos_terminais.pdf[scaledwidth="65%"]
+image::images/arvores/fig_folhas_nos_terminais.svg[scaledwidth="45%"]
 
 Os nomes *folhas* e *raiz* provém da visualização de uma árvore invertida,
 com a raiz em cima e as folhas em baixo, como indicado na <<fig_folhas_raiz>>.
 
 [[fig_folhas_raiz]]
 .Numa árvore o nó de cima é a raiz e nós de baixo são as folhas, ou nós terminais.
-image::images/arvores/fig_folhas_raiz.pdf[scaledwidth="50%"]
+image::images/arvores/fig_folhas_raiz.svg[scaledwidth="50%"]
 
 ==== Conhecimento de detalhes
 
@@ -262,7 +277,7 @@ o nó em destaque pertence ao nível 3.
 
 [[fig_niveis_nos]]
 .Demonstração dos níveis de uma árvore, o nó em destaque pertence ao nível 3.
-image::images/arvores/niveis_nos.pdf[scaledwidth="50%"]
+image::images/arvores/niveis_nos.svg[scaledwidth="50%"]
 
 
 ===== Grau de um nó
@@ -276,7 +291,7 @@ grau 4, o nó B tem grau 3 e o restante tem grau 1.
 
 [[fig_grau_no]]
 .Árvore indicando os graus dos nós: R=2, B=3 e A=4.
-image::images/arvores/grau_no.pdf[scaledwidth="40%"]
+image::images/arvores/grau_no.svg[scaledwidth="40%"]
 
 ===== Grau de uma árvore
 
@@ -299,7 +314,7 @@ ele poderia ser descrito apenas por *ABCD*.
 
 [[fig_caminho]]
 .Caminhos dos nós destacadas.
-image::images/arvores/caminho.pdf[]
+image::images/arvores/caminho.svg[]
 
 
 ===== Altura
@@ -314,7 +329,7 @@ Na <<fig_arvore_tamanho>>, da esquerda para direita, as alturas das
 
 [[fig_arvore_tamanho]]
 .Árvores com suas indicações de altura
-image::images/arvores/altura_arvore.pdf[]
+image::images/arvores/altura_arvore.svg[scaledwidth="70%"]
 
 ==== Inglês técnico
 

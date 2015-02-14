@@ -1,7 +1,7 @@
 ==== Autoavaliação
 
 :img: images/arvores
-:caderno: https://www.linkedin.com/profile/view?id=332775837
+:caderno: https://github.com/edusantana/mergulhando-de-cabeca-na-ead/blob/master/livro/caderno-arvore.asciidoc
 
 .Objetivo da seção
 ____
@@ -33,7 +33,7 @@ para as demais árvores.
 <ulink url="{caderno}">
 <inlinemediaobject>
 <imageobject>
-<imagedata fileref="images/pagina-com-atividade.pdf"/>
+<imagedata fileref="images/pagina-com-atividade.svg"/>
 </imageobject>
 </inlinemediaobject></ulink></simpara>
 ++++
@@ -41,7 +41,7 @@ para as demais árvores.
 
 [[fig_verificando_aprendizado_objetivo1]]
 .Árvores para serem utilizadas no reconhecimento das características
-image::images/arvores/verificando-aprendizado-objetivo1.pdf[]
+image::images/arvores/verificando-aprendizado-objetivo1.svg[scaledwidth="90%"]
 
 [cols="1a,1a", frame="none", grip="none"]
 |====
@@ -98,7 +98,7 @@ Todas as folhas:
 Para facilitar a compreensão, as folhas e os nós de maior grau foram
 realçados nas árvores a seguir:
 
-image::images/arvores/verificando-aprendizado-objetivo1-solucao.pdf[scaledwidth="70%"]
+image::images/arvores/verificando-aprendizado-objetivo1-solucao.svg[scaledwidth="70%"]
 
 [cols="1a,1a", frame="none"]
 |====
@@ -172,7 +172,7 @@ que sabe reconhecer todos estes conteúdos.
 <ulink url="{caderno}">
 <inlinemediaobject>
 <imageobject>
-<imagedata fileref="images/pagina-com-atividade.pdf"/>
+<imagedata fileref="images/pagina-com-atividade.svg"/>
 </imageobject>
 </inlinemediaobject></ulink></simpara>
 ++++
@@ -193,9 +193,9 @@ O propósito desta atividade é proporcionar um momento de reflexão
 sobre os conteúdos estudados. *Escolha dois conceitos* da lista e
 descreva-os com suas *próprias palavras*:
 
-image::images/caixa3cm.pdf[]
+image::images/caixa3cm.svg[]
 
-image::images/caixa3cm.pdf[]
+image::images/caixa3cm.svg[]
 
 <<<
 
@@ -235,6 +235,7 @@ convido-o(a) a voltar e tentar realizá-la.
 ====
 
 <<<
+
 ===== Reproduzindo os termos em inglês apresentados
 
 ++++
@@ -242,7 +243,7 @@ convido-o(a) a voltar e tentar realizá-la.
 <ulink url="{caderno}">
 <inlinemediaobject>
 <imageobject>
-<imagedata fileref="images/pagina-com-atividade.pdf"/>
+<imagedata fileref="images/pagina-com-atividade.svg"/>
 </imageobject>
 </inlinemediaobject></ulink></simpara>
 ++++
@@ -335,7 +336,7 @@ inglês técnico.
 <ulink url="{caderno}">
 <inlinemediaobject>
 <imageobject>
-<imagedata fileref="images/pagina-com-atividade.pdf"/>
+<imagedata fileref="images/pagina-com-atividade.svg"/>
 </imageobject>
 </inlinemediaobject></ulink></simpara>
 ++++
@@ -352,7 +353,7 @@ Utilizando as árvores da figura abaixo, verifique que você consegue
 reconhecer os termos em inglês, respondendo as intruções. Algumas
 respostas já foram preenchidas para facilitar o seu entendimento.
 
-image::images/arvores/verificando-aprendizado-objetivo1-ingles.pdf[scaledwidth="80%"]
+image::images/arvores/verificando-aprendizado-objetivo1-ingles.svg[scaledwidth="80%"]
 
 
 [cols="1a,1a", frame="none", grip="none"]
@@ -413,7 +414,7 @@ Degrees of all trees: *2, `___`, `___`, `___`*
 <<<
 
 ////
-image::images/arvores/verificando-aprendizado-objetivo1-ingles.pdf[scaledwidth="40%"]
+image::images/arvores/verificando-aprendizado-objetivo1-ingles.svg[scaledwidth="40%"]
 ////
 
 Segue as respostas e traduções das instruções.
